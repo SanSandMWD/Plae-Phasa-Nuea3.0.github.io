@@ -1,0 +1,204 @@
+body {
+  font-family: "Itim", cursive;
+  font-weight: 400;
+  font-style: normal;
+  color: rgb(150, 209, 212);  
+  background-color: rgb(255, 200, 200); /* สีพื้นหลังเริ่มต้น */
+  text-align: center;
+  padding: 20px;
+  transition: background-color 1s ease-in-out; /* ทำให้เปลี่ยนสีพื้นหลังแบบนุ่มนวล */
+  animation: changeBg 100s infinite alternate; /* ให้สีเปลี่ยนวนไปเรื่อยๆ */
+}
+@media screen and (max-width: 480px) {
+  body {
+      font-size: 18px;
+  }
+}
+
+/* ทำให้สีพื้นหลังเปลี่ยนแบบไดนามิก */
+@keyframes changeBg {
+  0% { background-color: rgb(255, 200, 200); }
+  25% { background-color: rgb(200, 255, 200); }
+  50% { background-color: rgb(200, 200, 255); }
+  75% { background-color: rgb(255, 255, 200); }
+  100% { background-color: rgb(255, 200, 200); }
+}
+
+h1{
+  padding: 100px 105px;
+  background-image: url("https://media.istockphoto.com/id/1900013732/th/%E0%B8%A3%E0%B8%B9%E0%B8%9B%E0%B8%96%E0%B9%88%E0%B8%B2%E0%B8%A2/%E0%B8%9E%E0%B8%B7%E0%B9%89%E0%B8%99%E0%B8%AB%E0%B8%A5%E0%B8%B1%E0%B8%87%E0%B8%81%E0%B8%A3%E0%B8%B0%E0%B8%94%E0%B8%B2%E0%B8%A9%E0%B8%81%E0%B8%A3%E0%B8%B2%E0%B8%9F%E0%B8%AA%E0%B8%B5%E0%B8%82%E0%B8%B2%E0%B8%A7.jpg?s=612x612&w=0&k=20&c=25186__Kksyjl59SGaCsBFGZSYX_webLrWEnWDBi8GA=");
+  border: 5px solid #000000;
+  text-align: left;
+  
+  
+}
+h3 {
+  font-size: 64px;
+  width: 1000px;
+  height: 100px;
+  color: rgb(0, 0, 0);
+  background-color: aliceblue;
+  
+  padding-top: 30px;
+  justify-content: center;
+
+  /* ใช้ clip-path เพื่อทำให้กล่องเป็นสี่เหลี่ยมคางหมูที่ด้านซ้ายเป็นมุมฉาก */
+  clip-path: polygon(0% 0%, 90% 0%, 100% 100%, 0% 100%);
+  position: absolute; left: 150px; top:350px;
+}
+h2 {
+  font-size: 48px;
+  width: 1000px;
+  height: 70px;
+  color: rgb(186, 186, 186);
+  background-color: rgb(117, 117, 117);
+  text-align: right; /* ข้อความชิดขวา */
+  padding-right: 50px; /* ขยับข้อความไปทางขวา 50px */
+  
+
+  /* เพิ่ม Flexbox เพื่อจัดตำแหน่งข้อความให้อยู่กลาง */
+ 
+  justify-content: center;  /* จัดแนวนอนให้อยู่ตรงกลาง */
+  align-items: center; /* จัดแนวตั้งให้อยู่ตรงกลาง */
+  
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 20% 100%);
+  position: absolute; right: 150px; top:410px;
+  z-index: -1;
+  
+}
+
+h3, h2 {
+ 
+  transition: background-color 0.3s, color 0.3s; /* ทำให้เปลี่ยนสีแบบนุ่มนวล */
+
+}
+.swapped-h3 {
+  color: rgb(255, 255, 255);
+  background-color: rgb(100, 100, 100);
+  position: absolute; right: 150px; top: 400px;
+  width: 1000px;
+  height: 50px;
+  font-size: 36px;
+  z-index: -1;
+}
+
+.swapped-h2 {
+  color: rgb(0, 0, 0);
+  background-color: aliceblue;
+  width: 1000px;
+  height: 120px;
+  position: absolute; right: 150px; top:350px;
+  font-size: 82px;
+  z-index: 1;
+}
+
+
+
+button {
+    padding: 100px 100px;
+    /* ปรับขนาดตามต้องการ */
+    font-size: 16px;
+    /* ปรับขนาดตัวอักษรตามต้องการ */
+    border-radius: 70%;
+    width: 50px;
+    /* กำหนดขนาดของปุ่ม */
+    position: absolute;
+    /* กำหนดให้เป็นตำแหน่งเอนเจิ้ล */
+    border: 7px solid #000000;
+    height: 150px;
+    background-color: aliceblue;
+    text-align: left;
+    vertical-align: top;
+    cursor: pointer;
+}
+
+button img {
+    display: block;
+    /* ป้องกันการเพิ่ม space ด้านล่าง */
+    width: 64px;
+    /* ขนาดของรูปภาพ */
+    height: 64px;
+    /* ขนาดของรูปภาพ */
+}
+input {
+    padding: 200px 300px;
+    /* ปรับขนาดตามต้องการ */
+    font-size: 32px;
+    
+    /* ปรับขนาดตัวอักษรตามต้องการ */
+    
+    /* ปรับความกว้างของ input field */
+    color: rgb(0, 0, 0);
+    
+    background-color: aqua;
+    background-image: url("https://media.istockphoto.com/id/1900013732/th/%E0%B8%A3%E0%B8%B9%E0%B8%9B%E0%B8%96%E0%B9%88%E0%B8%B2%E0%B8%A2/%E0%B8%9E%E0%B8%B7%E0%B9%89%E0%B8%99%E0%B8%AB%E0%B8%A5%E0%B8%B1%E0%B8%87%E0%B8%81%E0%B8%A3%E0%B8%B0%E0%B8%94%E0%B8%B2%E0%B8%A9%E0%B8%81%E0%B8%A3%E0%B8%B2%E0%B8%9F%E0%B8%AA%E0%B8%B5%E0%B8%82%E0%B8%B2%E0%B8%A7.jpg?s=612x612&w=0&k=20&c=25186__Kksyjl59SGaCsBFGZSYX_webLrWEnWDBi8GA=");
+    font-family: "Itim", cursive;
+    border-radius: 10%;
+    /* กำหนดขอบมน */
+    border: 7px solid #000000;
+    /* เพิ่มเส้นขอบ */
+    text-align: left;
+    
+    
+   /* ให้ข้อความที่ยาวเกินขอบกล่องขึ้นบรรทัดใหม่ */
+white-space: normal; /* ให้ข้อความสามารถขึ้นบรรทัดใหม่ได้ */
+overflow: auto; 
+word-wrap: break-word; overflow-wrap: break-word; outline: none;
+}
+input {
+  padding: 100px 200px;
+  /* ปรับขนาดตามต้องการ */
+  font-size: 32px;
+  
+  /* ปรับขนาดตัวอักษรตามต้องการ */
+  
+  /* ปรับความกว้างของ input field */
+  color: rgb(0, 0, 0);
+  
+  background-color: aqua;
+  background-image: url("https://media.istockphoto.com/id/1900013732/th/%E0%B8%A3%E0%B8%B9%E0%B8%9B%E0%B8%96%E0%B9%88%E0%B8%B2%E0%B8%A2/%E0%B8%9E%E0%B8%B7%E0%B9%89%E0%B8%99%E0%B8%AB%E0%B8%A5%E0%B8%B1%E0%B8%87%E0%B8%81%E0%B8%A3%E0%B8%B0%E0%B8%94%E0%B8%B2%E0%B8%A9%E0%B8%81%E0%B8%A3%E0%B8%B2%E0%B8%9F%E0%B8%AA%E0%B8%B5%E0%B8%82%E0%B8%B2%E0%B8%A7.jpg?s=612x612&w=0&k=20&c=25186__Kksyjl59SGaCsBFGZSYX_webLrWEnWDBi8GA=");
+  font-family: "Itim", cursive;
+  border-radius: 10%;
+  /* กำหนดขอบมน */
+  border: 7px solid #000000;
+  /* เพิ่มเส้นขอบ */
+  text-align: left;
+  
+  
+ /* ให้ข้อความที่ยาวเกินขอบกล่องขึ้นบรรทัดใหม่ */
+white-space: normal; /* ให้ข้อความสามารถขึ้นบรรทัดใหม่ได้ */
+overflow: auto; 
+word-wrap: break-word; overflow-wrap: break-word; outline: none;
+}
+output {
+  padding: 100px 300px;
+  /* ปรับขนาดตามต้องการ */
+  font-size: 30px;
+  /* ปรับขนาดตัวอักษรตามต้องการ */
+  
+  /* ปรับความกว้างของ input field */
+  color: rgb(0, 0, 0);
+
+  background-color: aqua;
+  background-image: url("https://media.istockphoto.com/id/1900013732/th/%E0%B8%A3%E0%B8%B9%E0%B8%9B%E0%B8%96%E0%B9%88%E0%B8%B2%E0%B8%A2/%E0%B8%9E%E0%B8%B7%E0%B9%89%E0%B8%99%E0%B8%AB%E0%B8%A5%E0%B8%B1%E0%B8%87%E0%B8%81%E0%B8%A3%E0%B8%B0%E0%B8%94%E0%B8%B2%E0%B8%A9%E0%B8%81%E0%B8%A3%E0%B8%B2%E0%B8%9F%E0%B8%AA%E0%B8%B5%E0%B8%82%E0%B8%B2%E0%B8%A7.jpg?s=612x612&w=0&k=20&c=25186__Kksyjl59SGaCsBFGZSYX_webLrWEnWDBi8GA=");
+  font-family: "Itim", cursive;
+  border-radius: 10%;
+  /* กำหนดขอบมน */
+  border: 7px solid #000000;
+  /* เพิ่มเส้นขอบ */
+  text-align: left;
+  
+ /* ให้ข้อความที่ยาวเกินขอบกล่องขึ้นบรรทัดใหม่ */
+
+
+
+}
+
+
+
+
+
+
+
+
+
