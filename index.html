@@ -9,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="CSS/style.css">
     <style>
+        
         body {
   font-family: "Itim", cursive;
   font-weight: 400;
@@ -41,11 +42,12 @@ h1{
   border: 0.5px solid #000000;
   text-align: 20px;
   font-size: 5px;
+  padding-top: 40px;
   
   
 }
 h3 {
-  font-size: 64px;
+  font-size: 72px;
   width: 500px;
   height: 100px;
   color: rgb(0, 0, 0);
@@ -56,16 +58,16 @@ h3 {
 
   /* ใช้ clip-path เพื่อทำให้กล่องเป็นสี่เหลี่ยมคางหมูที่ด้านซ้ายเป็นมุมฉาก */
   clip-path: polygon(0% 0%, 90% 0%, 100% 100%, 0% 100%);
-  position: absolute; left: 150px; top:150px;
+  position: absolute; left: 150px; top:200px;
 }
 h2 {
   font-size: 48px;
-  width: 1000px;
+  width: 700px;
   height: 70px;
   color: rgb(186, 186, 186);
   background-color: rgb(117, 117, 117);
   text-align: right; /* ข้อความชิดขวา */
-  padding-right: 50px; /* ขยับข้อความไปทางขวา 50px */
+  padding-right: 20px; /* ขยับข้อความไปทางขวา 50px */
   
 
   /* เพิ่ม Flexbox เพื่อจัดตำแหน่งข้อความให้อยู่กลาง */
@@ -74,7 +76,7 @@ h2 {
   align-items: center; /* จัดแนวตั้งให้อยู่ตรงกลาง */
   
   clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 20% 100%);
-  position: absolute; right: 150px; top:410px;
+  position: absolute; left: 360px; top:260px;
   z-index: -1;
   
 }
@@ -87,8 +89,8 @@ h3, h2 {
 .swapped-h3 {
   color: rgb(255, 255, 255);
   background-color: rgb(100, 100, 100);
-  position: absolute; right: 150px; top: 400px;
-  width: 1000px;
+  position: absolute; right: 150px; top: 250px;
+  width: 700px;
   height: 50px;
   font-size: 36px;
   z-index: -1;
@@ -97,9 +99,9 @@ h3, h2 {
 .swapped-h2 {
   color: rgb(0, 0, 0);
   background-color: aliceblue;
-  width: 1000px;
+  width:500px;
   height: 120px;
-  position: absolute; right: 150px; top:350px;
+  position: absolute; left: 560px; top:200px;
   font-size: 82px;
   z-index: 1;
 }
@@ -111,17 +113,19 @@ button {
     /* ปรับขนาดตามต้องการ */
     font-size: 16px;
     /* ปรับขนาดตัวอักษรตามต้องการ */
-    border-radius: 70%;
-    width: 50px;
+    border-radius: 90%;
+    width: 200px;
     /* กำหนดขนาดของปุ่ม */
     position: absolute;
     /* กำหนดให้เป็นตำแหน่งเอนเจิ้ล */
-    border: 7px solid #000000;
-    height: 150px;
+    border: 5px solid #000000;
+    height: 200px;
     background-color: aliceblue;
-    text-align: left;
+    
     vertical-align: top;
     cursor: pointer;
+    padding-left:30px;
+    padding-top: 30px;
 }
 
 button img {
@@ -131,6 +135,7 @@ button img {
     /* ขนาดของรูปภาพ */
     height: 64px;
     /* ขนาดของรูปภาพ */
+    padding-left: -100px;
 }
 input {
     padding: 200px 300px;
@@ -147,7 +152,7 @@ input {
     font-family: "Itim", cursive;
     border-radius: 10%;
     /* กำหนดขอบมน */
-    border: 7px solid #000000;
+    border:5px solid #000000;
     /* เพิ่มเส้นขอบ */
     text-align: left;
     
@@ -159,7 +164,7 @@ word-wrap: break-word; overflow-wrap: break-word; outline: none;
 }
 
 output {
-  padding: 100px 300px;
+  padding: 200px 300px;
   /* ปรับขนาดตามต้องการ */
   font-size: 30px;
   /* ปรับขนาดตัวอักษรตามต้องการ */
@@ -182,39 +187,82 @@ output {
 
 }
 
-.cursor-ring {
+.crosshair {
   position: fixed;
   width: 50px;
   height: 50px;
-  border: 3px solid rgba(0, 162, 255, 0.8);
-  border-radius: 50%;
-  box-shadow: 0 0 15px rgba(0, 162, 255, 0.8);
   pointer-events: none;
   transform: translate(-50%, -50%);
-  animation: glow 1.5s infinite alternate ease-in-out;
-  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+  animation: pulse 1.5s ease-in-out infinite alternate;
 }
+
+.crosshair-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  animation: rotate 2s linear infinite; /* หมุนรอบตัวเอง */
+}
+
+.bar {
+  position: absolute;
+  background: rgba(0, 162, 255, 0.8);
+  box-shadow: 0 0 10px rgba(0, 162, 255, 0.8);
+  transition: transform 0.2s ease-in-out;
+}
+
+.bar.horizontal {
+  width: 20px;
+  height: 3px;
+}
+
+.bar.vertical {
+  width: 3px;
+  height: 20px;
+}
+
+/* ตำแหน่งของแท่ง (อยู่รอบจุดศูนย์กลาง) */
+.bar.top { top: 0; left: 50%; transform: translateX(-50%) translateY(-15px); }
+.bar.bottom { bottom: 0; left: 50%; transform: translateX(-50%) translateY(15px); }
+.bar.left { left: 0; top: 50%; transform: translateX(-15px) translateY(-50%); }
+.bar.right { right: 0; top: 50%; transform: translateX(15px) translateY(-50%); }
+
+/* เอฟเฟกต์เรืองแสง */
 @keyframes glow {
   0% {
-      box-shadow: 0 0 10px rgba(0, 162, 255, 0.5);
-      border-color: rgba(0, 162, 255, 0.5);
+      box-shadow: 0 0 5px rgba(0, 162, 255, 0.5);
+      background: rgba(0, 162, 255, 0.5);
   }
   100% {
-      box-shadow: 0 0 20px rgba(0, 162, 255, 1);
-      border-color: rgba(0, 162, 255, 1);
+      box-shadow: 0 0 15px rgba(0, 162, 255, 1);
+      background: rgba(0, 162, 255, 1);
   }
 }
 
+/* หมุนรอบตัวเอง */
+@keyframes rotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
 
+/* ขยาย-หด (Pulse Effect) */
+@keyframes pulse {
+  0% { transform: translate(-50%, -50%) scale(1); }
+  100% { transform: translate(-50%, -50%) scale(1.7); }
+}
 
-
-
-</style>
+.bar {
+  animation: glow 1.5s infinite alternate ease-in-out;
+}
+    </style>
 </head>
 <div id="mainApp">
 <body background-repeat: no-repeat; background-size: cover; /* ปรับขนาดให้ครอบคลุมเต็มจอ */>
-
-    <h1>
+    
+    <h1 style="position: absolute; top: 30px;">
 
 
 
@@ -224,8 +272,14 @@ output {
     </h1>
    
     
-    <div class="cursor-ring"></div>
-
+    <div class="crosshair">
+        <div class="crosshair-inner">
+            <div class="bar horizontal top"></div>
+            <div class="bar horizontal bottom"></div>
+            <div class="bar vertical left"></div>
+            <div class="bar vertical right"></div>
+        </div>
+    </div>
     
     <h3 type="text" id="languageText" onclick="changeText()">ภาษาไทย</h3>
     <h2 type="text" id="languageText2" onclick="changeText()">กำเมือง</h2>   
@@ -236,11 +290,11 @@ output {
 
 
     <script src="app.js" defer></script>
-    <input type="text" id="searchInput" style="position: absolute; left: 150px; top: 700px;" placeholder="พิมพ์ข้อความที่นี่">
+    <input type="text" id="searchInput" style="position: absolute; left: 140px; top: 600px;" placeholder="พิมพ์ข้อความที่นี่">
     <img " src="
         https://media.istockphoto.com/id/1075605186/th/%E0%B9%80%E0%B8%A7%E0%B8%84%E0%B9%80%E0%B8%95%E0%B8%AD%E0%B8%A3%E0%B9%8C/%E0%B8%95%E0%B8%B1%E0%B8%A7%E0%B9%81%E0%B8%9B%E0%B8%A5%E0%B9%80%E0%B8%AA%E0%B9%89%E0%B8%99%E0%B8%9A%E0%B8%B2%E0%B8%87%E0%B8%AA%E0%B8%B5%E0%B8%94%E0%B9%8D%E0%B8%B2.jpg?s=612x612&w=0&k=20&c=0SCRuZCM3D23Ezd3B_e76Y7z0OX13iD6dYl69Zfmb58=" alt="
         รูปภาพจาก Google Drive" onclick="satar()"  width="200" height="200" style="border-radius: 50%; 
-            position: absolute; left: 100px; top:100px; 
+            position: absolute; left:300px; top:970px; 
             border: 5px solid black; 
             transition: box-shadow 0.3s ease; 
             margin-top: 100px; 
@@ -250,7 +304,7 @@ output {
     <div id="แปลเเล้ว"></div>
 
     <br><br><br>
-    <output id="result"  style=" position: absolute; left: 150px; top:700px;"  ></output>
+    <output id="result"  style=" position: absolute; left: 150px; top:1300px;"  ></output>
     
 
     
@@ -258,14 +312,14 @@ output {
 <br><br><br>
 
  <button id="soundButton" onclick="sound(); sdata(result)"  
- style="position: absolute; left:1000px; top: 900px;
+ style="position: absolute; left:700px; top: 1070px;
                transition: box-shadow 0.3s ease;"
         onmouseover="this.style.boxShadow='0px 0px 15px 5px rgba(0, 255, 255, 0.7)';"
         onmouseout="this.style.boxShadow='none';">
     <span style="font-size: 100px;">🔊</span>
 
 </button>
-<button onclick="randomWord() ; spawnStars(750, 1450)" class="animated-button" style=" font-size: 100px; position:  absolute; left: 700px; top:1400px; ">🌟</button>
+<button onclick="randomWord() ; spawnStars(750, 1450)" class="animated-button" style=" font-size: 100px; position:  absolute; left:850px; top:1400px; ">🌟</button>
 <div id="result"></div>
 
 

@@ -57,7 +57,22 @@ function satar() {
     var inputElement = document.getElementById('searchInput'); // ใช้ id ของ input ที่ต้องการเช็ค
 
     if (h3Element.classList.contains('swapped-h3')) {
-        console.log('1'); // ถ้ามีคลาส swapped-h3
+        console.log('1'); // ถ้ามีคลาส swapped-h3 (หาคำแปลจาก dictionary)
+        var searchData = document.getElementById("searchInput").value;
+        var result = searchData;
+    
+        // ตรวจสอบว่า searchData เป็นคำที่มีใน dictionary และมีการแปลแล้ว
+        if (Object.values(dictionary).includes(searchData)) {
+            // ถ้าคำแปลตรงกับ searchData จะหาคำแทนจาก dictionary
+            result = Object.keys(dictionary).find(key => dictionary[key] === searchData);
+        }
+    
+        // แสดงผลลัพธ์ใน div ที่มี id="result"
+        document.getElementById("result").innerText = result;
+    
+        // แสดงผลใน console
+        console.log("Translated Text (log1):", result);
+
     } else {
         console.log('2'); // ถ้าไม่มีคลาส swapped-h3
         var searchData = document.getElementById("searchInput").value;
@@ -99,15 +114,46 @@ function changeText() {
  } 
 
 
- const cursorRing = document.querySelector('.cursor-ring');
+ const crosshair = document.querySelector('.crosshair');
+ const crosshairInner = document.querySelector('.crosshair-inner');
+
+ let angle = 0;
+
+ function updateRotation() {
+     angle += 2; // ปรับค่าการหมุน (2 องศาต่อเฟรม)
+     crosshairInner.style.transform = `rotate(${angle}deg)`;
+     requestAnimationFrame(updateRotation);
+ }
 
  document.addEventListener('mousemove', (e) => {
-     cursorRing.style.left = `${e.clientX}px`;
-     cursorRing.style.top = `${e.clientY}px`;
+     crosshair.style.left = `${e.clientX}px`;
+     crosshair.style.top = `${e.clientY}px`;
  });
 
  document.addEventListener('touchmove', (e) => {
      const touch = e.touches[0];
-     cursorRing.style.left = `${touch.clientX}px`;
-     cursorRing.style.top = `${touch.clientY}px`;
+     crosshair.style.left = `${touch.clientX}px`;
+     crosshair.style.top = `${touch.clientY}px`;
  });
+
+ updateRotation(); // เรียกฟังก์ชันหมุนเมื่อโหลดหน้าเว็บ
+
+ function randomWord() {
+    const keys = Object.keys(dictionary);
+    let randomWords = [];
+
+    while (randomWords.length < 5) {
+        const randomKey = keys[Math.floor(Math.random() * keys.length)];
+        if (!randomWords.some(item => item.key === randomKey)) {
+            randomWords.push({ key: randomKey, value: dictionary[randomKey] });
+        }
+    }
+
+    let resultText = "ช่วง!!!!แนะนำคำศัพท์<br><br>"; // เว้นบรรทัดหลังหัวข้อ
+    randomWords.forEach(item => {
+       
+    resultText += `${item.value} &nbsp; แปลว่า &nbsp; ${item.key}<br>`; // เพิ่มช่องว่างเล็กน้อยระหว่างคำ
+});
+
+    document.getElementById("result").innerHTML = resultText;
+}
