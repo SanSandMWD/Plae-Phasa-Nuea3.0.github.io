@@ -97,3 +97,17 @@ function changeText() {
     h3.style.left = h2Right;
     h2.style.right = h3Left;
  } 
+
+
+ const cursorRing = document.querySelector('.cursor-ring');
+
+ document.addEventListener('mousemove', (e) => {
+     cursorRing.style.left = `${e.clientX}px`;
+     cursorRing.style.top = `${e.clientY}px`;
+ });
+
+ document.addEventListener('touchmove', (e) => {
+     const touch = e.touches[0];
+     cursorRing.style.left = `${touch.clientX}px`;
+     cursorRing.style.top = `${touch.clientY}px`;
+ });

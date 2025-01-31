@@ -7,6 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/style.css">
     <style>
         body {
   font-family: "Itim", cursive;
@@ -35,7 +36,7 @@
 }
 h1{
   width: 1220px;
-  height:80px;
+  height:160px;
   background-image: url("https://media.istockphoto.com/id/1900013732/th/%E0%B8%A3%E0%B8%B9%E0%B8%9B%E0%B8%96%E0%B9%88%E0%B8%B2%E0%B8%A2/%E0%B8%9E%E0%B8%B7%E0%B9%89%E0%B8%99%E0%B8%AB%E0%B8%A5%E0%B8%B1%E0%B8%87%E0%B8%81%E0%B8%A3%E0%B8%B0%E0%B8%94%E0%B8%B2%E0%B8%A9%E0%B8%81%E0%B8%A3%E0%B8%B2%E0%B8%9F%E0%B8%AA%E0%B8%B5%E0%B8%82%E0%B8%B2%E0%B8%A7.jpg?s=612x612&w=0&k=20&c=25186__Kksyjl59SGaCsBFGZSYX_webLrWEnWDBi8GA=");
   border: 0.5px solid #000000;
   text-align: 20px;
@@ -45,7 +46,7 @@ h1{
 }
 h3 {
   font-size: 64px;
-  width: 1000px;
+  width: 500px;
   height: 100px;
   color: rgb(0, 0, 0);
   background-color: aliceblue;
@@ -55,7 +56,7 @@ h3 {
 
   /* ใช้ clip-path เพื่อทำให้กล่องเป็นสี่เหลี่ยมคางหมูที่ด้านซ้ายเป็นมุมฉาก */
   clip-path: polygon(0% 0%, 90% 0%, 100% 100%, 0% 100%);
-  position: absolute; left: 150px; top:350px;
+  position: absolute; left: 150px; top:150px;
 }
 h2 {
   font-size: 48px;
@@ -156,31 +157,7 @@ white-space: normal; /* ให้ข้อความสามารถขึ�
 overflow: auto; 
 word-wrap: break-word; overflow-wrap: break-word; outline: none;
 }
-input {
-  padding: 100px 200px;
-  /* ปรับขนาดตามต้องการ */
-  font-size: 32px;
-  
-  /* ปรับขนาดตัวอักษรตามต้องการ */
-  
-  /* ปรับความกว้างของ input field */
-  color: rgb(0, 0, 0);
-  
-  background-color: aqua;
-  background-image: url("https://media.istockphoto.com/id/1900013732/th/%E0%B8%A3%E0%B8%B9%E0%B8%9B%E0%B8%96%E0%B9%88%E0%B8%B2%E0%B8%A2/%E0%B8%9E%E0%B8%B7%E0%B9%89%E0%B8%99%E0%B8%AB%E0%B8%A5%E0%B8%B1%E0%B8%87%E0%B8%81%E0%B8%A3%E0%B8%B0%E0%B8%94%E0%B8%B2%E0%B8%A9%E0%B8%81%E0%B8%A3%E0%B8%B2%E0%B8%9F%E0%B8%AA%E0%B8%B5%E0%B8%82%E0%B8%B2%E0%B8%A7.jpg?s=612x612&w=0&k=20&c=25186__Kksyjl59SGaCsBFGZSYX_webLrWEnWDBi8GA=");
-  font-family: "Itim", cursive;
-  border-radius: 10%;
-  /* กำหนดขอบมน */
-  border: 7px solid #000000;
-  /* เพิ่มเส้นขอบ */
-  text-align: left;
-  
-  
- /* ให้ข้อความที่ยาวเกินขอบกล่องขึ้นบรรทัดใหม่ */
-white-space: normal; /* ให้ข้อความสามารถขึ้นบรรทัดใหม่ได้ */
-overflow: auto; 
-word-wrap: break-word; overflow-wrap: break-word; outline: none;
-}
+
 output {
   padding: 100px 300px;
   /* ปรับขนาดตามต้องการ */
@@ -205,16 +182,34 @@ output {
 
 }
 
+.cursor-ring {
+  position: fixed;
+  width: 50px;
+  height: 50px;
+  border: 3px solid rgba(0, 162, 255, 0.8);
+  border-radius: 50%;
+  box-shadow: 0 0 15px rgba(0, 162, 255, 0.8);
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  animation: glow 1.5s infinite alternate ease-in-out;
+  z-index: 10;
+}
+@keyframes glow {
+  0% {
+      box-shadow: 0 0 10px rgba(0, 162, 255, 0.5);
+      border-color: rgba(0, 162, 255, 0.5);
+  }
+  100% {
+      box-shadow: 0 0 20px rgba(0, 162, 255, 1);
+      border-color: rgba(0, 162, 255, 1);
+  }
+}
 
 
 
 
 
-
-
-
-
-    </style>
+</style>
 </head>
 <div id="mainApp">
 <body background-repeat: no-repeat; background-size: cover; /* ปรับขนาดให้ครอบคลุมเต็มจอ */>
@@ -223,13 +218,13 @@ output {
 
 
 
-        <span style="color: red; font-size: 64px;">โปรแกรม</span>
-        <span style="color: green; font-size:64px;">แปลภาษา</span>
-        <span style="color: blue; font-size: 64px; ">ถิ่นเหนือ</span>
+        <span style="color: red; font-size: 94px;">โปรแกรม</span>
+        <span style="color: green; font-size:94px;">แปลภาษา</span>
+        <span style="color: blue; font-size: 94px; ">ถิ่นเหนือ</span>
     </h1>
    
     
-
+    <div class="cursor-ring"></div>
 
     
     <h3 type="text" id="languageText" onclick="changeText()">ภาษาไทย</h3>
