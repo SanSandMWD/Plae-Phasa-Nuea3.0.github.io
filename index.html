@@ -13,19 +13,18 @@
   font-weight: 400;
   font-style: normal;
   color: rgb(150, 209, 212);  
-  background-color: rgb(255, 200, 200); /* สีพื้นหลังเริ่มต้น */
+  background-color: rgb(255, 200, 200);
   text-align: center;
   
-  transition: background-color 1s ease-in-out; /* ทำให้เปลี่ยนสีพื้นหลังแบบนุ่มนวล */
-  animation: changeBg 100s infinite alternate; /* ให้สีเปลี่ยนวนไปเรื่อยๆ */
-}
-@media screen and (max-width: 480px) {
-  body {
-      font-size: 18px;
-  }
+  transition: background-color 1s ease-in-out;
+  animation: changeBg 100s infinite alternate;
+  width: 480px;
+  height: 320px;
 }
 
-/* ทำให้สีพื้นหลังเปลี่ยนแบบไดนามิก */
+
+
+
 @keyframes changeBg {
   0% { background-color: rgb(255, 200, 200); }
   25% { background-color: rgb(200, 255, 200); }
@@ -33,19 +32,20 @@
   75% { background-color: rgb(255, 255, 200); }
   100% { background-color: rgb(255, 200, 200); }
 }
-
 h1{
-  padding: 10px 1000px;
+  width: 480px;
+  height: 40px;
   background-image: url("https://media.istockphoto.com/id/1900013732/th/%E0%B8%A3%E0%B8%B9%E0%B8%9B%E0%B8%96%E0%B9%88%E0%B8%B2%E0%B8%A2/%E0%B8%9E%E0%B8%B7%E0%B9%89%E0%B8%99%E0%B8%AB%E0%B8%A5%E0%B8%B1%E0%B8%87%E0%B8%81%E0%B8%A3%E0%B8%B0%E0%B8%94%E0%B8%B2%E0%B8%A9%E0%B8%81%E0%B8%A3%E0%B8%B2%E0%B8%9F%E0%B8%AA%E0%B8%B5%E0%B8%82%E0%B8%B2%E0%B8%A7.jpg?s=612x612&w=0&k=20&c=25186__Kksyjl59SGaCsBFGZSYX_webLrWEnWDBi8GA=");
   border: 5px solid #000000;
   text-align: left;
+  font-size: 5px;
   
   
 }
 h3 {
   font-size: 64px;
-  width: 100px;
-  height: 10px;
+  width: 1000px;
+  height: 100px;
   color: rgb(0, 0, 0);
   background-color: aliceblue;
   
@@ -58,8 +58,8 @@ h3 {
 }
 h2 {
   font-size: 48px;
-  width: 100px;
-  height: 7px;
+  width: 1000px;
+  height: 70px;
   color: rgb(186, 186, 186);
   background-color: rgb(117, 117, 117);
   text-align: right; /* ข้อความชิดขวา */
@@ -222,9 +222,9 @@ output {
 
 
 
-        <span style="color: red; font-size: 32;">โปรแกรม</span>
-        <span style="color: green; font-size: 32;">แปลภาษา</span>
-        <span style="color: blue; font-size: 32; ">ถิ่นเหนือ</span>
+        <span style="color: red; font-size: 64px;">โปรแกรม</span>
+        <span style="color: green; font-size: 64px;">แปลภาษา</span>
+        <span style="color: blue; font-size: 64px; ">ถิ่นเหนือ</span>
     </h1>
    
     
