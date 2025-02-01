@@ -157,3 +157,27 @@ function changeText() {
 
     document.getElementById("result").innerHTML = resultText;
 }
+
+function sound() {
+    let text = document.getElementById("result").innerText || document.getElementById("result").textContent;
+    let speech = new SpeechSynthesisUtterance(text);
+    speech.lang = "th-TH"; // ตั้งค่าเป็นภาษาไทย
+    speech.rate = 1; // ความเร็วปกติ
+    speech.pitch = 1; // ระดับเสียงปกติ
+    speech.volume = 1; // ความดังสูงสุด
+    
+    // เช็คว่ามีเสียงที่รองรับภาษาไทยหรือไม่
+    let voices = speechSynthesis.getVoices().filter(voice => voice.lang.startsWith("th"));
+    if (voices.length > 0) {
+        speech.voice = voices[0]; // ใช้เสียงภาษาไทยแรกที่เจอ
+    }
+
+    // อ่านออกเสียง
+    window.speechSynthesis.speak(speech);
+}
+
+// โหลดเสียงล่วงหน้า (สำคัญสำหรับบางเบราว์เซอร์)
+window.speechSynthesis.onvoiceschanged = () => {
+    let voices = speechSynthesis.getVoices();
+    console.log("Available voices:", voices);
+};
