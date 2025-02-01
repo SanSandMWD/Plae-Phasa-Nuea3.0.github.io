@@ -8,6 +8,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="CSS/style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <style>
     
     body {
@@ -311,7 +312,7 @@ output {
 
 <br><br><br>
 
- <button id="soundButton" onclick="sound()"  
+ <button id="soundButton" 
  style="position: absolute; left:700px; top: 1070px;
                transition: box-shadow 0.3s ease;"
         onmouseover="this.style.boxShadow='0px 0px 15px 5px rgba(0, 255, 255, 0.7)';"
@@ -319,6 +320,7 @@ output {
     <span style="font-size: 100px;">🔊</span>
 
 </button>
+<audio id="ttsAudio" controls style="display: none;"></audio>
 <button onclick="randomWord() ; spawnStars(750, 1450)" class="animated-button" style=" font-size: 100px; position:  absolute; left:850px; top:1400px; ">🌟</button>
 <div id="result"></div>
 
