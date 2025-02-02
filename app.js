@@ -1657,7 +1657,7 @@ setTimeout(function() {
     quoteText.style.opacity = "1"; // ค่อย ๆ ปรากฏ
     setTimeout(function() {
         quoteText.style.opacity = "0"; // ค่อย ๆ หายไป
-    }, 4000); // แสดง 3 วินาที
+    }, 5000); // แสดง 3 วินาที
 }, 1000);
 
 // หน้าจอดำจางออกใน 2 วิ หลังจาก 5 วิ
@@ -1666,7 +1666,7 @@ setTimeout(function() {
     setTimeout(function() {
         document.getElementById("blackScreen").style.display = "none";
     }, 2000);
-}, 6000);
+}, 8000);
 
 setTimeout(function() {
     quoteText.classList.add("show");
