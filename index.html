@@ -8,271 +8,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="CSS/style.css">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <style>
     
-    body {
-  font-family: "Itim", cursive;
-  font-weight: 400;
-  font-style: normal;
-  color: rgb(150, 209, 212);  
-  background-color: rgb(255, 200, 200);
-  text-align: center;
-  
-  transition: background-color 1s ease-in-out;
-  animation: changeBg 100s infinite alternate;
-  width: 480px;
-  height: 320px;
-  
-}
-
-
-/* ซ่อนปุ่มในมือถือ */
-@media screen and (max-width: 480px) {
-            #soundButton {
-                display: none;
-            }
-        }
-        
-        /* แสดงปุ่มบนคอมพิวเตอร์ */
-        @media screen and (min-width: 481px) {
-            #soundButton {
-                display: inline-block;
-            }
-        }
-
-@keyframes changeBg {
-  0% { background-color: rgb(255, 200, 200); }
-  25% { background-color: rgb(200, 255, 200); }
-  50% { background-color: rgb(200, 200, 255); }
-  75% { background-color: rgb(255, 255, 200); }
-  100% { background-color: rgb(255, 200, 200); }
-}
-h1{
-  width: 1220px;
-  height:160px;
-  background-image: url("https://media.istockphoto.com/id/1900013732/th/%E0%B8%A3%E0%B8%B9%E0%B8%9B%E0%B8%96%E0%B9%88%E0%B8%B2%E0%B8%A2/%E0%B8%9E%E0%B8%B7%E0%B9%89%E0%B8%99%E0%B8%AB%E0%B8%A5%E0%B8%B1%E0%B8%87%E0%B8%81%E0%B8%A3%E0%B8%B0%E0%B8%94%E0%B8%B2%E0%B8%A9%E0%B8%81%E0%B8%A3%E0%B8%B2%E0%B8%9F%E0%B8%AA%E0%B8%B5%E0%B8%82%E0%B8%B2%E0%B8%A7.jpg?s=612x612&w=0&k=20&c=25186__Kksyjl59SGaCsBFGZSYX_webLrWEnWDBi8GA=");
-  border: 0.5px solid #000000;
-  text-align: 20px;
-  font-size: 5px;
-  padding-top: 40px;
-  
-  
-}
-h3 {
-  font-size: 72px;
-  width: 500px;
-  height: 100px;
-  color: rgb(0, 0, 0);
-  background-color: aliceblue;
-  
-  padding-top: 30px;
-  justify-content: center;
-
-  /* ใช้ clip-path เพื่อทำให้กล่องเป็นสี่เหลี่ยมคางหมูที่ด้านซ้ายเป็นมุมฉาก */
-  clip-path: polygon(0% 0%, 90% 0%, 100% 100%, 0% 100%);
-  position: absolute; left: 150px; top:200px;
-}
-h2 {
-  font-size: 48px;
-  width: 700px;
-  height: 70px;
-  color: rgb(186, 186, 186);
-  background-color: rgb(117, 117, 117);
-  text-align: right; /* ข้อความชิดขวา */
-  padding-right: 20px; /* ขยับข้อความไปทางขวา 50px */
-  
-
-  /* เพิ่ม Flexbox เพื่อจัดตำแหน่งข้อความให้อยู่กลาง */
  
-  justify-content: center;  /* จัดแนวนอนให้อยู่ตรงกลาง */
-  align-items: center; /* จัดแนวตั้งให้อยู่ตรงกลาง */
-  
-  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 20% 100%);
-  position: absolute; left: 360px; top:260px;
-  z-index: -1;
-  
-}
-
-h3, h2 {
- 
-  transition: background-color 0.3s, color 0.3s; /* ทำให้เปลี่ยนสีแบบนุ่มนวล */
-
-}
-.swapped-h3 {
-  color: rgb(255, 255, 255);
-  background-color: rgb(100, 100, 100);
-  position: absolute; right: 150px; top: 250px;
-  width: 700px;
-  height: 50px;
-  font-size: 36px;
-  z-index: -1;
-}
-
-.swapped-h2 {
-  color: rgb(0, 0, 0);
-  background-color: aliceblue;
-  width:500px;
-  height: 120px;
-  position: absolute; left: 560px; top:200px;
-  font-size: 82px;
-  z-index: 1;
-}
-
-
-
-button {
-    padding: 100px 100px;
-    /* ปรับขนาดตามต้องการ */
-    font-size: 16px;
-    /* ปรับขนาดตัวอักษรตามต้องการ */
-    border-radius: 90%;
-    width: 200px;
-    /* กำหนดขนาดของปุ่ม */
-    position: absolute;
-    /* กำหนดให้เป็นตำแหน่งเอนเจิ้ล */
-    border: 5px solid #000000;
-    height: 200px;
-    background-color: aliceblue;
-    
-    vertical-align: top;
-    cursor: pointer;
-    padding-left:30px;
-    padding-top: 30px;
-}
-
-button img {
-    display: block;
-    /* ป้องกันการเพิ่ม space ด้านล่าง */
-    width: 64px;
-    /* ขนาดของรูปภาพ */
-    height: 64px;
-    /* ขนาดของรูปภาพ */
-    padding-left: -100px;
-}
-input {
-    padding: 200px 300px;
-    /* ปรับขนาดตามต้องการ */
-    font-size: 32px;
-    
-    /* ปรับขนาดตัวอักษรตามต้องการ */
-    
-    /* ปรับความกว้างของ input field */
-    color: rgb(0, 0, 0);
-    
-    background-color: aqua;
-    background-image: url("https://media.istockphoto.com/id/1900013732/th/%E0%B8%A3%E0%B8%B9%E0%B8%9B%E0%B8%96%E0%B9%88%E0%B8%B2%E0%B8%A2/%E0%B8%9E%E0%B8%B7%E0%B9%89%E0%B8%99%E0%B8%AB%E0%B8%A5%E0%B8%B1%E0%B8%87%E0%B8%81%E0%B8%A3%E0%B8%B0%E0%B8%94%E0%B8%B2%E0%B8%A9%E0%B8%81%E0%B8%A3%E0%B8%B2%E0%B8%9F%E0%B8%AA%E0%B8%B5%E0%B8%82%E0%B8%B2%E0%B8%A7.jpg?s=612x612&w=0&k=20&c=25186__Kksyjl59SGaCsBFGZSYX_webLrWEnWDBi8GA=");
-    font-family: "Itim", cursive;
-    border-radius: 10%;
-    /* กำหนดขอบมน */
-    border:5px solid #000000;
-    /* เพิ่มเส้นขอบ */
-    text-align: left;
-    
-    
-   /* ให้ข้อความที่ยาวเกินขอบกล่องขึ้นบรรทัดใหม่ */
-white-space: normal; /* ให้ข้อความสามารถขึ้นบรรทัดใหม่ได้ */
-overflow: auto; 
-word-wrap: break-word; overflow-wrap: break-word; outline: none;
-}
-
-output {
-  padding: 200px 300px;
-  /* ปรับขนาดตามต้องการ */
-  font-size: 30px;
-  /* ปรับขนาดตัวอักษรตามต้องการ */
-  
-  /* ปรับความกว้างของ input field */
-  color: rgb(0, 0, 0);
-
-  background-color: aqua;
-  background-image: url("https://media.istockphoto.com/id/1900013732/th/%E0%B8%A3%E0%B8%B9%E0%B8%9B%E0%B8%96%E0%B9%88%E0%B8%B2%E0%B8%A2/%E0%B8%9E%E0%B8%B7%E0%B9%89%E0%B8%99%E0%B8%AB%E0%B8%A5%E0%B8%B1%E0%B8%87%E0%B8%81%E0%B8%A3%E0%B8%B0%E0%B8%94%E0%B8%B2%E0%B8%A9%E0%B8%81%E0%B8%A3%E0%B8%B2%E0%B8%9F%E0%B8%AA%E0%B8%B5%E0%B8%82%E0%B8%B2%E0%B8%A7.jpg?s=612x612&w=0&k=20&c=25186__Kksyjl59SGaCsBFGZSYX_webLrWEnWDBi8GA=");
-  font-family: "Itim", cursive;
-  border-radius: 10%;
-  /* กำหนดขอบมน */
-  border: 7px solid #000000;
-  /* เพิ่มเส้นขอบ */
-  text-align: left;
-  
- /* ให้ข้อความที่ยาวเกินขอบกล่องขึ้นบรรทัดใหม่ */
-
-
-
-}
-
-.crosshair {
-  position: fixed;
-  width: 50px;
-  height: 50px;
-  pointer-events: none;
-  transform: translate(-50%, -50%);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 100;
-  animation: pulse 1.5s ease-in-out infinite alternate;
-}
-
-.crosshair-inner {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  animation: rotate 2s linear infinite; /* หมุนรอบตัวเอง */
-}
-
-.bar {
-  position: absolute;
-  background: rgba(0, 162, 255, 0.8);
-  box-shadow: 0 0 10px rgba(0, 162, 255, 0.8);
-  transition: transform 0.2s ease-in-out;
-}
-
-.bar.horizontal {
-  width: 20px;
-  height: 3px;
-}
-
-.bar.vertical {
-  width: 3px;
-  height: 20px;
-}
-
-/* ตำแหน่งของแท่ง (อยู่รอบจุดศูนย์กลาง) */
-.bar.top { top: 0; left: 50%; transform: translateX(-50%) translateY(-15px); }
-.bar.bottom { bottom: 0; left: 50%; transform: translateX(-50%) translateY(15px); }
-.bar.left { left: 0; top: 50%; transform: translateX(-15px) translateY(-50%); }
-.bar.right { right: 0; top: 50%; transform: translateX(15px) translateY(-50%); }
-
-/* เอฟเฟกต์เรืองแสง */
-@keyframes glow {
-  0% {
-      box-shadow: 0 0 5px rgba(0, 162, 255, 0.5);
-      background: rgba(0, 162, 255, 0.5);
-  }
-  100% {
-      box-shadow: 0 0 15px rgba(0, 162, 255, 1);
-      background: rgba(0, 162, 255, 1);
-  }
-}
-
-/* หมุนรอบตัวเอง */
-@keyframes rotate {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-
-/* ขยาย-หด (Pulse Effect) */
-@keyframes pulse {
-  0% { transform: translate(-50%, -50%) scale(1); }
-  100% { transform: translate(-50%, -50%) scale(1.7); }
-}
-
-.bar {
-  animation: glow 1.5s infinite alternate ease-in-out;
-}
-  </style>
 </head>
-<div id="mainApp">
 <body background-repeat: no-repeat; background-size: cover; /* ปรับขนาดให้ครอบคลุมเต็มจอ */>
     
     <h1 style="position: absolute; top: 30px;">
@@ -294,8 +32,8 @@ output {
         </div>
     </div>
     
-    <h3 type="text" id="languageText" onclick="changeText()">ภาษาไทย</h3>
-    <h2 type="text" id="languageText2" onclick="changeText()">กำเมือง</h2>   
+    <h3 type="text" id="languageText" onclick="createStars(); changeText()">ภาษาไทย</h3>
+<h2 type="text" id="languageText2" onclick="createStars(); changeText()">กำเมือง</h2>
  
   
 </div>
@@ -305,9 +43,12 @@ output {
     <script src="app.js" defer></script>
     <input type="text" id="searchInput" style="position: absolute; left: 140px; top: 600px;" placeholder="พิมพ์ข้อความที่นี่">
     <img " src="
-        https://media.istockphoto.com/id/1075605186/th/%E0%B9%80%E0%B8%A7%E0%B8%84%E0%B9%80%E0%B8%95%E0%B8%AD%E0%B8%A3%E0%B9%8C/%E0%B8%95%E0%B8%B1%E0%B8%A7%E0%B9%81%E0%B8%9B%E0%B8%A5%E0%B9%80%E0%B8%AA%E0%B9%89%E0%B8%99%E0%B8%9A%E0%B8%B2%E0%B8%87%E0%B8%AA%E0%B8%B5%E0%B8%94%E0%B9%8D%E0%B8%B2.jpg?s=612x612&w=0&k=20&c=0SCRuZCM3D23Ezd3B_e76Y7z0OX13iD6dYl69Zfmb58=" alt="
-        รูปภาพจาก Google Drive" onclick="satar()"  width="200" height="200" style="border-radius: 50%; 
+        https://media.istockphoto.com/id/1075605186/th/%E0%B9%80%E0%B8%A7%E0%B8%84%E0%B9%80%E0%B8%95%E0%B8%AD%E0%B8%A3%E0%B9%8C/%E0%B8%95%E0%B8%B1%E0%B8%A7%E0%B9%81%E0%B8%9B%E0%B8%A5%E0%B9%80%E0%B8%AA%E0%B9%89%E0%B8%99%E0%B8%9A%E0%B8%B2%E0%B8%87%E0%B8%AA%E0%B8%B5%E0%B8%94%E0%B9%8D%E0%B8%B2.jpg?s=612x612&w=0&k=20&c=0SCRuZCM3D23Ezd3B_e76Y7z0OX13iD6dYl69Zfmb58="  alt="Animated Image" 
+        onclick="satar(); addEffects(this);"  
+        class="animated-image" 
+        width="200" height="200" style="border-radius: 50%; 
             position: absolute; left:300px; top:970px; 
+            
             border: 5px solid black; 
             transition: box-shadow 0.3s ease; 
             margin-top: 100px; 
@@ -318,13 +59,15 @@ output {
 
     <br><br><br>
     <output id="result"  style=" position: absolute; left: 150px; top:1300px;"  ></output>
-    
+     <!-- หน้าจอดำ -->
+     <div id="blackScreen"></div>
 
-    
+     <!-- ข้อความสุภาษิต -->
+     <div id="quoteText"></div>
 
 <br><br><br>
 
- <button id="soundButton" 
+ <button id="soundButton"  onclick="sdata()"
  style="position: absolute; left:700px; top: 1070px;
                transition: box-shadow 0.3s ease;"
         onmouseover="this.style.boxShadow='0px 0px 15px 5px rgba(0, 255, 255, 0.7)';"

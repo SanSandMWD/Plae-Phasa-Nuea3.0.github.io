@@ -52,6 +52,7 @@ var dictionary = {
     "อาสะใภ้": "อาไป๊"
 }
 
+
 function satar() {
     var h3Element = document.getElementById('languageText'); // ใช้ id ของ h3 ที่ต้องการเช็ค
     var inputElement = document.getElementById('searchInput'); // ใช้ id ของ input ที่ต้องการเช็ค
@@ -87,6 +88,12 @@ function satar() {
     
         // Log the translated result to the console
         console.log("Translated Text:", result);
+        
+        image.classList.add('rainbow-border');
+        image.classList.add('expand-circle');
+
+
+        
 }
 
 }
@@ -158,12 +165,176 @@ function changeText() {
     document.getElementById("result").innerHTML = resultText;
 }
 
- // ฟังก์ชันเพื่ออ่านออกเสียงข้อความใน <output id="result">
- $("#soundButton").click(function() {
-    var text = $('#result').text();  // อ่านข้อความจาก <output id="result">
-    if (text.length > 0) {
-        var utterance = new SpeechSynthesisUtterance(text);  // สร้างคำพูดจากข้อความ
-        utterance.lang = 'th-TH';  // กำหนดภาษาเป็นภาษาไทย
-        speechSynthesis.speak(utterance);  // อ่านข้อความออกเสียง
+ 
+
+
+function createStars() {
+    for (let i = 0; i < 3; i++) {
+        let star = document.createElement("div");
+        star.classList.add("star");
+
+        // สุ่มตำแหน่ง x และ y
+        let x = Math.random() * (200 - 100) + 100; // ระหว่าง 100px ถึง 200px
+        let y = Math.random() * (350 - 250) + 250; // ระหว่าง 250px ถึง 350px
+
+        // กำหนดตำแหน่งของดาว
+        star.style.left = x + "px";
+        star.style.top = y + "px";
+
+        // สร้างตัวแปร custom --start-x สำหรับตำแหน่งเริ่มต้น
+        star.style.setProperty('--start-x', x + 'px');
+
+        // สุ่มความเร็วการเคลื่อนไหวของดาว
+        let speed = Math.random() * (6 - 4) + 4; // ความเร็วอยู่ระหว่าง 4 ถึง 6 วินาที
+        speed = speed / 3; // เร่งความเร็วให้เร็วขึ้น 3 เท่า
+        star.style.animationDuration = speed + "s";
+
+        // เพิ่มดาวลงในเอกสาร
+        document.body.appendChild(star);
+
+        // ลบดาวออกเมื่อการเคลื่อนไหวเสร็จสิ้น
+        star.addEventListener('animationend', () => {
+            star.remove(); // ลบดาวออกจาก DOM
+        });
     }
+}
+
+// เรียกใช้ฟังก์ชัน
+createStars();
+
+function sdata() {
+    let text = document.getElementById("result").textContent; // ดึงข้อความจาก <output>
+    let msg = new SpeechSynthesisUtterance();
+    msg.text = text;
+    msg.lang = "th-TH"; // ตั้งค่าให้พูดภาษาไทย
+    msg.rate = 1; // ความเร็วในการอ่าน (1 = ปกติ)
+    msg.pitch = 1; // ระดับเสียง
+    speechSynthesis.speak(msg);
+}
+
+ // เมื่อโหลดหน้าเว็บ ให้แสดงหน้าจอดำ 5 วินาทีแล้วค่อย ๆ จางออกใน 2 วินาที
+ document.addEventListener("DOMContentLoaded", function () {
+    // รายการสุภาษิต
+    const quotes = [
+        "เงินอยู่ใต้น้ำ คำอยู่ใต้ดิน",
+        "เยียะหยังหื้อเยียะแต้ดีหลี จะได้เป็นเศรษฐีวันนึ่ง",
+        "เจ๊าก็ว่ายังงาย ขวายก็ว่าแดดออก",
+        "ควายบ่ตาย ไปฟั่งปาดจิ้น",
+        "วัดบ่เข้า พระเจ้าบ่ไหว้ คือ คนหนา",
+        "จะจูงก็ไปก่อน จะส่อนก็ตวยหลัง",
+        "มีเงินว่าเป็นเจ้า มีข้าวว่าเป็นนาย",
+        "จิกปิกไหนก็ป้อ จ้อหว้อไหนก็ขวัก",
+        "กามตัณหาพาหื้อล่วงล้ำ บังเกิดไหม้สันดาน",
+        "จะไปหล็วกก่อนหมอ จะไปซอก่อนปี่",
+        "หนุ่มเอาเก๊า เถ้าเอาปล๋าย",
+        "ควายบ่กินหญ้า จะไปก้มเขามันลง",
+        "คนหล็วกว่าใกล้ คนใบ้ว่าไกล",
+        "หลับเดิ้กลุกเจ๊า หนึ้งข้าวเป่าไฟ",
+        "น้ำขุ่นไว้ใน น้ำใสแวดนอก",
+        "ไฟในจะไปเอาออก ไฝนอกจะไปเข้า",
+        "ตุ้มผ้าลายหมาจั่งเห่า ค้นคำเก่าจั่งผิดกัน",
+        "จับใจหมี ปดีใจเผึ้ง จับใจมองเซิง บ่เพิ่งใจเงี้ยว",
+        "นั่งหื้ออดูตี้ หนีหื้อดูกัน",
+        "หัวใจคนใผหยั่งบ่ตึ้ก น้ำแม่สมุทรใหญ่กล้างพิลึก ยังหยั่งได้เถิงทราย",
+        "ไม้โค่นค้างก็เพื่อคมเสียม ขุดเลาะเลียมเก๊างุนรากแก้ว",
+        "ใคร่รู้หื้อถาม ใคร่งามหื้อแต้ม",
+        "จะไปกินน้ำย้อยศอกคนอื่น",
+        "หมาเห่า อย่าเห่าตวยหมา",
+        "เปิ่นบ่ฮู้ผู้โทษมาถู กำคองูผู้พิษใส่ข้า",
+        "ขดออกแพ้เจ้า ขดเข้าแพ้ของ",
+        "ยามเมื่อฮัก น้ำผักว่าหวาน ยามเมื่อจัง น้ำตาลว่าส้ม",
+        "พี่น้องผิ่ดกั่น เหมือนพร้าฟันน้ำ จะไปผูกมั้นกรรมเวร",
+        "เมื่อทุกข์ก็ทาข์ เมื่อผ่านก็ผาน เมื่อสุขสำราญก็ไว้เป็นห้อง",
+        "น้ำไหลตวยหนทาง ผีสางเพื่อคำปาก",
+        "อดเผ็ดกินหวาน อดสานได้จ้า",
+        "คนใบ้ใช้หลายเพื่อ",
+        "ฮักจั้น ๆ มันจั่งพันเหย เมิน ๆ เคย มันจั่งคุ้มเถ้า",
+        "จะไปเป็นคน “ปากหวานกันส้ม”"
+    ];
+
+    // เลือกสุภาษิตแบบสุ่ม
+    const randomIndex = Math.floor(Math.random() * quotes.length);
+    const randomQuote = quotes[randomIndex];
+    const quoteText = document.getElementById("quoteText");
+
+    // แสดงสุภาษิตหลังจาก 1 วิ และค่อย ๆ ปรากฏ
+    setTimeout(() => {
+        quoteText.textContent = randomQuote;
+        quoteText.style.opacity = "1"; // ค่อย ๆ ปรากฏ
+        setTimeout(() => {
+            quoteText.style.opacity = "0"; // ค่อย ๆ หายไป
+        }, 3000); // แสดง 3 วินาที
+    }, 1000);
+
+    // หน้าจอดำจางออกใน 2 วิ หลังจาก 5 วิ
+    setTimeout(() => {
+        document.getElementById("blackScreen").style.opacity = "0";
+        setTimeout(() => {
+            document.getElementById("blackScreen").style.display = "none";
+        }, 2000);
+    }, 5000);
 });
+
+ // รายการสุภาษิต
+ const quotes = [
+    "เงินอยู่ใต้น้ำ คำอยู่ใต้ดิน",
+    "เยียะหยังหื้อเยียะแต้ดีหลี จะได้เป็นเศรษฐีวันนึ่ง",
+    "เจ๊าก็ว่ายังงาย ขวายก็ว่าแดดออก",
+    "ควายบ่ตาย ไปฟั่งปาดจิ้น",
+    "วัดบ่เข้า พระเจ้าบ่ไหว้ คือ คนหนา",
+    "จะจูงก็ไปก่อน จะส่อนก็ตวยหลัง",
+    "มีเงินว่าเป็นเจ้า มีข้าวว่าเป็นนาย",
+    "จิกปิกไหนก็ป้อ จ้อหว้อไหนก็ขวัก",
+    "กามตัณหาพาหื้อล่วงล้ำ บังเกิดไหม้สันดาน",
+    "จะไปหล็วกก่อนหมอ จะไปซอก่อนปี่",
+    "หนุ่มเอาเก๊า เถ้าเอาปล๋าย",
+    "ควายบ่กินหญ้า จะไปก้มเขามันลง",
+    "คนหล็วก ว่าใกล้ คนใบ้ว่าไกล",
+    "หลับเดิ้กลุกเจ๊า หนึ้งข้าวเป่าไฟ",
+    "น้ำขุ่นไว้ใน น้ำใสแวดนอก",
+    "ไฟในจะไปเอาออก ไฝนอกจะไปเข้า",
+    "ตุ้มผ้าลายหมาจั่งเห่า ค้นคำเก่าจั่งผิดกัน",
+    "จับใจหมี ปดีใจเผึ้ง จับใจมองเซิง บ่เพิ่งใจเงี้ยว",
+    "นั่งหื้ออดูตี้ หนีหื้อดูกัน",
+    "หัวใจคนใผหยั่งบ่ตึ้ก น้ำแม่สมุทรใหญ่กล้างพิลึก ยังหยั่งได้เถิงทราย",
+    "ไม้โค่นค้างก็เพื่อคมเสียม ขุดเลาะเลียมเก๊างุนรากแก้ว",
+    "ใคร่รู้หื้อถาม ใคร่งามหื้อแต้ม",
+    "จะไปกินน้ำย้อยศอกคนอื่น",
+    "หมาเห่า อย่าเห่าตวยหมา",
+    "เปิ่นบ่ฮู้ผู้โทษมาถู กำคองูผู้พิษใส่ข้า",
+    "ขดออกแพ้เจ้า ขดเข้าแพ้ของ",
+    "ยามเมื่อฮัก น้ำผักว่าหวาน ยามเมื่อจัง น้ำตาลว่าส้ม",
+    "พี่น้องผิ่ดกั่น เหมือนพร้าฟันน้ำ จะไปผูกมั้นกรรมเวร",
+    "เมื่อทุกข์ก็ทาข์ เมื่อผ่านก็ผาน เมื่อสุขสำราญก็ไว้เป็นห้อง",
+    "น้ำไหลตวยหนทาง ผีสางเพื่อคำปาก",
+    "อดเผ็ดกินหวาน อดสานได้จ้า",
+    "คนใบ้ใช้หลายเพื่อ",
+    "ฮักจั้น ๆ มันจั่งพันเหย เมิน ๆ เคย มันจั่งคุ้มเถ้า",
+    "จะไปเป็นคน “ปากหวานกันส้ม”"
+];
+
+// เลือกสุภาษิตแบบสุ่ม
+const randomIndex = Math.floor(Math.random() * quotes.length);
+const randomQuote = quotes[randomIndex];
+const quoteText = document.getElementById("quoteText");
+
+// แสดงสุภาษิตหลังจาก 1 วิ และค่อย ๆ ปรากฏ
+setTimeout(function() {
+    quoteText.textContent = randomQuote;
+    quoteText.style.opacity = "1"; // ค่อย ๆ ปรากฏ
+    setTimeout(function() {
+        quoteText.style.opacity = "0"; // ค่อย ๆ หายไป
+    }, 3000); // แสดง 3 วินาที
+}, 1000);
+
+// หน้าจอดำจางออกใน 2 วิ หลังจาก 5 วิ
+setTimeout(function() {
+    document.getElementById("blackScreen").style.opacity = "0";
+    setTimeout(function() {
+        document.getElementById("blackScreen").style.display = "none";
+    }, 2000);
+}, 5000);
+
+setTimeout(function() {
+    quoteText.classList.add("show");
+}, 1000); // ปรากฏหลังจาก 1 วินาที
