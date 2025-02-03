@@ -9,169 +9,169 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="CSS/style.css">
     <style>
-      body {
-font-family: "Itim", cursive;
-font-weight: 400;
-font-style: normal;
-color: rgb(150, 209, 212);  
-background-color: rgb(255, 200, 200);
-text-align: center;
-
-transition: background-color 1s ease-in-out;
-animation: changeBg 100s infinite alternate;
-width: 480px;
-height: 320px;
-
+        body {
+  font-family: "Itim", cursive;
+  font-weight: 400;
+  font-style: normal;
+  color: rgb(150, 209, 212);  
+  background-color: rgb(255, 200, 200);
+  text-align: center;
+  
+  transition: background-color 1s ease-in-out;
+  animation: changeBg 100s infinite alternate;
+  width: 480px;
+  height: 320px;
+  
 }
 
 
 
 
 @keyframes changeBg {
-0% { background-color: rgb(255, 200, 200); }
-25% { background-color: rgb(200, 255, 200); }
-50% { background-color: rgb(200, 200, 255); }
-75% { background-color: rgb(255, 255, 200); }
-100% { background-color: rgb(255, 200, 200); }
+  0% { background-color: rgb(255, 200, 200); }
+  25% { background-color: rgb(200, 255, 200); }
+  50% { background-color: rgb(200, 200, 255); }
+  75% { background-color: rgb(255, 255, 200); }
+  100% { background-color: rgb(255, 200, 200); }
 }
 h1{
-width: 1220px;
-height:160px;
-background-image: url("https://media.istockphoto.com/id/1900013732/th/%E0%B8%A3%E0%B8%B9%E0%B8%9B%E0%B8%96%E0%B9%88%E0%B8%B2%E0%B8%A2/%E0%B8%9E%E0%B8%B7%E0%B9%89%E0%B8%99%E0%B8%AB%E0%B8%A5%E0%B8%B1%E0%B8%87%E0%B8%81%E0%B8%A3%E0%B8%B0%E0%B8%94%E0%B8%B2%E0%B8%A9%E0%B8%81%E0%B8%A3%E0%B8%B2%E0%B8%9F%E0%B8%AA%E0%B8%B5%E0%B8%82%E0%B8%B2%E0%B8%A7.jpg?s=612x612&w=0&k=20&c=25186__Kksyjl59SGaCsBFGZSYX_webLrWEnWDBi8GA=");
-border: 0.5px solid #000000;
-text-align: 20px;
-font-size: 5px;
-padding-top: 40px;
-
-
+  width: 1220px;
+  height:160px;
+  background-image: url("https://media.istockphoto.com/id/1900013732/th/%E0%B8%A3%E0%B8%B9%E0%B8%9B%E0%B8%96%E0%B9%88%E0%B8%B2%E0%B8%A2/%E0%B8%9E%E0%B8%B7%E0%B9%89%E0%B8%99%E0%B8%AB%E0%B8%A5%E0%B8%B1%E0%B8%87%E0%B8%81%E0%B8%A3%E0%B8%B0%E0%B8%94%E0%B8%B2%E0%B8%A9%E0%B8%81%E0%B8%A3%E0%B8%B2%E0%B8%9F%E0%B8%AA%E0%B8%B5%E0%B8%82%E0%B8%B2%E0%B8%A7.jpg?s=612x612&w=0&k=20&c=25186__Kksyjl59SGaCsBFGZSYX_webLrWEnWDBi8GA=");
+  border: 0.5px solid #000000;
+  text-align: 20px;
+  font-size: 5px;
+  padding-top: 40px;
+  
+  
 }
 h3 {
-font-size: 72px;
-width: 500px;
-height: 100px;
-color: rgb(0, 0, 0);
-background-color: aliceblue;
+  font-size: 72px;
+  width: 500px;
+  height: 100px;
+  color: rgb(0, 0, 0);
+  background-color: aliceblue;
+  
+  padding-top: 30px;
+  justify-content: center;
 
-padding-top: 30px;
-justify-content: center;
-
-/* ใช้ clip-path เพื่อทำให้กล่องเป็นสี่เหลี่ยมคางหมูที่ด้านซ้ายเป็นมุมฉาก */
-clip-path: polygon(0% 0%, 90% 0%, 100% 100%, 0% 100%);
-position: absolute; left: 150px; top:200px;
+  /* ใช้ clip-path เพื่อทำให้กล่องเป็นสี่เหลี่ยมคางหมูที่ด้านซ้ายเป็นมุมฉาก */
+  clip-path: polygon(0% 0%, 90% 0%, 100% 100%, 0% 100%);
+  position: absolute; left: 150px; top:200px;
 }
 h2 {
-font-size: 48px;
-width: 700px;
-height: 70px;
-color: rgb(186, 186, 186);
-background-color: rgb(117, 117, 117);
-text-align: right; /* ข้อความชิดขวา */
-padding-right: 20px; /* ขยับข้อความไปทางขวา 50px */
+  font-size: 48px;
+  width: 700px;
+  height: 70px;
+  color: rgb(186, 186, 186);
+  background-color: rgb(117, 117, 117);
+  text-align: right; /* ข้อความชิดขวา */
+  padding-right: 20px; /* ขยับข้อความไปทางขวา 50px */
+  
 
-
-/* เพิ่ม Flexbox เพื่อจัดตำแหน่งข้อความให้อยู่กลาง */
-
-justify-content: center;  /* จัดแนวนอนให้อยู่ตรงกลาง */
-align-items: center; /* จัดแนวตั้งให้อยู่ตรงกลาง */
-
-clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 20% 100%);
-position: absolute; left: 360px; top:260px;
-z-index: -1;
-
+  /* เพิ่ม Flexbox เพื่อจัดตำแหน่งข้อความให้อยู่กลาง */
+ 
+  justify-content: center;  /* จัดแนวนอนให้อยู่ตรงกลาง */
+  align-items: center; /* จัดแนวตั้งให้อยู่ตรงกลาง */
+  
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 20% 100%);
+  position: absolute; left: 360px; top:260px;
+  z-index: -1;
+  
 }
 
 h3, h2 {
-
-transition: background-color 0.3s, color 0.3s; /* ทำให้เปลี่ยนสีแบบนุ่มนวล */
+ 
+  transition: background-color 0.3s, color 0.3s; /* ทำให้เปลี่ยนสีแบบนุ่มนวล */
 
 }
 .swapped-h3 {
-color: rgb(255, 255, 255);
-background-color: rgb(100, 100, 100);
-position: absolute; right: 150px; top: 250px;
-width: 700px;
-height: 50px;
-font-size: 36px;
-z-index: -1;
+  color: rgb(255, 255, 255);
+  background-color: rgb(100, 100, 100);
+  position: absolute; right: 150px; top: 250px;
+  width: 700px;
+  height: 50px;
+  font-size: 36px;
+  z-index: -1;
 }
 
 .swapped-h2 {
-color: rgb(0, 0, 0);
-background-color: aliceblue;
-width:500px;
-height: 120px;
-position: absolute; left: 560px; top:200px;
-font-size: 82px;
-z-index: 1;
+  color: rgb(0, 0, 0);
+  background-color: aliceblue;
+  width:500px;
+  height: 120px;
+  position: absolute; left: 560px; top:200px;
+  font-size: 82px;
+  z-index: 1;
 }
 
 
 
 button {
-  padding: 100px 100px;
-  /* ปรับขนาดตามต้องการ */
-  font-size: 16px;
-  /* ปรับขนาดตัวอักษรตามต้องการ */
-  border-radius: 90%;
-  width: 200px;
-  /* กำหนดขนาดของปุ่ม */
-  position: absolute;
-  /* กำหนดให้เป็นตำแหน่งเอนเจิ้ล */
-  border: 5px solid #000000;
-  height: 200px;
-  background-color: aliceblue;
-  
-  vertical-align: top;
-  cursor: pointer;
-  padding-left:30px;
-  padding-top: 30px;
+    padding: 100px 100px;
+    /* ปรับขนาดตามต้องการ */
+    font-size: 16px;
+    /* ปรับขนาดตัวอักษรตามต้องการ */
+    border-radius: 90%;
+    width: 200px;
+    /* กำหนดขนาดของปุ่ม */
+    position: absolute;
+    /* กำหนดให้เป็นตำแหน่งเอนเจิ้ล */
+    border: 5px solid #000000;
+    height: 200px;
+    background-color: aliceblue;
+    
+    vertical-align: top;
+    cursor: pointer;
+    padding-left:30px;
+    padding-top: 30px;
 }
 
 
 input {
-  padding: 200px 300px;
+    padding: 200px 300px;
+    /* ปรับขนาดตามต้องการ */
+    font-size: 32px;
+    
+    /* ปรับขนาดตัวอักษรตามต้องการ */
+    
+    /* ปรับความกว้างของ input field */
+    color: rgb(0, 0, 0);
+    
+    background-color: aqua;
+    background-image: url("https://media.istockphoto.com/id/1900013732/th/%E0%B8%A3%E0%B8%B9%E0%B8%9B%E0%B8%96%E0%B9%88%E0%B8%B2%E0%B8%A2/%E0%B8%9E%E0%B8%B7%E0%B9%89%E0%B8%99%E0%B8%AB%E0%B8%A5%E0%B8%B1%E0%B8%87%E0%B8%81%E0%B8%A3%E0%B8%B0%E0%B8%94%E0%B8%B2%E0%B8%A9%E0%B8%81%E0%B8%A3%E0%B8%B2%E0%B8%9F%E0%B8%AA%E0%B8%B5%E0%B8%82%E0%B8%B2%E0%B8%A7.jpg?s=612x612&w=0&k=20&c=25186__Kksyjl59SGaCsBFGZSYX_webLrWEnWDBi8GA=");
+    font-family: "Itim", cursive;
+    border-radius: 10%;
+    /* กำหนดขอบมน */
+    border:5px solid #000000;
+    /* เพิ่มเส้นขอบ */
+    text-align: left;
+    padding-top: 200px;
+    
+    
+
+}
+
+output {
+  height: 400px;
+  width: 600px;
   /* ปรับขนาดตามต้องการ */
-  font-size: 32px;
-  
+  font-size: 30px;
   /* ปรับขนาดตัวอักษรตามต้องการ */
   
   /* ปรับความกว้างของ input field */
   color: rgb(0, 0, 0);
-  
+
   background-color: aqua;
   background-image: url("https://media.istockphoto.com/id/1900013732/th/%E0%B8%A3%E0%B8%B9%E0%B8%9B%E0%B8%96%E0%B9%88%E0%B8%B2%E0%B8%A2/%E0%B8%9E%E0%B8%B7%E0%B9%89%E0%B8%99%E0%B8%AB%E0%B8%A5%E0%B8%B1%E0%B8%87%E0%B8%81%E0%B8%A3%E0%B8%B0%E0%B8%94%E0%B8%B2%E0%B8%A9%E0%B8%81%E0%B8%A3%E0%B8%B2%E0%B8%9F%E0%B8%AA%E0%B8%B5%E0%B8%82%E0%B8%B2%E0%B8%A7.jpg?s=612x612&w=0&k=20&c=25186__Kksyjl59SGaCsBFGZSYX_webLrWEnWDBi8GA=");
   font-family: "Itim", cursive;
   border-radius: 10%;
   /* กำหนดขอบมน */
-  border:5px solid #000000;
+  border: 3px solid #000000;
   /* เพิ่มเส้นขอบ */
-  text-align: left;
+  text-align: center;
   padding-top: 200px;
   
-  
-
-}
-
-output {
-height: 400px;
-width: 600px;
-/* ปรับขนาดตามต้องการ */
-font-size: 30px;
-/* ปรับขนาดตัวอักษรตามต้องการ */
-
-/* ปรับความกว้างของ input field */
-color: rgb(0, 0, 0);
-
-background-color: aqua;
-background-image: url("https://media.istockphoto.com/id/1900013732/th/%E0%B8%A3%E0%B8%B9%E0%B8%9B%E0%B8%96%E0%B9%88%E0%B8%B2%E0%B8%A2/%E0%B8%9E%E0%B8%B7%E0%B9%89%E0%B8%99%E0%B8%AB%E0%B8%A5%E0%B8%B1%E0%B8%87%E0%B8%81%E0%B8%A3%E0%B8%B0%E0%B8%94%E0%B8%B2%E0%B8%A9%E0%B8%81%E0%B8%A3%E0%B8%B2%E0%B8%9F%E0%B8%AA%E0%B8%B5%E0%B8%82%E0%B8%B2%E0%B8%A7.jpg?s=612x612&w=0&k=20&c=25186__Kksyjl59SGaCsBFGZSYX_webLrWEnWDBi8GA=");
-font-family: "Itim", cursive;
-border-radius: 10%;
-/* กำหนดขอบมน */
-border: 3px solid #000000;
-/* เพิ่มเส้นขอบ */
-text-align: center;
-padding-top: 200px;
-
 
 
 
@@ -179,40 +179,40 @@ padding-top: 200px;
 }
 
 .crosshair {
-position: fixed;
-width: 50px;
-height: 50px;
-pointer-events: none;
-transform: translate(-50%, -50%);
-display: flex;
-justify-content: center;
-align-items: center;
-z-index: 100;
-animation: pulse 1.5s ease-in-out infinite alternate;
+  position: fixed;
+  width: 50px;
+  height: 50px;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+  animation: pulse 1.5s ease-in-out infinite alternate;
 }
 
 .crosshair-inner {
-position: relative;
-width: 100%;
-height: 100%;
-animation: rotate 2s linear infinite; /* หมุนรอบตัวเอง */
+  position: relative;
+  width: 100%;
+  height: 100%;
+  animation: rotate 2s linear infinite; /* หมุนรอบตัวเอง */
 }
 
 .bar {
-position: absolute;
-background: rgba(0, 162, 255, 0.8);
-box-shadow: 0 0 10px rgba(0, 162, 255, 0.8);
-transition: transform 0.2s ease-in-out;
+  position: absolute;
+  background: rgba(0, 162, 255, 0.8);
+  box-shadow: 0 0 10px rgba(0, 162, 255, 0.8);
+  transition: transform 0.2s ease-in-out;
 }
 
 .bar.horizontal {
-width: 20px;
-height: 3px;
+  width: 20px;
+  height: 3px;
 }
 
 .bar.vertical {
-width: 3px;
-height: 20px;
+  width: 3px;
+  height: 20px;
 }
 
 /* ตำแหน่งของแท่ง (อยู่รอบจุดศูนย์กลาง) */
@@ -223,191 +223,191 @@ height: 20px;
 
 /* เอฟเฟกต์เรืองแสง */
 @keyframes glow {
-0% {
-    box-shadow: 0 0 5px rgba(0, 162, 255, 0.5);
-    background: rgba(0, 162, 255, 0.5);
-}
-100% {
-    box-shadow: 0 0 15px rgba(0, 162, 255, 1);
-    background: rgba(0, 162, 255, 1);
-}
+  0% {
+      box-shadow: 0 0 5px rgba(0, 162, 255, 0.5);
+      background: rgba(0, 162, 255, 0.5);
+  }
+  100% {
+      box-shadow: 0 0 15px rgba(0, 162, 255, 1);
+      background: rgba(0, 162, 255, 1);
+  }
 }
 
 /* หมุนรอบตัวเอง */
 @keyframes rotate {
-0% { transform: rotate(0deg); }
-100% { transform: rotate(360deg); }
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
 
 /* ขยาย-หด (Pulse Effect) */
 @keyframes pulse {
-0% { transform: translate(-50%, -50%) scale(1); }
-100% { transform: translate(-50%, -50%) scale(1.7); }
+  0% { transform: translate(-50%, -50%) scale(1); }
+  100% { transform: translate(-50%, -50%) scale(1.7); }
 }
 
 .bar {
-animation: glow 1.5s infinite alternate ease-in-out;
+  animation: glow 1.5s infinite alternate ease-in-out;
 }
 
 
 .star {
-position: absolute;
-width: 200px;
-height: 200px;
-background-color: white;
-clip-path: polygon(50% 0%, 60% 35%, 100% 35%, 65% 57%, 77% 100%, 50% 70%, 23% 100%, 35% 57%, 0% 35%, 40% 35%);
-box-shadow: 1000 1000 20000px 10000px rgba(255, 255, 0, 0.8); /* ขอบเรืองแสงสีเหลือง */
-animation: moveStar 1.67s linear forwards, spin 1.33s linear infinite, colorChange 0.67s infinite; /* ปรับความเร็ว */
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  background-color: white;
+  clip-path: polygon(50% 0%, 60% 35%, 100% 35%, 65% 57%, 77% 100%, 50% 70%, 23% 100%, 35% 57%, 0% 35%, 40% 35%);
+  box-shadow: 1000 1000 20000px 10000px rgba(255, 255, 0, 0.8); /* ขอบเรืองแสงสีเหลือง */
+  animation: moveStar 1.67s linear forwards, spin 1.33s linear infinite, colorChange 0.67s infinite; /* ปรับความเร็ว */
 }
 
 .star::after {
-content: '';
-position: absolute;
-top: 50%;
-left: 100%;
-width: 60px;
-height: 2px;
-background: rgba(255, 255, 0, 0.5);
-box-shadow: 0 0 10px 5px rgba(255, 255, 0, 0.5);
-transform-origin: left center;
-animation: tailEffect 1.67s linear forwards;
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  width: 60px;
+  height: 2px;
+  background: rgba(255, 255, 0, 0.5);
+  box-shadow: 0 0 10px 5px rgba(255, 255, 0, 0.5);
+  transform-origin: left center;
+  animation: tailEffect 1.67s linear forwards;
 }
 
 @keyframes moveStar {
-0% {
-    left: var(--start-x);
-}
-100% {
-    left: 1220px; /* เปลี่ยนตำแหน่งสุดที่ 1220px */
-    opacity: 0; /* ดาวจะหายไปเมื่อถึงตำแหน่งสุด */
-}
+  0% {
+      left: var(--start-x);
+  }
+  100% {
+      left: 1220px; /* เปลี่ยนตำแหน่งสุดที่ 1220px */
+      opacity: 0; /* ดาวจะหายไปเมื่อถึงตำแหน่งสุด */
+  }
 }
 
 @keyframes spin {
-0% {
-    transform: rotate(0deg);
-}
-100% {
-    transform: rotate(360deg); /* หมุนรอบตัวเอง */
-}
+  0% {
+      transform: rotate(0deg);
+  }
+  100% {
+      transform: rotate(360deg); /* หมุนรอบตัวเอง */
+  }
 }
 
 @keyframes colorChange {
-0%, 100% {
-    background-color: rgba(255, 255, 0, 1); /* สีเหลือง */
-}
-50% {
-    background-color: rgba(255, 255, 255, 1); /* สีขาว */
-}
+  0%, 100% {
+      background-color: rgba(255, 255, 0, 1); /* สีเหลือง */
+  }
+  50% {
+      background-color: rgba(255, 255, 255, 1); /* สีขาว */
+  }
 }
 
 @keyframes tailEffect {
-0% {
-    width: 60px;
-    opacity: 0.7;
-}
-100% {
-    width: 120px;
-    opacity: 0;
-}
+  0% {
+      width: 60px;
+      opacity: 0.7;
+  }
+  100% {
+      width: 120px;
+      opacity: 0;
+  }
 }
 
 button img {
-display: block;
-/* ป้องกันการเพิ่ม space ด้านล่าง */
-width: 64px;
-/* ขนาดของรูปภาพ */
-height: 64px;
-/* ขนาดของรูปภาพ */
-padding-left: -100px;
-transition: transform 0.3s ease, border-color 3s ease; 
+  display: block;
+  /* ป้องกันการเพิ่ม space ด้านล่าง */
+  width: 64px;
+  /* ขนาดของรูปภาพ */
+  height: 64px;
+  /* ขนาดของรูปภาพ */
+  padding-left: -100px;
+  transition: transform 0.3s ease, border-color 3s ease; 
 }
 
 .animated-image {
-width: 200px;
-height: 200px;
-border-radius: 50%;
-position: absolute;
-left: 300px;
-top: 970px;
-border: 5px solid black;
-transition: box-shadow 0.3s ease;
-margin-top: 100px;
-margin-left: 100px;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  position: absolute;
+  left: 300px;
+  top: 970px;
+  border: 5px solid black;
+  transition: box-shadow 0.3s ease;
+  margin-top: 100px;
+  margin-left: 100px;
 }
 
 .animated-image:hover {
-box-shadow: 0px 0px 15px 5px rgba(0, 255, 255, 0.7);
+  box-shadow: 0px 0px 15px 5px rgba(0, 255, 255, 0.7);
 }
 
 @keyframes rainbow {
-0% { border-color: red; }
-14% { border-color: orange; }
-28% { border-color: yellow; }
-42% { border-color: green; }
-57% { border-color: blue; }
-71% { border-color: indigo; }
-85% { border-color: violet; }
-100% { border-color: red; }
+  0% { border-color: red; }
+  14% { border-color: orange; }
+  28% { border-color: yellow; }
+  42% { border-color: green; }
+  57% { border-color: blue; }
+  71% { border-color: indigo; }
+  85% { border-color: violet; }
+  100% { border-color: red; }
 }
 
 .rainbow-border {
-animation: rainbow 1s infinite;
+  animation: rainbow 1s infinite;
 }
 
 .expand-circle {
-animation: expand 0.5s ease-out;
+  animation: expand 0.5s ease-out;
 }
 
 @keyframes expand {
-0% { transform: scale(1); }
-100% { transform: scale(1.5); }
+  0% { transform: scale(1); }
+  100% { transform: scale(1.5); }
 }
 .animated-image {
-width: 200px;
-height: 200px;
-border-radius: 50%;
-position: absolute;
-left: 300px;
-top: 970px;
-border: 5px solid black;
-transition: box-shadow 0.3s ease;
-margin-top: 100px;
-margin-left: 100px;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  position: absolute;
+  left: 300px;
+  top: 970px;
+  border: 5px solid black;
+  transition: box-shadow 0.3s ease;
+  margin-top: 100px;
+  margin-left: 100px;
 }
 
 
-      /* สไตล์สำหรับหน้าจอดำ */
-      #blackScreen {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: black;
-        z-index: 99;
-        transition: opacity 2s ease-out;
-    }
+        /* สไตล์สำหรับหน้าจอดำ */
+        #blackScreen {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: black;
+          z-index: 99;
+          transition: opacity 2s ease-out;
+      }
 
-    #quoteText {
-      position: absolute;
-      left: 250px;
-      top:60%;
-      transform: translate(0%, -50%) scale(0.8); /* ขยายข้อความเล็กน้อย */
-      font-size: 42px;
-      color: white;
-      opacity: 0;
-      text-shadow: 0 0 5px rgba(255, 255, 255, 0.8), 0 0 10px rgba(255, 255, 255, 0.6); /* แสงสีขาวเรือง */
-      transition: opacity 1.5s ease-in-out, transform 1.5s ease-in-out, text-shadow 1.5s ease-in-out; /* เพิ่ม transition สำหรับ text-shadow */
-      z-index: 100;
-  }
-  
-  #quoteText.show {
-      opacity: 1;
-      transform: translate(0%, -50%) scale(1); /* ขยายข้อความเต็มที่ */
-      text-shadow: 0 0 20px rgba(255, 255, 255, 1), 0 0 30px rgba(255, 255, 255, 0.7); /* แสงที่แรงขึ้น */
-  }
-  </style>
+      #quoteText {
+        position: absolute;
+        left: 250px;
+        top:60%;
+        transform: translate(0%, -50%) scale(0.8); /* ขยายข้อความเล็กน้อย */
+        font-size: 42px;
+        color: white;
+        opacity: 0;
+        text-shadow: 0 0 5px rgba(255, 255, 255, 0.8), 0 0 10px rgba(255, 255, 255, 0.6); /* แสงสีขาวเรือง */
+        transition: opacity 1.5s ease-in-out, transform 1.5s ease-in-out, text-shadow 1.5s ease-in-out; /* เพิ่ม transition สำหรับ text-shadow */
+        z-index: 100;
+    }
+    
+    #quoteText.show {
+        opacity: 1;
+        transform: translate(0%, -50%) scale(1); /* ขยายข้อความเต็มที่ */
+        text-shadow: 0 0 20px rgba(255, 255, 255, 1), 0 0 30px rgba(255, 255, 255, 0.7); /* แสงที่แรงขึ้น */
+    }
+    </style>
     
  
 </head>
