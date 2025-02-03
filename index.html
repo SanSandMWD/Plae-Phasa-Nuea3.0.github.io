@@ -80,18 +80,7 @@ h2 {
   z-index: -1;
   
 }
-h7{
-  font-size: 24px;
-  color: rgb(0, 0, 0);
 
-  
-  justify-content: center;  /* จัดแนวนอนให้อยู่ตรงกลาง */
-  align-items: center; /* จัดแนวตั้งให้อยู่ตรงกลาง */
-  
-
- 
-  
-}
 h3, h2 {
  
   transition: background-color 0.3s, color 0.3s; /* ทำให้เปลี่ยนสีแบบนุ่มนวล */
@@ -336,90 +325,91 @@ button img {
 }
 
 .animated-image {
-  width: 200px;
-  height: 200px;
   border-radius: 50%;
-  position: absolute;
+  position: relative; /* เปลี่ยนเป็น relative เพื่อให้วงกลมอยู่ภายในรูป */
   left: 300px;
   top: 970px;
   border: 5px solid black;
-  transition: box-shadow 0.3s ease;
+  transition: all 0.3s ease;
   margin-top: 100px;
   margin-left: 100px;
+  overflow: hidden; /* ซ่อนวงกลมที่เกินขอบ */
 }
 
 .animated-image:hover {
   box-shadow: 0px 0px 15px 5px rgba(0, 255, 255, 0.7);
-}
-
-@keyframes rainbow {
-  0% { border-color: red; }
-  14% { border-color: orange; }
-  28% { border-color: yellow; }
-  42% { border-color: green; }
-  57% { border-color: blue; }
-  71% { border-color: indigo; }
-  85% { border-color: violet; }
-  100% { border-color: red; }
+  transform: scale(1.1);
 }
 
 .rainbow-border {
-  animation: rainbow 1s infinite;
+  animation: rainbow 4s linear ; /* เปลี่ยนเป็น forwards */
+}
+@keyframes rainbow {
+  0% { border-color: red; }
+  16% { border-color: orange; }
+  33% { border-color: yellow; }
+  50% { border-color: green; }
+  66% { border-color: blue; }
+  83% { border-color: indigo; }
+  100% { border-color: violet; }
 }
 
-.expand-circle {
-  animation: expand 0.5s ease-out;
+.circle {
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.5); /* สีขาวโปร่งใส */
+  border-radius: 50%;
+  opacity: 0; /* เริ่มต้นโปร่งใส */
+  animation: expand 1s ease-out forwards; /* สร้าง animation ขยาย */
+  pointer-events: none; /* ป้องกันการคลิกวงกลม */
 }
 
 @keyframes expand {
-  0% { transform: scale(1); }
-  100% { transform: scale(1.5); }
-}
-.animated-image {
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  position: absolute;
-  left: 300px;
-  top: 970px;
-  border: 5px solid black;
-  transition: box-shadow 0.3s ease;
-  margin-top: 100px;
-  margin-left: 100px;
+  0% { transform: scale(0); opacity: 0; } /* เริ่มต้นเล็กมากและโปร่งใส */
+  100% { transform: scale(1); opacity: 1; } /* ขยายเต็มที่และทึบ */
 }
 
+h7{
+  font-size: 24px;
+  color: rgb(0, 0, 0);
 
-        /* สไตล์สำหรับหน้าจอดำ */
-        #blackScreen {
-          position: fixed;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          background: black;
-          z-index: 99;
-          transition: opacity 2s ease-out;
-      }
+  
+  justify-content: center;  /* จัดแนวนอนให้อยู่ตรงกลาง */
+  align-items: center; /* จัดแนวตั้งให้อยู่ตรงกลาง */
+  
 
-      #quoteText {
-        position: absolute;
-        left: 250px;
-        top:60%;
-        transform: translate(0%, -50%) scale(0.8); /* ขยายข้อความเล็กน้อย */
-        font-size: 42px;
-        color: white;
-        opacity: 0;
-        text-shadow: 0 0 5px rgba(255, 255, 255, 0.8), 0 0 10px rgba(255, 255, 255, 0.6); /* แสงสีขาวเรือง */
-        transition: opacity 1.5s ease-in-out, transform 1.5s ease-in-out, text-shadow 1.5s ease-in-out; /* เพิ่ม transition สำหรับ text-shadow */
-        z-index: 100;
-    }
-    
-    #quoteText.show {
-        opacity: 1;
-        transform: translate(0%, -50%) scale(1); /* ขยายข้อความเต็มที่ */
-        text-shadow: 0 0 20px rgba(255, 255, 255, 1), 0 0 30px rgba(255, 255, 255, 0.7); /* แสงที่แรงขึ้น */
-    }
-    </style>
+ 
+  
+}
+
+#blackScreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+  z-index: 99;
+  transition: opacity 2s ease-out;
+}
+
+#quoteText {
+position: absolute;
+left: 250px;
+top:60%;
+transform: translate(0%, -50%) scale(0.8); /* ขยายข้อความเล็กน้อย */
+font-size: 42px;
+color: white;
+opacity: 0;
+text-shadow: 0 0 5px rgba(255, 255, 255, 0.8), 0 0 10px rgba(255, 255, 255, 0.6); /* แสงสีขาวเรือง */
+transition: opacity 1.5s ease-in-out, transform 1.5s ease-in-out, text-shadow 1.5s ease-in-out; /* เพิ่ม transition สำหรับ text-shadow */
+z-index: 100;
+}
+
+#quoteText.show {
+opacity: 1;
+transform: translate(0%, -50%) scale(1); /* ขยายข้อความเต็มที่ */
+text-shadow: 0 0 20px rgba(255, 255, 255, 1), 0 0 30px rgba(255, 255, 255, 0.7); /* แสงที่แรงขึ้น */
+}</style>
     
  
 </head>
@@ -433,7 +423,7 @@ button img {
         <span style="color: green; font-size:94px;">แปลภาษา</span>
         <span style="color: blue; font-size: 94px; ">ถิ่นเหนือ</span>
     </h1>
-   
+    <div id="animationContainer"></div>
     
     <div class="crosshair">
         <div class="crosshair-inner">
@@ -483,7 +473,7 @@ button img {
 <br><br><br>
 <h7 style="position: absolute; left: 370px; top: 1300px;" >กดปุ่มลำโพงเพื่อฟังเสียงรบกวนรอเสียงโหลดสักครู่</h7>
 
- <button id="soundButton"  onclick="sdata()"
+ <button id="soundButton"  onclick="sdata() ; addEffects(this)"
  style="position: absolute; left:700px; top: 1070px;
                transition: box-shadow 0.3s ease;"
         onmouseover="this.style.boxShadow='0px 0px 15px 5px rgba(0, 255, 255, 0.7)';"
@@ -492,7 +482,7 @@ button img {
 
 </button>
 <audio id="ttsAudio" controls style="display: none;"></audio>
-<button onclick="randomWord() ; spawnStars(750, 1450)" class="animated-button" style=" font-size: 100px; position:  absolute; left:850px; top:1400px; ">🌟</button>
+<button onclick="randomWord(); SS()" class="animated-button" style=" font-size: 100px; position:  absolute; left:850px; top:1400px; ">🌟</button>
 <div id="result"></div>
 
 

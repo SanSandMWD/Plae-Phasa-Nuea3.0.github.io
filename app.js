@@ -1683,3 +1683,45 @@ setTimeout(function() {
 setTimeout(function() {
     quoteText.classList.add("show");
 }, 1000); // ปรากฏหลังจาก 1 วินาที
+
+function addEffects(image) {
+    image.classList.add('rainbow-border');
+
+    for (let i = 0; i < 4; i++) {
+        const circle = document.createElement('div');
+        circle.classList.add('circle');
+
+        const size = Math.random() * 50;
+        const x = Math.random() * (image.width - size);
+        const y = Math.random() * (image.height - size);
+
+        circle.style.width = size + 'px';
+        circle.style.height = size + 'px';
+        circle.style.left = x + 'px';
+        circle.style.top = y + 'px';
+
+        image.appendChild(circle);
+    }
+
+    setTimeout(() => {
+        const circles = image.querySelectorAll('.circle');
+        circles.forEach(circle => circle.remove());
+
+        image.classList.remove('rainbow-border');
+    }, 4000);
+}
+
+function SS(event) {
+    const x = event.clientX;
+    const y = event.clientY;
+
+    const blurLight = document.createElement('div');
+    blurLight.classList.add('blur-light');
+    blurLight.style.left = (x - 75) + 'px'; // -75 เพื่อให้อยู่ตรงกลางเมาส์
+    blurLight.style.top = (y - 75) + 'px'; // -75 เพื่อให้อยู่ตรงกลางเมาส์
+    document.body.appendChild(blurLight);
+
+    setTimeout(() => {
+        blurLight.remove();
+    }, 1000);
+}
