@@ -1541,28 +1541,15 @@ function sdata() {
         return;
     }
 
-    let msg = new SpeechSynthesisUtterance();
-    msg.text = text;
-    msg.lang = "th-TH"; // ตั้งค่าภาษาไทย
-    msg.rate = 1; // ความเร็ว (1 = ปกติ)
-    msg.pitch = 1; // ระดับเสียง
-
-    let voices = speechSynthesis.getVoices();
-    let thaiVoice = voices.find(voice => voice.lang === "th-TH");
-
-    if (thaiVoice) {
-        msg.voice = thaiVoice;
-    } else {
-        console.log("ไม่พบเสียงภาษาไทย ใช้เสียงเริ่มต้นแทน");
-    }
-
-    speechSynthesis.speak(msg);
+    // หน่วงเวลาเล็กน้อยก่อนที่จะเริ่มพูด
+    setTimeout(function() {
+        if (typeof responsiveVoice !== 'undefined') {
+            responsiveVoice.speak(text, "Thai Female");
+        } else {
+            console.log("ไม่พบ ResponsiveVoice");
+        }
+    }, 100);  // หน่วงเวลา 100ms
 }
-
-// โหลดเสียงเมื่อหน้าเว็บพร้อม
-window.speechSynthesis.onvoiceschanged = function() {
-    speechSynthesis.getVoices();
-};
 
 
  // เมื่อโหลดหน้าเว็บ ให้แสดงหน้าจอดำ 5 วินาทีแล้วค่อย ๆ จางออกใน 2 วินาที
