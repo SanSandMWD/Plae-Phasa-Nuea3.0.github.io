@@ -1535,27 +1535,22 @@ function createStars() {
 createStars();
 
 function sdata() {
-    var textElement = document.getElementById("result");
-    var text = textElement.textContent; // ดึงข้อความจาก <output>
-  
-    if ('speechSynthesis' in window) {
-      var utterance = new SpeechSynthesisUtterance(text);
-  
-      // กำหนดภาษา (ถ้าต้องการ)
-      utterance.lang = 'th-TH'; // ภาษาไทย
-      // utterance.lang = 'en-US'; // ภาษาอังกฤษ
-  
-      // กำหนดอัตราการพูด (ความเร็ว)
-      utterance.rate = 0.5; // ค่าปกติ
-  
-      // กำหนดระดับเสียง
-      utterance.pitch = 1.0; // ค่าปกติ
-  
-      speechSynthesis.speak(utterance);
-    } else {
-      alert('Web Speech API ไม่รองรับในเบราว์เซอร์นี้');
+    let text = document.getElementById("result").textContent.trim(); 
+    if (!text) {
+        console.log("ไม่มีข้อความให้พูด");
+        return;
     }
+
+    // หน่วงเวลาเล็กน้อยก่อนที่จะเริ่มพูด
+    setTimeout(function() {
+        if (typeof responsiveVoice !== 'undefined') {
+            responsiveVoice.speak(text, "Thai Female");
+        } else {
+            console.log("ไม่พบ ResponsiveVoice");
+        }
+    }, 100);  // หน่วงเวลา 100ms
 }
+
 
  // เมื่อโหลดหน้าเว็บ ให้แสดงหน้าจอดำ 5 วินาทีแล้วค่อย ๆ จางออกใน 2 วินาที
  document.addEventListener("DOMContentLoaded", function () {
