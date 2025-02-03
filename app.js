@@ -1537,34 +1537,51 @@ createStars();
 function sdata() {
     let textElement = document.getElementById("result");
     if (!textElement) {
-        console.log("ไม่พบองค์ประกอบที่มี ID 'result'");
+        console.error("ไม่พบองค์ประกอบที่มี ID 'result'"); // ใช้ console.error สำหรับข้อความแสดงข้อผิดพลาด
         return;
     }
-    
+
     let text = textElement.textContent.trim();
     if (!text) {
-        console.log("ไม่มีข้อความให้พูด");
+        console.warn("ไม่มีข้อความให้พูด"); // ใช้ console.warn สำหรับข้อความเตือน
         return;
     }
-    
+
     if ('speechSynthesis' in window) {
         let utterance = new SpeechSynthesisUtterance(text);
         utterance.lang = "th-TH"; // ตั้งค่าให้เป็นภาษาไทย
-        utterance.rate = 0.5; // ความเร็วปกติ
-        utterance.pitch = 1.0; // ระดับเสียงปกติ
-        
+        utterance.rate = 1.0; // ความเร็วปกติ (1.0 คือค่าเริ่มต้น)
+        utterance.pitch = 1.0; // ระดับเสียงปกติ (1.0 คือค่าเริ่มต้น)
+
+        // ตรวจสอบว่ามีเสียงภาษาไทยหรือไม่
         let voices = speechSynthesis.getVoices();
         let thaiVoice = voices.find(voice => voice.lang === "th-TH");
+
         if (thaiVoice) {
             utterance.voice = thaiVoice;
+        } else {
+            console.warn("ไม่พบเสียงภาษาไทยในระบบ");
+            // หากไม่พบเสียงภาษาไทย จะใช้เสียงเริ่มต้นของระบบ
         }
-        
+
+        // เพิ่ม event listeners เพื่อจัดการเหตุการณ์ต่างๆ
+        utterance.onstart = () => {
+            console.log("เริ่มต้นการอ่านออกเสียง");
+        };
+
+        utterance.onend = () => {
+            console.log("อ่านออกเสียงจบแล้ว");
+        };
+
+        utterance.onerror = (event) => {
+            console.error("เกิดข้อผิดพลาดในการอ่านออกเสียง:", event.error);
+        };
+
         speechSynthesis.speak(utterance);
     } else {
-        console.log("เบราว์เซอร์ของคุณไม่รองรับ Web Speech API");
+        console.error("เบราว์เซอร์ของคุณไม่รองรับ Web Speech API");
     }
 }
-
 
  // เมื่อโหลดหน้าเว็บ ให้แสดงหน้าจอดำ 5 วินาทีแล้วค่อย ๆ จางออกใน 2 วินาที
  document.addEventListener("DOMContentLoaded", function () {
