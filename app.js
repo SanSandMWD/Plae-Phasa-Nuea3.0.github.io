@@ -1054,7 +1054,7 @@ var dictionary = {
 "สลัว":"มัวมืด", "สลากภัต":"ข้าวสาก", "สล้าง":"ส่างล่าง", "สลิดป่า":"สลิดคาเลา", "สวด":"สูด",
 "สวดพุทธาภิเษก":"สูดเบิก", "สวน":"ก๋าย", "ส่วน":"พุ่น", "สวบ":"สาด", "สวม":"สุบ",
 "ส้วม":"วิด", "สวมรอย":"ซ้ำฮอย", "สวย":"งาม", "สวอง":"ตีนนก", "สวะ":"ขี้โข่",
-"สว่าง":"แจ้ง", "สวัสดี":"ส็วดดี", "สวาด":"บ่ะขี้แรต", "สว่าน":"เหล็กจี", "สว้าน":"สะว้าน",
+"สว่าง":"แจ้ง", "สวัสดี":"สาหวั๊ดดี", "สวาด":"บ่ะขี้แรต", "สว่าน":"เหล็กจี", "สว้าน":"สะว้าน",
 "สวาปาม":"ยว่าม", "สวาหุม":"สัวหุม", "สวาหะ":"สัวหะ", "สวิง":"หิง", "สวิงสวาย":"ปั่นเมา",
 "สหชาติ":"เสี่ยว", "สองเกลอ":"กุ้ม", "สองจิตสองใจ":"สองใจสองคอ", "สองฤดู":"บานใบ", "ส่อง":"แยง",
 "ส่อน":"ตาเหล้อ", "สอพอ":"สนส่อ", "สอย":"สิ", "ส่อเสียด":"สับส่อ", "สะกดรอย":"ตวยฮอย",
@@ -1535,20 +1535,34 @@ function createStars() {
 createStars();
 
 function sdata() {
-    let text = document.getElementById("result").textContent.trim(); 
+    let textElement = document.getElementById("result");
+    if (!textElement) {
+        console.log("ไม่พบองค์ประกอบที่มี ID 'result'");
+        return;
+    }
+    
+    let text = textElement.textContent.trim();
     if (!text) {
         console.log("ไม่มีข้อความให้พูด");
         return;
     }
-
-    // หน่วงเวลาเล็กน้อยก่อนที่จะเริ่มพูด
-    setTimeout(function() {
-        if (typeof responsiveVoice !== 'undefined') {
-            responsiveVoice.speak(text, "Thai Male");
-        } else {
-            console.log("ไม่พบ ResponsiveVoice");
+    
+    if ('speechSynthesis' in window) {
+        let utterance = new SpeechSynthesisUtterance(text);
+        utterance.lang = "th-TH"; // ตั้งค่าให้เป็นภาษาไทย
+        utterance.rate = 0.5; // ความเร็วปกติ
+        utterance.pitch = 1.0; // ระดับเสียงปกติ
+        
+        let voices = speechSynthesis.getVoices();
+        let thaiVoice = voices.find(voice => voice.lang === "th-TH");
+        if (thaiVoice) {
+            utterance.voice = thaiVoice;
         }
-    }, 100);  // หน่วงเวลา 100ms
+        
+        speechSynthesis.speak(utterance);
+    } else {
+        console.log("เบราว์เซอร์ของคุณไม่รองรับ Web Speech API");
+    }
 }
 
 
