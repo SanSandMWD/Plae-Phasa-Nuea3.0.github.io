@@ -1535,51 +1535,25 @@ function createStars() {
 createStars();
 
 function sdata() {
-    let textElement = document.getElementById("result");
-    if (!textElement) {
-        console.error("ไม่พบองค์ประกอบที่มี ID 'result'"); // ใช้ console.error สำหรับข้อความแสดงข้อผิดพลาด
-        return;
-    }
-
-    let text = textElement.textContent.trim();
-    if (!text) {
-        console.warn("ไม่มีข้อความให้พูด"); // ใช้ console.warn สำหรับข้อความเตือน
-        return;
-    }
-
+    var textElement = document.getElementById("result");
+    var text = textElement.textContent; // ดึงข้อความจาก <output>
+  
     if ('speechSynthesis' in window) {
-        let utterance = new SpeechSynthesisUtterance(text);
-        utterance.lang = "th-TH"; // ตั้งค่าให้เป็นภาษาไทย
-        utterance.rate = 1.0; // ความเร็วปกติ (1.0 คือค่าเริ่มต้น)
-        utterance.pitch = 1.0; // ระดับเสียงปกติ (1.0 คือค่าเริ่มต้น)
-
-        // ตรวจสอบว่ามีเสียงภาษาไทยหรือไม่
-        let voices = speechSynthesis.getVoices();
-        let thaiVoice = voices.find(voice => voice.lang === "th-TH");
-
-        if (thaiVoice) {
-            utterance.voice = thaiVoice;
-        } else {
-            console.warn("ไม่พบเสียงภาษาไทยในระบบ");
-            // หากไม่พบเสียงภาษาไทย จะใช้เสียงเริ่มต้นของระบบ
-        }
-
-        // เพิ่ม event listeners เพื่อจัดการเหตุการณ์ต่างๆ
-        utterance.onstart = () => {
-            console.log("เริ่มต้นการอ่านออกเสียง");
-        };
-
-        utterance.onend = () => {
-            console.log("อ่านออกเสียงจบแล้ว");
-        };
-
-        utterance.onerror = (event) => {
-            console.error("เกิดข้อผิดพลาดในการอ่านออกเสียง:", event.error);
-        };
-
-        speechSynthesis.speak(utterance);
+      var utterance = new SpeechSynthesisUtterance(text);
+  
+      // กำหนดภาษา (ถ้าต้องการ)
+      utterance.lang = 'th-TH'; // ภาษาไทย
+      // utterance.lang = 'en-US'; // ภาษาอังกฤษ
+  
+      // กำหนดอัตราการพูด (ความเร็ว)
+      utterance.rate = 0.5; // ค่าปกติ
+  
+      // กำหนดระดับเสียง
+      utterance.pitch = 1.0; // ค่าปกติ
+  
+      speechSynthesis.speak(utterance);
     } else {
-        console.error("เบราว์เซอร์ของคุณไม่รองรับ Web Speech API");
+      alert('Web Speech API ไม่รองรับในเบราว์เซอร์นี้');
     }
 }
 
@@ -1618,9 +1592,9 @@ function sdata() {
         "เมื่อทุกข์ก็ทาข์ เมื่อผ่านก็ผาน เมื่อสุขสำราญก็ไว้เป็นห้อง",
         "น้ำไหลตวยหนทาง ผีสางเพื่อคำปาก",
         "อดเผ็ดกินหวาน อดสานได้จ้า",
-        "คนใบ้ใช้หลายเพื่อ",
+        "คนใบ้ใช้หลายเตื่อ",
         "ฮักจั้น ๆ มันจั่งพันเหย เมิน ๆ เคย มันจั่งคุ้มเถ้า",
-        "จะไปเป็นคน “ปากหวานกันส้ม”"
+        "จะไปเป็นคน ปากหวานกันส้ม"
     ];
 
     // เลือกสุภาษิตแบบสุ่ม
