@@ -1535,22 +1535,14 @@ function createStars() {
 createStars();
 
 function sdata() {
-    let text = document.getElementById("result").textContent.trim(); 
-    if (!text) {
-        console.log("ไม่มีข้อความให้พูด");
-        return;
-    }
-
-    // หน่วงเวลาเล็กน้อยก่อนที่จะเริ่มพูด
-    setTimeout(function() {
-        if (typeof responsiveVoice !== 'undefined') {
-            responsiveVoice.speak(text, "Thai Female");
-        } else {
-            console.log("ไม่พบ ResponsiveVoice");
-        }
-    }, 100);  // หน่วงเวลา 100ms
-}
-
+    let text = document.getElementById("result").textContent; // ดึงข้อความจาก <output>
+    let msg = new SpeechSynthesisUtterance();
+    msg.text = text;
+    msg.lang = "th-TH"; // ตั้งค่าให้พูดภาษาไทย
+    msg.rate = 0.5; // ความเร็วในการอ่าน (1 = ปกติ)
+    msg.pitch = 1; // ระดับเสียง
+    speechSynthesis.speak(msg);
+}         
 
  // เมื่อโหลดหน้าเว็บ ให้แสดงหน้าจอดำ 5 วินาทีแล้วค่อย ๆ จางออกใน 2 วินาที
  document.addEventListener("DOMContentLoaded", function () {
