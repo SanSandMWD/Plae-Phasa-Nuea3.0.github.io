@@ -5,11 +5,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
-    
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="CSS/style.css">
     <style>
+        
         body {
   font-family: "Itim", cursive;
   font-weight: 400;
@@ -17,11 +18,12 @@
   color: rgb(150, 209, 212);  
   background-color: rgb(255, 200, 200);
   text-align: center;
-  
+  display: flex;
   transition: background-color 1s ease-in-out;
   animation: changeBg 100s infinite alternate;
   width: 480px;
   height: 320px;
+  position: absolute;
   
 }
 
@@ -43,6 +45,20 @@ h1{
   text-align: 20px;
   font-size: 5px;
   padding-top: 40px;
+  
+  
+}
+
+h4{
+  width: 600px;
+  height:80px;
+  background-image: url("https://media.istockphoto.com/id/1900013732/th/%E0%B8%A3%E0%B8%B9%E0%B8%9B%E0%B8%96%E0%B9%88%E0%B8%B2%E0%B8%A2/%E0%B8%9E%E0%B8%B7%E0%B9%89%E0%B8%99%E0%B8%AB%E0%B8%A5%E0%B8%B1%E0%B8%87%E0%B8%81%E0%B8%A3%E0%B8%B0%E0%B8%94%E0%B8%B2%E0%B8%A9%E0%B8%81%E0%B8%A3%E0%B8%B2%E0%B8%9F%E0%B8%AA%E0%B8%B5%E0%B8%82%E0%B8%B2%E0%B8%A7.jpg?s=612x612&w=0&k=20&c=25186__Kksyjl59SGaCsBFGZSYX_webLrWEnWDBi8GA=");
+  border: 0.5px solid #000000;
+  text-align: 20px;
+  font-size: 5px;
+  padding-top: 40px;
+  border-radius: 20px; /* ทำให้ขอบมน */
+
   
   
 }
@@ -130,9 +146,9 @@ button {
 
 
 input {
-    padding: 150px 250px;
+    padding: 200px 300px;
     /* ปรับขนาดตามต้องการ */
-    font-size: 64px;
+    font-size: 32px;
     
     /* ปรับขนาดตัวอักษรตามต้องการ */
     
@@ -157,7 +173,7 @@ output {
   height: 400px;
   width: 600px;
   /* ปรับขนาดตามต้องการ */
-  font-size: 60px;
+  font-size: 30px;
   /* ปรับขนาดตัวอักษรตามต้องการ */
   
   /* ปรับความกว้างของ input field */
@@ -251,67 +267,6 @@ output {
 }
 
 
-.star {
-  position: absolute;
-  width: 200px;
-  height: 200px;
-  background-color: white;
-  clip-path: polygon(50% 0%, 60% 35%, 100% 35%, 65% 57%, 77% 100%, 50% 70%, 23% 100%, 35% 57%, 0% 35%, 40% 35%);
-  box-shadow: 1000 1000 20000px 10000px rgba(255, 255, 0, 0.8); /* ขอบเรืองแสงสีเหลือง */
-  animation: moveStar 1.67s linear forwards, spin 1.33s linear infinite, colorChange 0.67s infinite; /* ปรับความเร็ว */
-}
-
-.star::after {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 100%;
-  width: 60px;
-  height: 2px;
-  background: rgba(255, 255, 0, 0.5);
-  box-shadow: 0 0 10px 5px rgba(255, 255, 0, 0.5);
-  transform-origin: left center;
-  animation: tailEffect 1.67s linear forwards;
-}
-
-@keyframes moveStar {
-  0% {
-      left: var(--start-x);
-  }
-  100% {
-      left: 1220px; /* เปลี่ยนตำแหน่งสุดที่ 1220px */
-      opacity: 0; /* ดาวจะหายไปเมื่อถึงตำแหน่งสุด */
-  }
-}
-
-@keyframes spin {
-  0% {
-      transform: rotate(0deg);
-  }
-  100% {
-      transform: rotate(360deg); /* หมุนรอบตัวเอง */
-  }
-}
-
-@keyframes colorChange {
-  0%, 100% {
-      background-color: rgba(255, 255, 0, 1); /* สีเหลือง */
-  }
-  50% {
-      background-color: rgba(255, 255, 255, 1); /* สีขาว */
-  }
-}
-
-@keyframes tailEffect {
-  0% {
-      width: 60px;
-      opacity: 0.7;
-  }
-  100% {
-      width: 120px;
-      opacity: 0;
-  }
-}
 
 button img {
   display: block;
@@ -324,49 +279,6 @@ button img {
   transition: transform 0.3s ease, border-color 3s ease; 
 }
 
-.animated-image {
-  border-radius: 50%;
-  position: relative; /* เปลี่ยนเป็น relative เพื่อให้วงกลมอยู่ภายในรูป */
-  left: 300px;
-  top: 970px;
-  border: 5px solid black;
-  transition: all 0.3s ease;
-  margin-top: 100px;
-  margin-left: 100px;
-  overflow: hidden; /* ซ่อนวงกลมที่เกินขอบ */
-}
-
-.animated-image:hover {
-  box-shadow: 0px 0px 15px 5px rgba(0, 255, 255, 0.7);
-  transform: scale(1.1);
-}
-
-.rainbow-border {
-  animation: rainbow 4s linear ; /* เปลี่ยนเป็น forwards */
-}
-@keyframes rainbow {
-  0% { border-color: red; }
-  16% { border-color: orange; }
-  33% { border-color: yellow; }
-  50% { border-color: green; }
-  66% { border-color: blue; }
-  83% { border-color: indigo; }
-  100% { border-color: violet; }
-}
-
-.circle {
-  position: absolute;
-  background-color: rgba(255, 255, 255, 0.5); /* สีขาวโปร่งใส */
-  border-radius: 50%;
-  opacity: 0; /* เริ่มต้นโปร่งใส */
-  animation: expand 1s ease-out forwards; /* สร้าง animation ขยาย */
-  pointer-events: none; /* ป้องกันการคลิกวงกลม */
-}
-
-@keyframes expand {
-  0% { transform: scale(0); opacity: 0; } /* เริ่มต้นเล็กมากและโปร่งใส */
-  100% { transform: scale(1); opacity: 1; } /* ขยายเต็มที่และทึบ */
-}
 
 h7{
   font-size: 24px;
@@ -409,22 +321,388 @@ z-index: 100;
 opacity: 1;
 transform: translate(0%, -50%) scale(1); /* ขยายข้อความเต็มที่ */
 text-shadow: 0 0 20px rgba(255, 255, 255, 1), 0 0 30px rgba(255, 255, 255, 0.7); /* แสงที่แรงขึ้น */
-}</style>
+}
+
+
+.animated-image {
+  border-radius: 50%;
+  position: relative;
+  left: 300px;
+  top: 970px;
+  border: 5px solid black;
+  transition: all 0.3s ease;
+  margin-top: 100px;
+  margin-left: 100px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.animated-image:hover {
+  box-shadow: 0px 0px 15px 5px rgba(0, 255, 255, 0.7);
+  transform: scale(1.1);
+}
+
+.rainbow-border {
+  animation: rainbow 8s linear;
+}
+
+@keyframes rainbow {
+  0% { border-color: red; }
+  16% { border-color: orange; }
+  33% { border-color: yellow; }
+  50% { border-color: green; }
+  66% { border-color: blue; }
+  83% { border-color: indigo; }
+  100% { border-color: violet; }
+}
+
+.circle {
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  opacity: 0;
+  animation: expand 1s ease-out forwards;
+  pointer-events: none;
+}
+
+@keyframes expand {
+  0% { transform: scale(0); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+#animationContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+
+
+.blur-light {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  background-color: rgba(255, 255, 0, 0.3);
+  border-radius: 50%;
+  filter: blur(20px);
+  opacity: 0;
+  animation: fade-in 1s ease-in-out forwards;
+  pointer-events: none;
+}
+
+@keyframes fade-in {
+  0% { opacity: 0; transform: scale(0.5); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+.star {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background-color: yellow;
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+  animation: moveStar 5s infinite ease-in-out, twinkleStar 1.5s infinite alternate;
+  opacity: 0; /* เริ่มต้นให้ดาวโปร่งใส */
+  transition: opacity 1s ease-in-out; /* ใช้ transition สำหรับการเปลี่ยนแปลง opacity */
+}
+
+/* การเคลื่อนที่ของดาว */
+@keyframes moveStar {
+  0% {
+      transform: translate(0, 0);
+  }
+  100% {
+      transform: translate(var(--x), var(--y));
+  }
+}
+
+/* การระยิบระยับของดาว */
+@keyframes twinkleStar {
+  0% {
+      opacity: 1;
+  }
+  50% {
+      opacity: 0.3;
+  }
+  100% {
+      opacity: 1;
+  }
+}
+
+
+
+    /* แถบเมนู */
+   #sidebar {
+  position: fixed;
+  left: -350px;
+  top: 0;
+  width: 350px;
+  height: 100vh;         /* เต็มความสูงหน้าจอ */
+  overflow-y: auto;      /* เปิดให้เลื่อนขึ้น–ลงได้ */
+  background-color: #222;
+  color: white;
+  transition: left 0.3s ease;
+  padding: 20px;
+  box-sizing: border-box;
+  z-index: 1000;
+}
+
+/* ถ้าต้องการซ่อน scrollbar สวย ๆ บน WebKit */
+#sidebar::-webkit-scrollbar {
+  width: 6px;
+}
+#sidebar::-webkit-scrollbar-thumb {
+  background: rgba(255,255,255,0.2);
+  border-radius: 3px;
+}
+
+    #sidebar.active {
+      left: 0;
+    }
+
+    #sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 40px; /* ✅ เพิ่มบรรทัดนี้ */
+}
+
+    #sidebar li {
+  margin-bottom: -100px;
+  font-size: 40px; /* ✅ เพิ่มขนาดฟอนต์ */
+}
+
+    #sidebar h5 {
+      
+      text-decoration: none;
+       background: linear-gradient(90deg,
+    #ff7e5f, /* ส้ม */
+    #feb47b, /* ส้มอ่อน */
+    #86A8E7, /* ฟ้าอ่อน */
+    #91EAE4  /* ฟ้าสดใส */
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;       /* สำหรับเบราว์เซอร์ที่รองรับ */
+  color: transparent;
+    }
     
+
+    /* ปุ่มรังผึ้ง */
+.hex-button {
+  all: unset; /* ✅ ลบสไตล์ปุ่มพื้นฐานออก */
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  width: 60px;
+  height: 60px;
+  background: #ffcc00;
+  clip-path: polygon(
+    50% 0%,
+    93% 25%,
+    93% 75%,
+    50% 100%,
+    7% 75%,
+    7% 25%
+  );
+  border: 10px solid #cc9900;
+  box-shadow: 0 0 20px rgba(255, 204, 0, 0.4), inset 0 0 10px rgba(0, 0, 0, 0.2);
+  animation: metallic-shine 2s linear infinite;
+  background-image: linear-gradient(
+    135deg,
+    #ffcc00 0%,
+    #fff6cc 40%,
+    #ffcc00 60%,
+    #fff6cc 100%
+  );
+  background-size: 200% 200%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 1100;
+  transition: transform 0.6s ease;
+}
+
+/* หมุนเมื่อคลิก */
+.hex-button.rotate {
+  transform: rotate(360deg);
+}
+
+/* ไอคอนเมนู ☰ */
+.hex-button::after {
+  content: "☰";
+  font-size: 24px;
+  color: #333;
+}
+
+/* แอนิเมชันประกายเงา */
+@keyframes metallic-shine {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
+  }
+}
+
+
+#sidebar h5 {
+  color: white;
+  text-decoration: none;
+  position: relative;
+  display: inline-block;
+  padding: 5px 0;
+  font-size: 40px;
+  transition: color 0.3s ease;
+}
+
+#sidebar li.active h5 {
+  color: #ffd700; /* สีตอน active */
+}
+
+/* ขีดเส้นใต้แบบแอนิเมชัน */
+#sidebar h5::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background-color: #ffd700;
+  transition: width 0.3s ease;
+}
+
+#sidebar h5:hover::after,
+#sidebar li.active h5::after {
+  width: 100%;
+}
+
+#sidebar h5:hover {
+  color: #fffacd; /* สีอ่อนขึ้นเล็กน้อย */
+  text-shadow: 0 0 5px rgba(255, 255, 200, 0.7);
+}
+
+
+
+
+
+
+
+.custom-heading {
+  font-size: 38px;
+  font-weight: bold;
+  margin-top: 100px;
+  text-align: center;
+  color: #fffacd;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+
+
+
+#categoryHeader {
+  font-size: 48px;
+  width: 700px;
+  height: 70px;
+  color: #ffd700;
+  background-color: rgb(117, 117, 117);
+  text-align: right;
+  padding-right: 20px;
+
+  display: flex;              /* เพิ่ม */
+  justify-content: center;    
+  align-items: center;       
+
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 20% 100%);
+  position: absolute;
+  left: 360px;
+  top: 260px;
+  z-index: 10;               /* เปลี่ยนจาก -1 เป็น 10 */
+}
+
+
+
+
+
+h6{
+  width: 800px;
+  height: 100px;
+  background-image: url("https://media.istockphoto.com/id/1900013732/th/%E0%B8%A3%E0%B8%B9%E0%B8%9B%E0%B8%96%E0%B9%88%E0%B8%B2%E0%B8%A2/%E0%B8%9E%E0%B8%B7%E0%B9%89%E0%B8%99%E0%B8%AB%E0%B8%A5%E0%B8%B1%E0%B8%87%E0%B8%81%E0%B8%A3%E0%B8%B0%E0%B8%94%E0%B8%B2%E0%B8%A9%E0%B8%81%E0%B8%A3%E0%B8%B2%E0%B8%9F%E0%B8%AA%E0%B8%B5%E0%B8%82%E0%B8%B2%E0%B8%A7.jpg?s=612x612&w=0&k=20&c=25186__Kksyjl59SGaCsBFGZSYX_webLrWEnWDBi8GA=");
+  border: 0.5px solid #000000;
+  text-align: 20px;
+  font-size: 60px;
+  padding-top: 40px;
+  color: #2a004688;
+  position: absolute;
+  left: 180px;
+  top: 200px;
+  z-index: 10; 
+}
+
+
+.sidebar-menu {
+  list-style: none;
+  padding: 0;
+  margin: 20px;
+}
+
+
+.category-header {
+  margin-top: 80px;
+  margin-bottom: -300px;
+  cursor: pointer;
+  margin-bottom: 40px;
+}
+
+.subcategory-list {
+  display: none;
+  padding-left: 16px;
+  margin-top:40px;
+  margin-bottom: 0;
+}
+
+.subcategory-list li {
+  margin: 10px 0;
+}
+
+#bodyList p:hover {
+  background-color: #eef;
+  cursor: pointer;
+}
+
+#bodyList, #familyList , #plantsList ,#objectsList ,#clothingList ,#monkItemsList ,#natureList,#buildingsList,#fruitsList,#foodList,#vegetablesList,#fruitsExtraList,#flowersList,#treesList,#fishList,#birdsList,#landAnimalsList,#reptilesList,#illnessList,#vehiclesList,#religionList,#entertainmentList,#professionsList,#classifiersList,#cookingVerbsList,#eatingVerbsList,#dressingVerbsList,#speakingVerbsList,#feelingVerbsList,#healthVerbsList,#cleaningVerbsList,#craftingVerbsList,#fightingVerbsList,#movingVerbsList,#educationVerbsList,#farmingVerbsList,#eyeVerbsList,#pronounsList,#nounsList,#demonstrativesList,#daytimeList,#durationList,#quantitiesList,#flavorsList,#colorsList,#scentsList,#featuresList,#sizesList,#touchList,#endingsList {
+  width: 1000px;
  
+  background-image: url("https://media.istockphoto.com/id/1900013732/th/%E0%B8%A3%E0%B8%B9%E0%B8%9B%E0%B8%96%E0%B9%88%E0%B8%B2%E0%B8%A2/%E0%B8%9E%E0%B8%B7%E0%B9%89%E0%B8%99%E0%B8%AB%E0%B8%A5%E0%B8%B1%E0%B8%87%E0%B8%81%E0%B8%A3%E0%B8%B0%E0%B8%94%E0%B8%B2%E0%B8%A9%E0%B8%81%E0%B8%A3%E0%B8%B2%E0%B8%9F%E0%B8%AA%E0%B8%B5%E0%B8%82%E0%B8%B2%E0%B8%A7.jpg?s=612x612&w=0&k=20&c=25186__Kksyjl59SGaCsBFGZSYX_webLrWEnWDBi8GA=");
+  border: 0.5px solid #000000;
+  text-align: 20px;
+  font-size:60px;
+  padding-top: 40px;
+  color: #2a004688;
+  position: absolute;
+  left: 80px;
+  top: 500px;
+ 
+}
+
+
+    </style>
+
+
 </head>
-<body background-repeat: no-repeat; background-size: cover; /* ปรับขนาดให้ครอบคลุมเต็มจอ */>
-    
+
+<body background-repeat: no-repeat; background-size: cover;>
+
     <h1 style="position: absolute; top: 30px;">
-
-
-
         <span style="color: red; font-size: 94px;">โปรแกรม</span>
         <span style="color: green; font-size:94px;">แปลภาษา</span>
         <span style="color: blue; font-size: 94px; ">ถิ่นเหนือ</span>
     </h1>
     <div id="animationContainer"></div>
-    
     <div class="crosshair">
         <div class="crosshair-inner">
             <div class="bar horizontal top"></div>
@@ -433,25 +711,19 @@ text-shadow: 0 0 20px rgba(255, 255, 255, 1), 0 0 30px rgba(255, 255, 255, 0.7);
             <div class="bar vertical right"></div>
         </div>
     </div>
-    
     <h3 type="text" id="languageText" onclick="createStars(); changeText()">ภาษาไทย</h3>
-<h2 type="text" id="languageText2" onclick="createStars(); changeText()">กำเมือง</h2>
- 
-  
-</div>
+    <h2 type="text" id="languageText2" onclick="createStars(); changeText()">กำเมือง</h2>
+    </div>
+    <!-- รวมสคริปต์ ResponsiveVoice -->
+    <script src="https://code.responsivevoice.org/responsivevoice.js?key=ryShErb3"></script>
 
-
- <!-- รวมสคริปต์ ResponsiveVoice -->
- <script src="https://code.responsivevoice.org/responsivevoice.js?key=ryShErb3"></script>
-    
- <!-- สคริปต์ของคุณเอง -->
- <script src="app.js" defer></script>
-    <input type="text" id="searchInput" style="position: absolute; left: 140px; top: 600px;" placeholder="พิมพ์ข้อความที่นี่">
+    <!-- สคริปต์ของคุณเอง -->
+    <script src="app.js" defer></script>
+    <input type="text" id="searchInput" style="position: absolute; left: 140px; top: 600px;"
+        placeholder="พิมพ์ข้อความที่นี่" onkeypress="if(event.key === 'Enter') satar();">
     <img " src="
-        https://media.istockphoto.com/id/1075605186/th/%E0%B9%80%E0%B8%A7%E0%B8%84%E0%B9%80%E0%B8%95%E0%B8%AD%E0%B8%A3%E0%B9%8C/%E0%B8%95%E0%B8%B1%E0%B8%A7%E0%B9%81%E0%B8%9B%E0%B8%A5%E0%B9%80%E0%B8%AA%E0%B9%89%E0%B8%99%E0%B8%9A%E0%B8%B2%E0%B8%87%E0%B8%AA%E0%B8%B5%E0%B8%94%E0%B9%8D%E0%B8%B2.jpg?s=612x612&w=0&k=20&c=0SCRuZCM3D23Ezd3B_e76Y7z0OX13iD6dYl69Zfmb58="  alt="Animated Image" 
-        onclick="satar(); addEffects(this);"  
-        class="animated-image" 
-        width="200" height="200" style="border-radius: 50%; 
+        https://media.istockphoto.com/id/1075605186/th/%E0%B9%80%E0%B8%A7%E0%B8%84%E0%B9%80%E0%B8%95%E0%B8%AD%E0%B8%A3%E0%B9%8C/%E0%B8%95%E0%B8%B1%E0%B8%A7%E0%B9%81%E0%B8%9B%E0%B8%A5%E0%B9%80%E0%B8%AA%E0%B9%89%E0%B8%99%E0%B8%9A%E0%B8%B2%E0%B8%87%E0%B8%AA%E0%B8%B5%E0%B8%94%E0%B9%8D%E0%B8%B2.jpg?s=612x612&w=0&k=20&c=0SCRuZCM3D23Ezd3B_e76Y7z0OX13iD6dYl69Zfmb58="  alt="
+        Animated Image" onclick="satar(); addEffects(this);" class="animated-image" width="200" height="200" style="border-radius: 50%; 
             position: absolute; left:300px; top:970px; 
             
             border: 5px solid black; 
@@ -463,33 +735,499 @@ text-shadow: 0 0 20px rgba(255, 255, 255, 1), 0 0 30px rgba(255, 255, 255, 0.7);
     <div id="แปลเเล้ว"></div>
 
     <br><br><br>
-    <output id="result"  style=" position: absolute; left: 150px; top:1400px;"  ></output>
-     <!-- หน้าจอดำ -->
-     <div id="blackScreen"></div>
+    <output id="result" style=" position: absolute; left: 150px; top:1400px;"></output>
+    <!-- หน้าจอดำ -->
+    <div id="blackScreen"></div>
 
-     <!-- ข้อความสุภาษิต -->
-     <div id="quoteText"></div>
+    <!-- ข้อความสุภาษิต -->
+    <div id="quoteText"></div>
 
-<br><br><br>
-<h7 style="position: absolute; left: 370px; top: 1300px;" ></h7>
+    <br><br><br>
+    <h7 style="position: absolute; left: 370px; top: 1300px;"></h7>
 
- <button id="soundButton"  onclick="sdata() ; addEffects(this)"
- style="position: absolute; left:700px; top: 1070px;
+    <button id="soundButton" onclick="sdata() ; addEffects(this)" style="position: absolute; left:700px; top: 1070px;
                transition: box-shadow 0.3s ease;"
         onmouseover="this.style.boxShadow='0px 0px 15px 5px rgba(0, 255, 255, 0.7)';"
         onmouseout="this.style.boxShadow='none';">
-    <span style="font-size: 100px;">🔊</span>
+        <span style="font-size: 100px;">🔊</span>
 
-</button>
-<audio id="ttsAudio" controls style="display: none;"></audio>
-<button onclick="randomWord(); SS()" class="animated-button" style=" font-size: 100px; position:  absolute; left:850px; top:1400px; ">🌟</button>
-<div id="result"></div>
-
-
-
+    </button>
+    <audio id="ttsAudio" controls style="display: none;"></audio>
+    <button onclick="randomWord(); SS()" class="animated-button"
+        style=" font-size: 100px; position:  absolute; left:850px; top:1400px; ">🌟</button>
+    <div id="result"></div>
 
 
+    <audio id="clickSound" preload="auto">
+        <source src="click.mp3" type="audio/mpeg" />
+    </audio>
 
+    <button id="menuButton" class="hex-button" onclick="toggleMenu()">
+
+    </button>
+
+
+
+
+    <!-- แก้จาก h11 เป็น h5 -->
+    <div id="sidebar">
+        <ul class="sidebar-menu">
+            <li>
+                <h5 onclick="showCategory('home')">หน้าแรก</h5>
+            </li>
+
+            <li>
+                <h5 class="category-header" onclick="toggleSubmenu0()">หมวดหมู่</h5>
+                <ul id="vocabSubmenu0" class="subcategory-list">
+
+                    <li>
+                        <h5 onclick="showCategory('family')">หมวดครอบครัว</h5>
+                    </li>
+                    <li>
+                        <h5 onclick="showCategory('body')">หมวดร่างกาย</h5>
+                    </li>
+                    <li>
+                        <h5 onclick="showCategory('nature')">หมวดธรรมชาติ</h5>
+                    </li>
+                    <li>
+                        <h5 onclick="showCategory('objects')">หมวดสิ่งของ/เครื่องใช้</h5>
+                    </li>
+                    <li>
+                        <h5 onclick="showCategory('clothing')">หมวดเครื่องนุ่งห่ม/เครื่องประดับ</h5>
+                    </li>
+                    <li>
+                        <h5 onclick="showCategory('monkItems')">หมวดเครื่องนุ่งห่ม/ของใช้พระสงฆ์</h5>
+                    </li>
+
+                    <li>
+                        <h5 onclick="showCategory('buildings')">หมวดสิ่งปลูกสร้าง/ก่อสร้าง</h5>
+                    </li>
+
+                    <li>
+                        <h5 onclick="showCategory('food')">หมวดอาหาร/เครื่องปรุง</h5>
+                    </li>
+                    <li>
+                        <h5 class="category-header" onclick="toggleSubmenu1()">หมวดหมู่คำศัพท์กลุ่มพืช ▼</h5>
+                        <ul id="vocabSubmenu1" class="subcategory-list">
+                            <li>
+                                <h5 onclick="showCategory('plants')">หมวดพืช</h5>
+                            </li>
+
+                            <li>
+
+                                <h5 onclick="showCategory('vegetables')">หมวดชื่อผัก</h5>
+                            </li>
+                            <li>
+                                <h5 onclick="showCategory('fruits')">หมวดผลไม้</h5>
+                            </li>
+                            <li>
+                                <h5 onclick="showCategory('flowers')">หมวดดอกไม้</h5>
+                            </li>
+                            <li>
+                                <h5 onclick="showCategory('trees')">หมวดไม้ยืนต้นและพืชล้มลุก</h5>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <h5 class="category-header" onclick="toggleSubmenu2()">หมวดหมู่คำศัพท์กลุ่มสัตว์ ▼</h5>
+                        <ul id="vocabSubmenu2" class="subcategory-list">
+                            <li>
+                                <h5 onclick="showCategory('fish')">หมวดปลาและสัตว์น้ำ</h5>
+                            </li>
+                            <li>
+                                <h5 onclick="showCategory('birds')">หมวดนกและสัตว์ปีก</h5>
+                            </li>
+                            <li>
+                                <h5 onclick="showCategory('mammals')">หมวดสัตว์บก</h5>
+                            </li>
+                            <li>
+                                <h5 onclick="showCategory('reptiles')">หมวดสัตว์เลื้อยคลานและสัตว์ครึ่งบกครึ่งน้ำ</h5>
+                            </li>
+
+                        </ul>
+                    </li>
+
+                    <li>
+                        <h5 onclick="showCategory('illness')">หมวดโรคภัยไข้เจ็บและอาการเจ็บป่วย</h5>
+                    </li>
+
+                    <!-- ยานพาหนะ -->
+                    <li>
+                        <h5 onclick="showCategory('vehicles')">หมวดยานพาหนะและส่วนประกอบของพาหนะ</h5>
+                    </li>
+
+                    <!-- ศาสนาและวัฒนธรรม -->
+                    <li>
+                        <h5 onclick="showCategory('religion')">หมวดศาสนา วัฒนธรรม และประเพณี</h5>
+                    </li>
+
+                    <!-- ดนตรีและการแสดง -->
+                    <li>
+                        <h5 onclick="showCategory('entertainment')">หมวดเครื่องดนตรี การแสดง การละเล่น และของเล่น</h5>
+                    </li>
+
+                    <!-- อาชีพ -->
+                    <li>
+                        <h5 onclick="showCategory('professions')">หมวดอาชีพและสถานภาพของบุคคล</h5>
+                    </li>
+
+                    <!-- คำลักษณนาม -->
+                    <li>
+                        <h5 onclick="showCategory('classifiers')">หมวดคำลักษณนาม</h5>
+                    </li>
+
+                    <li>
+                        <h5 class="category-header" onclick="toggleSubmenu3()">หมวดหมู่คำศัพท์กริยา ▼</h5>
+                        <ul id="vocabSubmenu3" class="subcategory-list">
+                            <li>
+                                <h5 onclick="showCategory('cookingVerbs')">หมวดกริยาเกี่ยวกับการปรุงอาหาร</h5>
+                            </li>
+                            <li>
+                                <h5 onclick="showCategory('eatingVerbs')">หมวดกริยาเกี่ยวกับการกินและการดื่ม</h5>
+                            </li>
+                            <li>
+                                <h5 onclick="showCategory('dressingVerbs')">หมวดกริยาเกี่ยวกับการแต่งตัว</h5>
+                            </li>
+                            <li>
+                                <h5 onclick="showCategory('speakingVerbs')">หมวดกริยาเกี่ยวกับการพูดและการเปล่งเสียง
+                                </h5>
+                            </li>
+                            <li>
+                                <h5 onclick="showCategory('feelingVerbs')">หมวดกริยาเกี่ยวกับความรู้สึก</h5>
+                            </li>
+                            <li>
+                                <h5 onclick="showCategory('healthVerbs')">
+                                    หมวดกริยาเกี่ยวกับอาหารของร่างกายและการเจ็บป่วย</h5>
+                            </li>
+                            <li>
+                                <h5 onclick="showCategory('cleaningVerbs')">หมวดกริยาเกี่ยวกับการทำความสะอาด</h5>
+                            </li>
+                            <li>
+                                <h5 onclick="showCategory('craftingVerbs')">
+                                    หมวดกริยาเกี่ยวกับการเย็บปักถักร้อยและการผลิตสิ่งของ</h5>
+                            </li>
+                            <li>
+                                <h5 onclick="showCategory('fightingVerbs')">หมวดกริยาเกี่ยวกับการทำร้ายและการต่อสู้</h5>
+                            </li>
+                            <li>
+                                <h5 onclick="showCategory('movingVerbs')">หมวดกริยาเกี่ยวกับการเคลื่อนไหวและเคลื่อนที่
+                                </h5>
+                            </li>
+                            <li>
+                                <h5 onclick="showCategory('educationVerbs')">หมวดกริยาเกี่ยวกับการศึกษาเล่าเรียน</h5>
+                            </li>
+                            <li>
+                                <h5 onclick="showCategory('farmingVerbs')">หมวดกริยาเกี่ยวกับการเกษตร</h5>
+                            </li>
+                            <li>
+                                <h5 onclick="showCategory('eyeVerbs')">หมวดกริยาเกี่ยวกับตา</h5>
+                            </li>
+
+                        </ul>
+
+
+                    </li>
+
+                    <li>
+                        <h5 class="category-header" onclick="toggleSubmenu4()">หมวดหมู่คำอื่นๆ ▼</h5>
+                        <ul id="vocabSubmenu4" class="subcategory-list">
+                            <li>
+                                <h5 onclick="showCategory('pronouns')">หมวดคำบุรุษสรรพนาม</h5>
+                            </li>
+                            <li>
+                                <h5 onclick="showCategory('nouns')">หมวดคำแสดงคำนาม</h5>
+                            </li>
+                            <li>
+                                <h5 onclick="showCategory('demonstratives')">หมวดคำชี้เฉพาะ</h5>
+                            </li>
+                            <li>
+                                <h5 onclick="showCategory('daytime')">หมวดคำบอกช่วงเวลาใน 1 วัน</h5>
+                            </li>
+                            <li>
+                                <h5 onclick="showCategory('duration')">หมวดคำบอกระยะเวลา</h5>
+                            </li>
+                            <li>
+                                <h5 onclick="showCategory('quantities')">หมวดคำบอกจำนวนและปริมาณ</h5>
+                            </li>
+                            <li>
+                                <h5 onclick="showCategory('flavors')">หมวดคำบอกรสและรสชาติ</h5>
+                            </li>
+                            <li>
+                                <h5 onclick="showCategory('colors')">หมวดคำบอกสี</h5>
+                            </li>
+                            <li>
+                                <h5 onclick="showCategory('scents')">หมวดคำบอกกลิ่น</h5>
+                            </li>
+                            <li>
+                                <h5 onclick="showCategory('features')">หมวดคำบอกลักษณะ</h5>
+                            </li>
+                            <li>
+                                <h5 onclick="showCategory('sizes')">หมวดคำบอกขนาด</h5>
+                            </li>
+                            <li>
+                                <h5 onclick="showCategory('touch')">หมวดคำบอกสัมผัส</h5>
+                            </li>
+                            <li>
+                                <h5 onclick="showCategory('endings')">หมวดคำลงท้าย</h5>
+                            </li>
+
+                        </ul>
+
+
+                    </li>
+
+
+                </ul>
+            </li>
+        </ul>
+    </div>
+        <div id="family" style="display:none;">
+        <h6>หมวดครอบครัว</h6>
+        <div id="familyList" "></div>
+        </div>
+        <div id="body" class="category" style="display: none;">
+            <h6>หมวดร่างกาย</h6>
+            <div id="bodyList"></div>
+        </div>
+
+        <div id="plants" class="category" style="display: none;">
+            <h6>หมวดเกี่ยวกับส่วนต่างๆของพืช</h6>
+            <div id="plantsList"></div>
+        </div>
+
+        <div id="objects" class="category" style="display: none;">
+            <h6>หมวดคำศัพท์สิ่งของ/เครื่องใช้</h6>
+            <div id="objectsList"></div>
+        </div>
+
+        <div id="clothing" class="category" style="display: none;">
+            <h6>หมวดคำศัพท์เครื่องนุ่งห่ม/เครื่องประดับ</h6>
+            <div id="clothingList"></div>
+        </div>
+
+        <div id="monkItems" class="category" style="display: none;">
+            <h6>หมวดคำศัพท์เครื่องนุ่งห่ม/ของใช้พระสงฆ์</h6>
+            <div id="monkItemsList"></div>
+        </div>
+
+        <div id="nature" class="category" style="display: none;">
+            <h6>หมวดคำศัพท์ธรรมชาติ</h6>
+            <div id="natureList"></div>
+        </div>
+
+        <div id="buildings" class="category" style="display: none;">
+            <h6>หมวดคำศัพท์สิ่งปลูกสร้าง/อุปกรณ์ก่อสร้าง</h6>
+            <div id="buildingsList"></div>
+        </div>
+
+        <div id="fruits" class="category" style="display: none;">
+            <h6>หมวดคำศัพท์ผลไม้</h6>
+            <div id="fruitsList"></div>
+        </div>
+
+        <div id="food" class="category" style="display: none;">
+            <h6>หมวดคำศัพท์อาหาร/เครื่องปรุง</h6>
+            <div id="foodList"></div>
+        </div>
+        <div id="vegetables" class="category" style="display: none;">
+            <h6>หมวดคำศัพท์เกี่ยวกับชื่อผัก</h6>
+            <div id="vegetablesList"></div>
+        </div>
+
+        
+
+        <div id="flowers" class="category" style="display: none;">
+            <h6>หมวดคำศัพท์ที่เกี่ยวกับดอกไม้</h6>
+            <div id="flowersList"></div>
+        </div>
+
+        <div id="trees" class="category" style="display: none;">
+            <h6>หมวดคำศัพท์ที่เกี่ยวกับชื่อไม้ยืนต้นและพืชล้มลุก</h6>
+            <div id="treesList"></div>
+        </div>
+
+        <div id="fish" class="category" style="display: none;">
+            <h6>หมวดคำศัพท์ที่เกี่ยวกับชื่อปลาและสัตว์น้ำ</h6>
+            <div id="fishList"></div>
+        </div>
+
+        <div id="birds" class="category" style="display: none;">
+            <h6>หมวดคำศัพท์ที่เกี่ยวกับนกและสัตว์ปีก</h6>
+            <div id="birdsList"></div>
+        </div>
+
+        <div id="landAnimals" class="category" style="display: none;">
+            <h6>หมวดคำศัพท์เกี่ยวกับสัตว์บก</h6>
+            <div id="landAnimalsList"></div>
+        </div>
+
+        <div id="reptiles" class="category" style="display: none;">
+            <h6>หมวดคำศัพท์เกี่ยวกับสัตว์เลื้อยคลานและสัตว์ครึ่งบกครึ่งน้ำ</h6>
+            <div id="reptilesList"></div>
+        </div>
+
+        <div id="illness" class="category" style="display: none;">
+            <h6>หมวดคำศัพท์เกี่ยวกับโรคภัยไข้เจ็บและอาการเจ็บป่วย</h6>
+            <div id="illnessList"></div>
+        </div>
+
+        <div id="vehicles" class="category" style="display: none;">
+            <h6>หมวดคำศัพท์เกี่ยวกับยานพาหนะและส่วนประกอบของพาหนะ</h6>
+            <div id="vehiclesList"></div>
+        </div>
+
+        <div id="religion" class="category" style="display: none;">
+            <h6>หมวดคำศัพท์เกี่ยวกับศาสนา วัฒนธรรม และประเพณี</h6>
+            <div id="religionList"></div>
+        </div>
+
+        <div id="entertainment" class="category" style="display: none;">
+            <h6>หมวดคำศัพท์เกี่ยวกับเครื่องดนตรี การแสดง การละเล่น และของเล่น</h6>
+            <div id="entertainmentList"></div>
+        </div>
+
+        <div id="professions" class="category" style="display: none;">
+            <h6>หมวดคำศัพท์เกี่ยวกับอาชีพและสถานภาพของบุคคล</h6>
+            <div id="professionsList"></div>
+        </div>
+
+        <div id="classifiers" class="category" style="display: none;">
+            <h6>หมวดคำลักษณนาม</h6>
+            <div id="classifiersList"></div>
+        </div>
+
+        <div id="cookingVerbs" class="category" style="display: none;">
+            <h6>หมวดกริยาเกี่ยวกับการปรุงอาหาร</h6>
+            <div id="cookingVerbsList"></div>
+        </div>
+
+        <div id="eatingVerbs" class="category" style="display: none;">
+            <h6>หมวดกริยาเกี่ยวกับการกินและการดื่ม</h6>
+            <div id="eatingVerbsList"></div>
+        </div>
+
+        <div id="dressingVerbs" class="category" style="display: none;">
+            <h6>หมวดกริยาเกี่ยวกับการแต่งตัว</h6>
+            <div id="dressingVerbsList"></div>
+        </div>
+
+        <div id="speakingVerbs" class="category" style="display: none;">
+            <h6>หมวดกริยาเกี่ยวกับการพูดและการเปล่งเสียง</h6>
+            <div id="speakingVerbsList"></div>
+        </div>
+
+        <div id="feelingVerbs" class="category" style="display: none;">
+            <h6>หมวดกริยาเกี่ยวกับความรู้สึก</h6>
+            <div id="feelingVerbsList"></div>
+        </div>
+
+        <div id="healthVerbs" class="category" style="display: none;">
+            <h6>หมวดกริยาเกี่ยวกับอาหารของร่างกายและการเจ็บป่วย</h6>
+            <div id="healthVerbsList"></div>
+        </div>
+
+        <div id="cleaningVerbs" class="category" style="display: none;">
+            <h6>หมวดกริยาเกี่ยวกับการทำความสะอาด</h6>
+            <div id="cleaningVerbsList"></div>
+        </div>
+
+        <div id="craftingVerbs" class="category" style="display: none;">
+            <h6>หมวดกริยาเกี่ยวกับการเย็บปักถักร้อยและการผลิตสิ่งของ</h6>
+            <div id="craftingVerbsList"></div>
+        </div>
+
+        <div id="fightingVerbs" class="category" style="display: none;">
+            <h6>หมวดกริยาเกี่ยวกับการทำร้ายและการต่อสู้</h6>
+            <div id="fightingVerbsList"></div>
+        </div>
+
+        <div id="movingVerbs" class="category" style="display: none;">
+            <h6>หมวดกริยาเกี่ยวกับการเคลื่อนไหวและเคลื่อนที่</h6>
+            <div id="movingVerbsList"></div>
+        </div>
+
+        <div id="educationVerbs" class="category" style="display: none;">
+            <h6>หมวดกริยาเกี่ยวกับการศึกษาเล่าเรียน</h6>
+            <div id="educationVerbsList"></div>
+        </div>
+
+        <div id="farmingVerbs" class="category" style="display: none;">
+            <h6>หมวดกริยาเกี่ยวกับการเกษตร</h6>
+            <div id="farmingVerbsList"></div>
+        </div>
+
+        <div id="eyeVerbs" class="category" style="display: none;">
+            <h6>หมวดกริยาเกี่ยวกับตา</h6>
+            <div id="eyeVerbsList"></div>
+        </div>
+
+        <div id="pronouns" class="category" style="display: none;">
+            <h6>หมวดคำบุรุษสรรพนาม</h6>
+            <div id="pronounsList"></div>
+        </div>
+
+        <div id="nouns" class="category" style="display: none;">
+            <h6>หมวดคำแสดงคำนาม</h6>
+            <div id="nounsList"></div>
+        </div>
+
+        <div id="demonstratives" class="category" style="display: none;">
+            <h6>หมวดคำชี้เฉพาะ</h6>
+            <div id="demonstrativesList"></div>
+        </div>
+
+        <div id="daytime" class="category" style="display: none;">
+            <h6>หมวดคำบอกช่วงเวลาใน 1 วัน</h6>
+            <div id="daytimeList"></div>
+        </div>
+
+        <div id="duration" class="category" style="display: none;">
+            <h6>หมวดคำบอกระยะเวลา</h6>
+            <div id="durationList"></div>
+        </div>
+
+        <div id="quantities" class="category" style="display: none;">
+            <h6>หมวดคำบอกจำนวนและปริมาณ</h6>
+            <div id="quantitiesList"></div>
+        </div>
+
+        <div id="flavors" class="category" style="display: none;">
+            <h6>หมวดคำบอกรสและรสชาติ</h6>
+            <div id="flavorsList"></div>
+        </div>
+
+        <div id="colors" class="category" style="display: none;">
+            <h6>หมวดคำบอกสี</h6>
+            <div id="colorsList"></div>
+        </div>
+
+        <div id="scents" class="category" style="display: none;">
+            <h6>หมวดคำบอกกลิ่น</h6>
+            <div id="scentsList"></div>
+        </div>
+
+        <div id="features" class="category" style="display: none;">
+            <h6>หมวดคำบอกลักษณะ</h6>
+            <div id="featuresList"></div>
+        </div>
+
+        <div id="sizes" class="category" style="display: none;">
+            <h6>หมวดคำบอกขนาด</h6>
+            <div id="sizesList"></div>
+        </div>
+
+        <div id="touch" class="category" style="display: none;">
+            <h6>หมวดคำบอกสัมผัส</h6>
+            <div id="touchList"></div>
+        </div>
+
+        <div id="endings" class="category" style="display: none;">
+            <h6>หมวดคำลงท้าย</h6>
+            <div id="endingsList"></div>
+        </div>
+
+        <div id="quoteText" style="white-space: pre-line; padding: 1em;"></div>
 
 
 
@@ -513,10 +1251,3 @@ text-shadow: 0 0 20px rgba(255, 255, 255, 1), 0 0 30px rgba(255, 255, 255, 0.7);
 </div>
 </body>
 </div>
-<!-- มินิเกม -->
-<div id="gameContainer" style="display: none; text-align: center; position: absolute; top: 200px; left: 50%; transform: translateX(-50%);">
-    <h1>เกมทายกำเมือง!!!</h1>
-    <p>Here’s where the game starts!</p>
-    <!-- ปุ่มจบเกม -->
-    <button onclick="endGame()">End Game</button>
-  </div>
