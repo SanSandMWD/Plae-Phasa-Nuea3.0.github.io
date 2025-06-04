@@ -3087,7 +3087,7 @@ function showCategory(category) {
   fruits: fruitsList,
   food: foodList,
   vegetables: vegetablesList,
-  fruitsExtra: fruitsExtraList,
+
   flowers: flowersList,
   trees: treesList,
   fish: fishList,
