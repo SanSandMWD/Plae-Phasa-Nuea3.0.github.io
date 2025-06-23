@@ -10,7 +10,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="CSS/style.css">
     <style>
-        
         body {
   font-family: "Itim", cursive;
   font-weight: 400;
@@ -194,49 +193,6 @@ output {
 
 
 }
-
-.crosshair {
-  position: fixed;
-  width: 50px;
-  height: 50px;
-  pointer-events: none;
-  transform: translate(-50%, -50%);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 100;
-  animation: pulse 1.5s ease-in-out infinite alternate;
-}
-
-.crosshair-inner {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  animation: rotate 2s linear infinite; /* หมุนรอบตัวเอง */
-}
-
-.bar {
-  position: absolute;
-  background: rgba(0, 162, 255, 0.8);
-  box-shadow: 0 0 10px rgba(0, 162, 255, 0.8);
-  transition: transform 0.2s ease-in-out;
-}
-
-.bar.horizontal {
-  width: 20px;
-  height: 3px;
-}
-
-.bar.vertical {
-  width: 3px;
-  height: 20px;
-}
-
-/* ตำแหน่งของแท่ง (อยู่รอบจุดศูนย์กลาง) */
-.bar.top { top: 0; left: 50%; transform: translateX(-50%) translateY(-15px); }
-.bar.bottom { bottom: 0; left: 50%; transform: translateX(-50%) translateY(15px); }
-.bar.left { left: 0; top: 50%; transform: translateX(-15px) translateY(-50%); }
-.bar.right { right: 0; top: 50%; transform: translateX(15px) translateY(-50%); }
 
 /* เอฟเฟกต์เรืองแสง */
 @keyframes glow {
@@ -689,8 +645,20 @@ h6{
  
 }
 
+@media (min-width: 1024px) {
+  body {
+    zoom: 80%;           /* ซูม 150% */
+    overflow-x: hidden;   /* ล็อคเลื่อนซ้าย-ขวา */
+  }
+}
 
-    </style>
+/* สำหรับมือถือ (หน้าจอแคบกว่า 1024px) */
+@media (max-width: 1023px) {
+  body {
+    zoom: 33%;           /* ปรับเป็นซูมปกติ */
+    overflow-x: auto;     /* อนุญาต scroll ได้ตามปกติ */
+  }
+}</style>
 
 
 </head>
