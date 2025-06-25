@@ -9,12 +9,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="CSS/style.css">
-    <style>
-        body {
+    <style>body {
   font-family: "Itim", cursive;
   font-weight: 400;
   font-style: normal;
-  color: rgb(150, 209, 212);  
+  color: rgb(150, 209, 212);
   background-color: rgb(255, 200, 200);
   text-align: center;
   display: flex;
@@ -23,199 +22,47 @@
   width: 480px;
   height: 320px;
   position: absolute;
-  
-}
-
-
-
-
-@keyframes changeBg {
-  0% { background-color: rgb(255, 200, 200); }
-  25% { background-color: rgb(200, 255, 200); }
-  50% { background-color: rgb(200, 200, 255); }
-  75% { background-color: rgb(255, 255, 200); }
-  100% { background-color: rgb(255, 200, 200); }
-}
-h1{
-  width: 1220px;
-  height:160px;
-  background-image: url("https://media.istockphoto.com/id/1900013732/th/%E0%B8%A3%E0%B8%B9%E0%B8%9B%E0%B8%96%E0%B9%88%E0%B8%B2%E0%B8%A2/%E0%B8%9E%E0%B8%B7%E0%B9%89%E0%B8%99%E0%B8%AB%E0%B8%A5%E0%B8%B1%E0%B8%87%E0%B8%81%E0%B8%A3%E0%B8%B0%E0%B8%94%E0%B8%B2%E0%B8%A9%E0%B8%81%E0%B8%A3%E0%B8%B2%E0%B8%9F%E0%B8%AA%E0%B8%B5%E0%B8%82%E0%B8%B2%E0%B8%A7.jpg?s=612x612&w=0&k=20&c=25186__Kksyjl59SGaCsBFGZSYX_webLrWEnWDBi8GA=");
-  border: 0.5px solid #000000;
-  text-align: 20px;
-  font-size: 5px;
-  padding-top: 40px;
-  
-  
-}
-
-h4{
-  width: 600px;
-  height:80px;
-  background-image: url("https://media.istockphoto.com/id/1900013732/th/%E0%B8%A3%E0%B8%B9%E0%B8%9B%E0%B8%96%E0%B9%88%E0%B8%B2%E0%B8%A2/%E0%B8%9E%E0%B8%B7%E0%B9%89%E0%B8%99%E0%B8%AB%E0%B8%A5%E0%B8%B1%E0%B8%87%E0%B8%81%E0%B8%A3%E0%B8%B0%E0%B8%94%E0%B8%B2%E0%B8%A9%E0%B8%81%E0%B8%A3%E0%B8%B2%E0%B8%9F%E0%B8%AA%E0%B8%B5%E0%B8%82%E0%B8%B2%E0%B8%A7.jpg?s=612x612&w=0&k=20&c=25186__Kksyjl59SGaCsBFGZSYX_webLrWEnWDBi8GA=");
-  border: 0.5px solid #000000;
-  text-align: 20px;
-  font-size: 5px;
-  padding-top: 40px;
-  border-radius: 20px; /* ทำให้ขอบมน */
-
-  
-  
-}
-h3 {
-  font-size: 72px;
-  width: 500px;
-  height: 100px;
-  color: rgb(0, 0, 0);
-  background-color: aliceblue;
-  
-  padding-top: 30px;
-  justify-content: center;
-
-  /* ใช้ clip-path เพื่อทำให้กล่องเป็นสี่เหลี่ยมคางหมูที่ด้านซ้ายเป็นมุมฉาก */
-  clip-path: polygon(0% 0%, 90% 0%, 100% 100%, 0% 100%);
-  position: absolute; left: 150px; top:200px;
-}
-h2 {
-  font-size: 48px;
-  width: 700px;
-  height: 70px;
-  color: rgb(186, 186, 186);
-  background-color: rgb(117, 117, 117);
-  text-align: right; /* ข้อความชิดขวา */
-  padding-right: 20px; /* ขยับข้อความไปทางขวา 50px */
-  
-
-  /* เพิ่ม Flexbox เพื่อจัดตำแหน่งข้อความให้อยู่กลาง */
- 
-  justify-content: center;  /* จัดแนวนอนให้อยู่ตรงกลาง */
-  align-items: center; /* จัดแนวตั้งให้อยู่ตรงกลาง */
-  
-  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 20% 100%);
-  position: absolute; left: 360px; top:260px;
-  z-index: -1;
-  
-}
-
-h3, h2 {
- 
-  transition: background-color 0.3s, color 0.3s; /* ทำให้เปลี่ยนสีแบบนุ่มนวล */
-
-}
-.swapped-h3 {
-  color: rgb(255, 255, 255);
-  background-color: rgb(100, 100, 100);
-  position: absolute; right: 150px; top: 250px;
-  width: 700px;
-  height: 50px;
-  font-size: 36px;
-  z-index: -1;
-}
-
-.swapped-h2 {
-  color: rgb(0, 0, 0);
-  background-color: aliceblue;
-  width:500px;
-  height: 120px;
-  position: absolute; left: 560px; top:200px;
-  font-size: 82px;
-  z-index: 1;
-}
-
-
-
-button {
-    padding: 100px 100px;
-    /* ปรับขนาดตามต้องการ */
-    font-size: 16px;
-    /* ปรับขนาดตัวอักษรตามต้องการ */
-    border-radius: 90%;
-    width: 200px;
-    /* กำหนดขนาดของปุ่ม */
-    position: absolute;
-    /* กำหนดให้เป็นตำแหน่งเอนเจิ้ล */
-    border: 5px solid #000000;
-    height: 200px;
-    background-color: aliceblue;
-    
-    vertical-align: top;
-    cursor: pointer;
-    padding-left:30px;
-    padding-top: 30px;
-}
-
-
-input {
-    padding: 200px 300px;
-    /* ปรับขนาดตามต้องการ */
-    font-size: 32px;
-    
-    /* ปรับขนาดตัวอักษรตามต้องการ */
-    
-    /* ปรับความกว้างของ input field */
-    color: rgb(0, 0, 0);
-    
-    background-color: aqua;
-    background-image: url("https://media.istockphoto.com/id/1900013732/th/%E0%B8%A3%E0%B8%B9%E0%B8%9B%E0%B8%96%E0%B9%88%E0%B8%B2%E0%B8%A2/%E0%B8%9E%E0%B8%B7%E0%B9%89%E0%B8%99%E0%B8%AB%E0%B8%A5%E0%B8%B1%E0%B8%87%E0%B8%81%E0%B8%A3%E0%B8%B0%E0%B8%94%E0%B8%B2%E0%B8%A9%E0%B8%81%E0%B8%A3%E0%B8%B2%E0%B8%9F%E0%B8%AA%E0%B8%B5%E0%B8%82%E0%B8%B2%E0%B8%A7.jpg?s=612x612&w=0&k=20&c=25186__Kksyjl59SGaCsBFGZSYX_webLrWEnWDBi8GA=");
-    font-family: "Itim", cursive;
-    border-radius: 10%;
-    /* กำหนดขอบมน */
-    border:5px solid #000000;
-    /* เพิ่มเส้นขอบ */
-    text-align: left;
-    padding-top: 200px;
-    
-    
 
 }
 
-output {
-  height: 400px;
-  width: 600px;
-  /* ปรับขนาดตามต้องการ */
-  font-size: 30px;
-  /* ปรับขนาดตัวอักษรตามต้องการ */
-  
-  /* ปรับความกว้างของ input field */
-  color: rgb(0, 0, 0);
-
-  background-color: aqua;
-  background-image: url("https://media.istockphoto.com/id/1900013732/th/%E0%B8%A3%E0%B8%B9%E0%B8%9B%E0%B8%96%E0%B9%88%E0%B8%B2%E0%B8%A2/%E0%B8%9E%E0%B8%B7%E0%B9%89%E0%B8%99%E0%B8%AB%E0%B8%A5%E0%B8%B1%E0%B8%87%E0%B8%81%E0%B8%A3%E0%B8%B0%E0%B8%94%E0%B8%B2%E0%B8%A9%E0%B8%81%E0%B8%A3%E0%B8%B2%E0%B8%9F%E0%B8%AA%E0%B8%B5%E0%B8%82%E0%B8%B2%E0%B8%A7.jpg?s=612x612&w=0&k=20&c=25186__Kksyjl59SGaCsBFGZSYX_webLrWEnWDBi8GA=");
-  font-family: "Itim", cursive;
-  border-radius: 10%;
-  /* กำหนดขอบมน */
-  border: 3px solid #000000;
-  /* เพิ่มเส้นขอบ */
-  text-align: center;
-  padding-top: 200px;
-  
 
 
 
 
-}
 
 /* เอฟเฟกต์เรืองแสง */
 @keyframes glow {
   0% {
-      box-shadow: 0 0 5px rgba(0, 162, 255, 0.5);
-      background: rgba(0, 162, 255, 0.5);
+    box-shadow: 0 0 5px rgba(0, 162, 255, 0.5);
+    background: rgba(0, 162, 255, 0.5);
   }
+
   100% {
-      box-shadow: 0 0 15px rgba(0, 162, 255, 1);
-      background: rgba(0, 162, 255, 1);
+    box-shadow: 0 0 15px rgba(0, 162, 255, 1);
+    background: rgba(0, 162, 255, 1);
   }
 }
 
 /* หมุนรอบตัวเอง */
 @keyframes rotate {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 /* ขยาย-หด (Pulse Effect) */
 @keyframes pulse {
-  0% { transform: translate(-50%, -50%) scale(1); }
-  100% { transform: translate(-50%, -50%) scale(1.7); }
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  100% {
+    transform: translate(-50%, -50%) scale(1.7);
+  }
 }
 
 .bar {
@@ -232,21 +79,23 @@ button img {
   height: 64px;
   /* ขนาดของรูปภาพ */
   padding-left: -100px;
-  transition: transform 0.3s ease, border-color 3s ease; 
+  transition: transform 0.3s ease, border-color 3s ease;
 }
 
 
-h7{
+h7 {
   font-size: 24px;
   color: rgb(0, 0, 0);
 
-  
-  justify-content: center;  /* จัดแนวนอนให้อยู่ตรงกลาง */
-  align-items: center; /* จัดแนวตั้งให้อยู่ตรงกลาง */
-  
 
- 
-  
+  justify-content: center;
+  /* จัดแนวนอนให้อยู่ตรงกลาง */
+  align-items: center;
+  /* จัดแนวตั้งให้อยู่ตรงกลาง */
+
+
+
+
 }
 
 #blackScreen {
@@ -261,22 +110,27 @@ h7{
 }
 
 #quoteText {
-position: absolute;
-left: 250px;
-top:60%;
-transform: translate(0%, -50%) scale(0.8); /* ขยายข้อความเล็กน้อย */
-font-size: 42px;
-color: white;
-opacity: 0;
-text-shadow: 0 0 5px rgba(255, 255, 255, 0.8), 0 0 10px rgba(255, 255, 255, 0.6); /* แสงสีขาวเรือง */
-transition: opacity 1.5s ease-in-out, transform 1.5s ease-in-out, text-shadow 1.5s ease-in-out; /* เพิ่ม transition สำหรับ text-shadow */
-z-index: 100;
+  position: absolute;
+  left: 250px;
+  top: 60%;
+  transform: translate(0%, -50%) scale(0.8);
+  /* ขยายข้อความเล็กน้อย */
+  font-size: 42px;
+  color: white;
+  opacity: 0;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.8), 0 0 10px rgba(255, 255, 255, 0.6);
+  /* แสงสีขาวเรือง */
+  transition: opacity 1.5s ease-in-out, transform 1.5s ease-in-out, text-shadow 1.5s ease-in-out;
+  /* เพิ่ม transition สำหรับ text-shadow */
+  z-index: 100;
 }
 
 #quoteText.show {
-opacity: 1;
-transform: translate(0%, -50%) scale(1); /* ขยายข้อความเต็มที่ */
-text-shadow: 0 0 20px rgba(255, 255, 255, 1), 0 0 30px rgba(255, 255, 255, 0.7); /* แสงที่แรงขึ้น */
+  opacity: 1;
+  transform: translate(0%, -50%) scale(1);
+  /* ขยายข้อความเต็มที่ */
+  text-shadow: 0 0 20px rgba(255, 255, 255, 1), 0 0 30px rgba(255, 255, 255, 0.7);
+  /* แสงที่แรงขึ้น */
 }
 
 
@@ -303,13 +157,33 @@ text-shadow: 0 0 20px rgba(255, 255, 255, 1), 0 0 30px rgba(255, 255, 255, 0.7);
 }
 
 @keyframes rainbow {
-  0% { border-color: red; }
-  16% { border-color: orange; }
-  33% { border-color: yellow; }
-  50% { border-color: green; }
-  66% { border-color: blue; }
-  83% { border-color: indigo; }
-  100% { border-color: violet; }
+  0% {
+    border-color: red;
+  }
+
+  16% {
+    border-color: orange;
+  }
+
+  33% {
+    border-color: yellow;
+  }
+
+  50% {
+    border-color: green;
+  }
+
+  66% {
+    border-color: blue;
+  }
+
+  83% {
+    border-color: indigo;
+  }
+
+  100% {
+    border-color: violet;
+  }
 }
 
 .circle {
@@ -322,8 +196,15 @@ text-shadow: 0 0 20px rgba(255, 255, 255, 1), 0 0 30px rgba(255, 255, 255, 0.7);
 }
 
 @keyframes expand {
-  0% { transform: scale(0); opacity: 0; }
-  100% { transform: scale(1); opacity: 1; }
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
 #animationContainer {
@@ -351,54 +232,31 @@ text-shadow: 0 0 20px rgba(255, 255, 255, 1), 0 0 30px rgba(255, 255, 255, 0.7);
 }
 
 @keyframes fade-in {
-  0% { opacity: 0; transform: scale(0.5); }
-  100% { opacity: 1; transform: scale(1); }
-}
-
-.star {
-  position: absolute;
-  width: 50px;
-  height: 50px;
-  background-color: yellow;
-  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
-  animation: moveStar 5s infinite ease-in-out, twinkleStar 1.5s infinite alternate;
-  opacity: 0; /* เริ่มต้นให้ดาวโปร่งใส */
-  transition: opacity 1s ease-in-out; /* ใช้ transition สำหรับการเปลี่ยนแปลง opacity */
-}
-
-/* การเคลื่อนที่ของดาว */
-@keyframes moveStar {
   0% {
-      transform: translate(0, 0);
+    opacity: 0;
+    transform: scale(0.5);
   }
-  100% {
-      transform: translate(var(--x), var(--y));
-  }
-}
 
-/* การระยิบระยับของดาว */
-@keyframes twinkleStar {
-  0% {
-      opacity: 1;
-  }
-  50% {
-      opacity: 0.3;
-  }
   100% {
-      opacity: 1;
+    opacity: 1;
+    transform: scale(1);
   }
 }
 
 
 
-    /* แถบเมนู */
-   #sidebar {
+
+
+/* แถบเมนู */
+#sidebar {
   position: fixed;
   left: -350px;
   top: 0;
   width: 350px;
-  height: 100vh;         /* เต็มความสูงหน้าจอ */
-  overflow-y: auto;      /* เปิดให้เลื่อนขึ้น–ลงได้ */
+  height: 100vh;
+  /* เต็มความสูงหน้าจอ */
+  overflow-y: auto;
+  /* เปิดให้เลื่อนขึ้น–ลงได้ */
   background-color: #222;
   color: white;
   transition: left 0.3s ease;
@@ -411,69 +269,74 @@ text-shadow: 0 0 20px rgba(255, 255, 255, 1), 0 0 30px rgba(255, 255, 255, 0.7);
 #sidebar::-webkit-scrollbar {
   width: 6px;
 }
+
 #sidebar::-webkit-scrollbar-thumb {
-  background: rgba(255,255,255,0.2);
+  background: rgba(255, 255, 255, 0.2);
   border-radius: 3px;
 }
 
-    #sidebar.active {
-      left: 0;
-    }
+#sidebar.active {
+  left: 0;
+}
 
-    #sidebar ul {
+#sidebar ul {
   list-style: none;
   padding: 0;
-  margin-top: 40px; /* ✅ เพิ่มบรรทัดนี้ */
+  margin-top: 40px;
+  /* ✅ เพิ่มบรรทัดนี้ */
 }
 
-    #sidebar li {
+#sidebar li {
   margin-bottom: -100px;
-  font-size: 40px; /* ✅ เพิ่มขนาดฟอนต์ */
+  font-size: 40px;
+  /* ✅ เพิ่มขนาดฟอนต์ */
 }
 
-    #sidebar h5 {
-      
-      text-decoration: none;
-       background: linear-gradient(90deg,
-    #ff7e5f, /* ส้ม */
-    #feb47b, /* ส้มอ่อน */
-    #86A8E7, /* ฟ้าอ่อน */
-    #91EAE4  /* ฟ้าสดใส */
-  );
+#sidebar h5 {
+
+  text-decoration: none;
+  background: linear-gradient(90deg,
+      #ff7e5f,
+      /* ส้ม */
+      #feb47b,
+      /* ส้มอ่อน */
+      #86A8E7,
+      /* ฟ้าอ่อน */
+      #91EAE4
+      /* ฟ้าสดใส */
+    );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  background-clip: text;       /* สำหรับเบราว์เซอร์ที่รองรับ */
+  background-clip: text;
+  /* สำหรับเบราว์เซอร์ที่รองรับ */
   color: transparent;
-    }
-    
+}
 
-    /* ปุ่มรังผึ้ง */
+
+/* ปุ่มรังผึ้ง */
 .hex-button {
-  all: unset; /* ✅ ลบสไตล์ปุ่มพื้นฐานออก */
+  all: unset;
+  /* ✅ ลบสไตล์ปุ่มพื้นฐานออก */
   position: fixed;
   top: 20px;
   left: 20px;
   width: 60px;
   height: 60px;
   background: #ffcc00;
-  clip-path: polygon(
-    50% 0%,
-    93% 25%,
-    93% 75%,
-    50% 100%,
-    7% 75%,
-    7% 25%
-  );
+  clip-path: polygon(50% 0%,
+      93% 25%,
+      93% 75%,
+      50% 100%,
+      7% 75%,
+      7% 25%);
   border: 10px solid #cc9900;
   box-shadow: 0 0 20px rgba(255, 204, 0, 0.4), inset 0 0 10px rgba(0, 0, 0, 0.2);
   animation: metallic-shine 2s linear infinite;
-  background-image: linear-gradient(
-    135deg,
-    #ffcc00 0%,
-    #fff6cc 40%,
-    #ffcc00 60%,
-    #fff6cc 100%
-  );
+  background-image: linear-gradient(135deg,
+      #ffcc00 0%,
+      #fff6cc 40%,
+      #ffcc00 60%,
+      #fff6cc 100%);
   background-size: 200% 200%;
   display: flex;
   align-items: center;
@@ -500,6 +363,7 @@ text-shadow: 0 0 20px rgba(255, 255, 255, 1), 0 0 30px rgba(255, 255, 255, 0.7);
   0% {
     background-position: 0% 50%;
   }
+
   100% {
     background-position: 200% 50%;
   }
@@ -517,7 +381,8 @@ text-shadow: 0 0 20px rgba(255, 255, 255, 1), 0 0 30px rgba(255, 255, 255, 0.7);
 }
 
 #sidebar li.active h5 {
-  color: #ffd700; /* สีตอน active */
+  color: #ffd700;
+  /* สีตอน active */
 }
 
 /* ขีดเส้นใต้แบบแอนิเมชัน */
@@ -538,7 +403,8 @@ text-shadow: 0 0 20px rgba(255, 255, 255, 1), 0 0 30px rgba(255, 255, 255, 0.7);
 }
 
 #sidebar h5:hover {
-  color: #fffacd; /* สีอ่อนขึ้นเล็กน้อย */
+  color: #fffacd;
+  /* สีอ่อนขึ้นเล็กน้อย */
   text-shadow: 0 0 5px rgba(255, 255, 200, 0.7);
 }
 
@@ -569,35 +435,24 @@ text-shadow: 0 0 20px rgba(255, 255, 255, 1), 0 0 30px rgba(255, 255, 255, 0.7);
   text-align: right;
   padding-right: 20px;
 
-  display: flex;              /* เพิ่ม */
-  justify-content: center;    
-  align-items: center;       
+  display: flex;
+  /* เพิ่ม */
+  justify-content: center;
+  align-items: center;
 
   clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 20% 100%);
   position: absolute;
   left: 360px;
   top: 260px;
-  z-index: 10;               /* เปลี่ยนจาก -1 เป็น 10 */
+  z-index: 10;
+  /* เปลี่ยนจาก -1 เป็น 10 */
 }
 
 
 
 
 
-h6{
-  width: 800px;
-  height: 100px;
-  background-image: url("https://media.istockphoto.com/id/1900013732/th/%E0%B8%A3%E0%B8%B9%E0%B8%9B%E0%B8%96%E0%B9%88%E0%B8%B2%E0%B8%A2/%E0%B8%9E%E0%B8%B7%E0%B9%89%E0%B8%99%E0%B8%AB%E0%B8%A5%E0%B8%B1%E0%B8%87%E0%B8%81%E0%B8%A3%E0%B8%B0%E0%B8%94%E0%B8%B2%E0%B8%A9%E0%B8%81%E0%B8%A3%E0%B8%B2%E0%B8%9F%E0%B8%AA%E0%B8%B5%E0%B8%82%E0%B8%B2%E0%B8%A7.jpg?s=612x612&w=0&k=20&c=25186__Kksyjl59SGaCsBFGZSYX_webLrWEnWDBi8GA=");
-  border: 0.5px solid #000000;
-  text-align: 20px;
-  font-size: 60px;
-  padding-top: 40px;
-  color: #2a004688;
-  position: absolute;
-  left: 180px;
-  top: 200px;
-  z-index: 10; 
-}
+
 
 
 .sidebar-menu {
@@ -617,7 +472,7 @@ h6{
 .subcategory-list {
   display: none;
   padding-left: 16px;
-  margin-top:40px;
+  margin-top: 40px;
   margin-bottom: 0;
 }
 
@@ -630,33 +485,692 @@ h6{
   cursor: pointer;
 }
 
-#bodyList, #familyList , #plantsList ,#objectsList ,#clothingList ,#monkItemsList ,#natureList,#buildingsList,#fruitsList,#foodList,#vegetablesList,#fruitsExtraList,#flowersList,#treesList,#fishList,#birdsList,#landAnimalsList,#reptilesList,#illnessList,#vehiclesList,#religionList,#entertainmentList,#professionsList,#classifiersList,#cookingVerbsList,#eatingVerbsList,#dressingVerbsList,#speakingVerbsList,#feelingVerbsList,#healthVerbsList,#cleaningVerbsList,#craftingVerbsList,#fightingVerbsList,#movingVerbsList,#educationVerbsList,#farmingVerbsList,#eyeVerbsList,#pronounsList,#nounsList,#demonstrativesList,#daytimeList,#durationList,#quantitiesList,#flavorsList,#colorsList,#scentsList,#featuresList,#sizesList,#touchList,#endingsList {
-  width: 1000px;
- 
-  background-image: url("https://media.istockphoto.com/id/1900013732/th/%E0%B8%A3%E0%B8%B9%E0%B8%9B%E0%B8%96%E0%B9%88%E0%B8%B2%E0%B8%A2/%E0%B8%9E%E0%B8%B7%E0%B9%89%E0%B8%99%E0%B8%AB%E0%B8%A5%E0%B8%B1%E0%B8%87%E0%B8%81%E0%B8%A3%E0%B8%B0%E0%B8%94%E0%B8%B2%E0%B8%A9%E0%B8%81%E0%B8%A3%E0%B8%B2%E0%B8%9F%E0%B8%AA%E0%B8%B5%E0%B8%82%E0%B8%B2%E0%B8%A7.jpg?s=612x612&w=0&k=20&c=25186__Kksyjl59SGaCsBFGZSYX_webLrWEnWDBi8GA=");
-  border: 0.5px solid #000000;
-  text-align: 20px;
-  font-size:60px;
-  padding-top: 40px;
-  color: #2a004688;
-  position: absolute;
-  left: 80px;
-  top: 500px;
- 
-}
+
 
 @media (min-width: 1024px) {
   body {
-    zoom: 80%;           /* ซูม 150% */
-    overflow-x: hidden;   /* ล็อคเลื่อนซ้าย-ขวา */
+    zoom: 80%;
+    /* ซูม 150% */
+    overflow-x: hidden;
+    /* ล็อคเลื่อนซ้าย-ขวา */
   }
+
+  @keyframes changeBg {
+    0% {
+      background-color: rgb(255, 200, 200);
+    }
+
+    25% {
+      background-color: rgb(200, 255, 200);
+    }
+
+    50% {
+      background-color: rgb(200, 200, 255);
+    }
+
+    75% {
+      background-color: rgb(255, 255, 200);
+    }
+
+    100% {
+      background-color: rgb(255, 200, 200);
+    }
+  }
+
+  h1 {
+    width: 2355px;
+    height: 160px;
+    background-image: url("https://media.istockphoto.com/id/1900013732/th/%E0%B8%A3%E0%B8%B9%E0%B8%9B%E0%B8%96%E0%B9%88%E0%B8%B2%E0%B8%A2/%E0%B8%9E%E0%B8%B7%E0%B9%89%E0%B8%99%E0%B8%AB%E0%B8%A5%E0%B8%B1%E0%B8%87%E0%B8%81%E0%B8%A3%E0%B8%B0%E0%B8%94%E0%B8%B2%E0%B8%A9%E0%B8%81%E0%B8%A3%E0%B8%B2%E0%B8%9F%E0%B8%AA%E0%B8%B5%E0%B8%82%E0%B8%B2%E0%B8%A7.jpg?s=612x612&w=0&k=20&c=25186__Kksyjl59SGaCsBFGZSYX_webLrWEnWDBi8GA=");
+    border: 0.5px solid #000000;
+    text-align: 20px;
+    font-size: 5px;
+    padding-top: 40px;
+
+
+  }
+
+  h4 {
+    width: 600px;
+    height: 80px;
+    background-image: url("https://media.istockphoto.com/id/1900013732/th/%E0%B8%A3%E0%B8%B9%E0%B8%9B%E0%B8%96%E0%B9%88%E0%B8%B2%E0%B8%A2/%E0%B8%9E%E0%B8%B7%E0%B9%89%E0%B8%99%E0%B8%AB%E0%B8%A5%E0%B8%B1%E0%B8%87%E0%B8%81%E0%B8%A3%E0%B8%B0%E0%B8%94%E0%B8%B2%E0%B8%A9%E0%B8%81%E0%B8%A3%E0%B8%B2%E0%B8%9F%E0%B8%AA%E0%B8%B5%E0%B8%82%E0%B8%B2%E0%B8%A7.jpg?s=612x612&w=0&k=20&c=25186__Kksyjl59SGaCsBFGZSYX_webLrWEnWDBi8GA=");
+    border: 0.5px solid #000000;
+    text-align: 20px;
+    font-size: 5px;
+    padding-top: 40px;
+    border-radius: 20px;
+    /* ทำให้ขอบมน */
+
+
+
+  }
+
+  h3 {
+    font-size: 72px;
+    width: 1200px;
+    height: 100px;
+    color: rgb(0, 0, 0);
+    background-color: aliceblue;
+
+    padding-top: 30px;
+    justify-content: center;
+
+    /* ใช้ clip-path เพื่อทำให้กล่องเป็นสี่เหลี่ยมคางหมูที่ด้านซ้ายเป็นมุมฉาก */
+    clip-path: polygon(0% 0%, 90% 0%, 100% 100%, 0% 100%);
+    position: absolute;
+    left: 150px;
+    top: 200px;
+  }
+
+  h2 {
+    font-size: 48px;
+    width: 1320px;
+    height: 90px;
+    color: rgb(186, 186, 186);
+    background-color: rgb(117, 117, 117);
+    text-align: right;
+    /* ข้อความชิดขวา */
+    padding-right: 20px;
+    /* ขยับข้อความไปทางขวา 50px */
+
+
+    /* เพิ่ม Flexbox เพื่อจัดตำแหน่งข้อความให้อยู่กลาง */
+
+    justify-content: center;
+    /* จัดแนวนอนให้อยู่ตรงกลาง */
+    align-items: center;
+    /* จัดแนวตั้งให้อยู่ตรงกลาง */
+
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 20% 100%);
+    position: absolute;
+    left: 900px;
+    top: 260px;
+    z-index: -1;
+
+  }
+
+  h3,
+  h2 {
+
+    transition: background-color 0.3s, color 0.3s;
+    /* ทำให้เปลี่ยนสีแบบนุ่มนวล */
+
+  }
+
+  .swapped-h3 {
+    color: rgb(255, 255, 255);
+    background-color: rgb(100, 100, 100);
+    position: absolute;
+    right: 150px;
+    top: 250px;
+    width: 1100px;
+    height: 50px;
+    font-size: 36px;
+    z-index: -1;
+  }
+
+  .swapped-h2 {
+    color: rgb(0, 0, 0);
+    background-color: aliceblue;
+    width: 1100px;
+    height: 120px;
+    position: absolute;
+    left: 1130px;
+    top: 200px;
+    font-size: 82px;
+    z-index: 1;
+  }
+h6 {
+  width: 800px;
+  height: 100px;
+  background-image: url("https://media.istockphoto.com/id/1900013732/th/%E0%B8%A3%E0%B8%B9%E0%B8%9B%E0%B8%96%E0%B9%88%E0%B8%B2%E0%B8%A2/%E0%B8%9E%E0%B8%B7%E0%B9%89%E0%B8%99%E0%B8%AB%E0%B8%A5%E0%B8%B1%E0%B8%87%E0%B8%81%E0%B8%A3%E0%B8%B0%E0%B8%94%E0%B8%B2%E0%B8%A9%E0%B8%81%E0%B8%A3%E0%B8%B2%E0%B8%9F%E0%B8%AA%E0%B8%B5%E0%B8%82%E0%B8%B2%E0%B8%A7.jpg?s=612x612&w=0&k=20&c=25186__Kksyjl59SGaCsBFGZSYX_webLrWEnWDBi8GA=");
+  border: 0.5px solid #000000;
+  text-align: 20px;
+  font-size: 60px;
+  padding-top: 40px;
+  color: #2a004688;
+  position: absolute;
+  left: 750px;
+  top: 200px;
+  z-index: 10;
+}
+#bodyList,
+#familyList,
+#plantsList,
+#objectsList,
+#clothingList,
+#monkItemsList,
+#natureList,
+#buildingsList,
+#fruitsList,
+#foodList,
+#vegetablesList,
+#fruitsExtraList,
+#flowersList,
+#treesList,
+#fishList,
+#birdsList,
+#landAnimalsList,
+#reptilesList,
+#illnessList,
+#vehiclesList,
+#religionList,
+#entertainmentList,
+#professionsList,
+#classifiersList,
+#cookingVerbsList,
+#eatingVerbsList,
+#dressingVerbsList,
+#speakingVerbsList,
+#feelingVerbsList,
+#healthVerbsList,
+#cleaningVerbsList,
+#craftingVerbsList,
+#fightingVerbsList,
+#movingVerbsList,
+#educationVerbsList,
+#farmingVerbsList,
+#eyeVerbsList,
+#pronounsList,
+#nounsList,
+#demonstrativesList,
+#daytimeList,
+#durationList,
+#quantitiesList,
+#flavorsList,
+#colorsList,
+#scentsList,
+#featuresList,
+#sizesList,
+#touchList,
+#endingsList {
+  width: 1000px;
+
+  background-image: url("https://media.istockphoto.com/id/1900013732/th/%E0%B8%A3%E0%B8%B9%E0%B8%9B%E0%B8%96%E0%B9%88%E0%B8%B2%E0%B8%A2/%E0%B8%9E%E0%B8%B7%E0%B9%89%E0%B8%99%E0%B8%AB%E0%B8%A5%E0%B8%B1%E0%B8%87%E0%B8%81%E0%B8%A3%E0%B8%B0%E0%B8%94%E0%B8%B2%E0%B8%A9%E0%B8%81%E0%B8%A3%E0%B8%B2%E0%B8%9F%E0%B8%AA%E0%B8%B5%E0%B8%82%E0%B8%B2%E0%B8%A7.jpg?s=612x612&w=0&k=20&c=25186__Kksyjl59SGaCsBFGZSYX_webLrWEnWDBi8GA=");
+  border: 0.5px solid #000000;
+  text-align: 20px;
+  font-size: 60px;
+  padding-top: 40px;
+  color: #2a004688;
+  position: absolute;
+  left: 630px;
+  top: 500px;
+
+}
+
+
+  button {
+    padding: 100px 100px;
+    /* ปรับขนาดตามต้องการ */
+    font-size: 16px;
+    /* ปรับขนาดตัวอักษรตามต้องการ */
+    border-radius: 90%;
+    width: 200px;
+    /* กำหนดขนาดของปุ่ม */
+    position: absolute;
+    /* กำหนดให้เป็นตำแหน่งเอนเจิ้ล */
+    border: 5px solid #000000;
+    height: 200px;
+    background-color: aliceblue;
+
+    vertical-align: top;
+    cursor: pointer;
+    padding-left: 30px;
+    padding-top: 30px;
+  }
+
+
+  input {
+    padding: 200px 300px;
+    /* ปรับขนาดตามต้องการ */
+    font-size: 32px;
+
+    /* ปรับขนาดตัวอักษรตามต้องการ */
+
+    /* ปรับความกว้างของ input field */
+    color: rgb(0, 0, 0);
+
+    background-color: aqua;
+    background-image: url("https://media.istockphoto.com/id/1900013732/th/%E0%B8%A3%E0%B8%B9%E0%B8%9B%E0%B8%96%E0%B9%88%E0%B8%B2%E0%B8%A2/%E0%B8%9E%E0%B8%B7%E0%B9%89%E0%B8%99%E0%B8%AB%E0%B8%A5%E0%B8%B1%E0%B8%87%E0%B8%81%E0%B8%A3%E0%B8%B0%E0%B8%94%E0%B8%B2%E0%B8%A9%E0%B8%81%E0%B8%A3%E0%B8%B2%E0%B8%9F%E0%B8%AA%E0%B8%B5%E0%B8%82%E0%B8%B2%E0%B8%A7.jpg?s=612x612&w=0&k=20&c=25186__Kksyjl59SGaCsBFGZSYX_webLrWEnWDBi8GA=");
+    font-family: "Itim", cursive;
+    border-radius: 10%;
+    /* กำหนดขอบมน */
+    border: 5px solid #000000;
+    /* เพิ่มเส้นขอบ */
+    text-align: left;
+    padding-top: 200px;
+    position: absolute;
+    left: 250px;
+    top: 470px;
+
+
+
+  }
+
+  output {
+    height: 400px;
+    width: 600px;
+    /* ปรับขนาดตามต้องการ */
+    font-size: 30px;
+    /* ปรับขนาดตัวอักษรตามต้องการ */
+
+    /* ปรับความกว้างของ input field */
+    color: rgb(0, 0, 0);
+
+    background-color: aqua;
+    background-image: url("https://media.istockphoto.com/id/1900013732/th/%E0%B8%A3%E0%B8%B9%E0%B8%9B%E0%B8%96%E0%B9%88%E0%B8%B2%E0%B8%A2/%E0%B8%9E%E0%B8%B7%E0%B9%89%E0%B8%99%E0%B8%AB%E0%B8%A5%E0%B8%B1%E0%B8%87%E0%B8%81%E0%B8%A3%E0%B8%B0%E0%B8%94%E0%B8%B2%E0%B8%A9%E0%B8%81%E0%B8%A3%E0%B8%B2%E0%B8%9F%E0%B8%AA%E0%B8%B5%E0%B8%82%E0%B8%B2%E0%B8%A7.jpg?s=612x612&w=0&k=20&c=25186__Kksyjl59SGaCsBFGZSYX_webLrWEnWDBi8GA=");
+    font-family: "Itim", cursive;
+    border-radius: 10%;
+    /* กำหนดขอบมน */
+    border: 3px solid #000000;
+    /* เพิ่มเส้นขอบ */
+    text-align: center;
+    padding-top: 200px;
+
+
+
+
+
+  }
+  button {
+      padding: 100px 100px;
+      /* ปรับขนาดตามต้องการ */
+      font-size: 16px;
+      /* ปรับขนาดตัวอักษรตามต้องการ */
+      border-radius: 90%;
+      width: 200px;
+      /* กำหนดขนาดของปุ่ม */
+      position: absolute;
+      /* กำหนดให้เป็นตำแหน่งเอนเจิ้ล */
+      border: 5px solid #000000;
+      height: 200px;
+      background-color: aliceblue;
+
+      vertical-align: top;
+      cursor: pointer;
+      padding-left: 30px;
+      padding-top: 30px;
+    }
+
+
+    input {
+      padding: 200px 300px;
+      /* ปรับขนาดตามต้องการ */
+      font-size: 32px;
+
+      /* ปรับขนาดตัวอักษรตามต้องการ */
+
+      /* ปรับความกว้างของ input field */
+      color: rgb(0, 0, 0);
+
+      background-color: aqua;
+      background-image: url("https://media.istockphoto.com/id/1900013732/th/%E0%B8%A3%E0%B8%B9%E0%B8%9B%E0%B8%96%E0%B9%88%E0%B8%B2%E0%B8%A2/%E0%B8%9E%E0%B8%B7%E0%B9%89%E0%B8%99%E0%B8%AB%E0%B8%A5%E0%B8%B1%E0%B8%87%E0%B8%81%E0%B8%A3%E0%B8%B0%E0%B8%94%E0%B8%B2%E0%B8%A9%E0%B8%81%E0%B8%A3%E0%B8%B2%E0%B8%9F%E0%B8%AA%E0%B8%B5%E0%B8%82%E0%B8%B2%E0%B8%A7.jpg?s=612x612&w=0&k=20&c=25186__Kksyjl59SGaCsBFGZSYX_webLrWEnWDBi8GA=");
+      font-family: "Itim", cursive;
+      border-radius: 10%;
+      /* กำหนดขอบมน */
+      border: 5px solid #000000;
+      /* เพิ่มเส้นขอบ */
+      text-align: left;
+      padding-top: 200px;
+      position: absolute;
+      left: 100px;
+      top: 470px;
+
+
+
+    }
+
+    output {
+      height: 250px;
+      width: 1100px;
+      /* ปรับขนาดตามต้องการ */
+      font-size: 30px;
+      /* ปรับขนาดตัวอักษรตามต้องการ */
+
+      /* ปรับความกว้างของ input field */
+      color: rgb(0, 0, 0);
+
+      background-color: aqua;
+      background-image: url("https://media.istockphoto.com/id/1900013732/th/%E0%B8%A3%E0%B8%B9%E0%B8%9B%E0%B8%96%E0%B9%88%E0%B8%B2%E0%B8%A2/%E0%B8%9E%E0%B8%B7%E0%B9%89%E0%B8%99%E0%B8%AB%E0%B8%A5%E0%B8%B1%E0%B8%87%E0%B8%81%E0%B8%A3%E0%B8%B0%E0%B8%94%E0%B8%B2%E0%B8%A9%E0%B8%81%E0%B8%A3%E0%B8%B2%E0%B8%9F%E0%B8%AA%E0%B8%B5%E0%B8%82%E0%B8%B2%E0%B8%A7.jpg?s=612x612&w=0&k=20&c=25186__Kksyjl59SGaCsBFGZSYX_webLrWEnWDBi8GA=");
+      font-family: "Itim", cursive;
+      border-radius: 10%;
+      /* กำหนดขอบมน */
+      border: 5px solid #000000;
+      /* เพิ่มเส้นขอบ */
+      text-align: center;
+      padding-top: 200px;
+      position: absolute; left: 1150px; top:470px;
+
+
+    }
+    #soundButton {
+  position: absolute;
+  left: 700px;
+  top: 970px;
+  
+}
+   
+
+    .animated-button {
+  position:  absolute; 
+    left:1800px; 
+    top:970px; 
+    font-size: 100px;  /* ให้อยู่เหนือ element อื่นถ้าซ้อนกัน */
+}
+
+.animated-image {
+
+  left: 200px;
+  top: 870px; /* ปรับตำแหน่งแนวตั้งที่นี่ */
+  transition: box-shadow 0.3s ease, transform 0.2s ease;
+ 
+}
 }
 
 /* สำหรับมือถือ (หน้าจอแคบกว่า 1024px) */
 @media (max-width: 1023px) {
   body {
-    zoom: 33%;           /* ปรับเป็นซูมปกติ */
-    overflow-x: auto;     /* อนุญาต scroll ได้ตามปกติ */
+    zoom: 33%;
+    /* ปรับเป็นซูมปกติ */
+    overflow-x: hidden;
+    overflow-y: hidden;
+    /* อนุญาต scroll ได้ตามปกติ */
+    @keyframes changeBg {
+      0% {
+        background-color: rgb(255, 200, 200);
+      }
+
+      25% {
+        background-color: rgb(200, 255, 200);
+      }
+
+      50% {
+        background-color: rgb(200, 200, 255);
+      }
+
+      75% {
+        background-color: rgb(255, 255, 200);
+      }
+
+      100% {
+        background-color: rgb(255, 200, 200);
+      }
+    }
+
+    h6 {
+  width: 800px;
+  height: 100px;
+  background-image: url("https://media.istockphoto.com/id/1900013732/th/%E0%B8%A3%E0%B8%B9%E0%B8%9B%E0%B8%96%E0%B9%88%E0%B8%B2%E0%B8%A2/%E0%B8%9E%E0%B8%B7%E0%B9%89%E0%B8%99%E0%B8%AB%E0%B8%A5%E0%B8%B1%E0%B8%87%E0%B8%81%E0%B8%A3%E0%B8%B0%E0%B8%94%E0%B8%B2%E0%B8%A9%E0%B8%81%E0%B8%A3%E0%B8%B2%E0%B8%9F%E0%B8%AA%E0%B8%B5%E0%B8%82%E0%B8%B2%E0%B8%A7.jpg?s=612x612&w=0&k=20&c=25186__Kksyjl59SGaCsBFGZSYX_webLrWEnWDBi8GA=");
+  border: 0.5px solid #000000;
+  text-align: 20px;
+  font-size: 60px;
+  padding-top: 40px;
+  color: #2a004688;
+  position: absolute;
+  left: 180px;
+  top: 200px;
+  z-index: 10;
+}
+    h1 {
+      width: 1220px;
+      height: 160px;
+      background-image: url("https://media.istockphoto.com/id/1900013732/th/%E0%B8%A3%E0%B8%B9%E0%B8%9B%E0%B8%96%E0%B9%88%E0%B8%B2%E0%B8%A2/%E0%B8%9E%E0%B8%B7%E0%B9%89%E0%B8%99%E0%B8%AB%E0%B8%A5%E0%B8%B1%E0%B8%87%E0%B8%81%E0%B8%A3%E0%B8%B0%E0%B8%94%E0%B8%B2%E0%B8%A9%E0%B8%81%E0%B8%A3%E0%B8%B2%E0%B8%9F%E0%B8%AA%E0%B8%B5%E0%B8%82%E0%B8%B2%E0%B8%A7.jpg?s=612x612&w=0&k=20&c=25186__Kksyjl59SGaCsBFGZSYX_webLrWEnWDBi8GA=");
+      border: 0.5px solid #000000;
+      text-align: 20px;
+      font-size: 5px;
+      padding-top: 40px;
+
+
+    }
+
+    h4 {
+      width: 600px;
+      height: 80px;
+      background-image: url("https://media.istockphoto.com/id/1900013732/th/%E0%B8%A3%E0%B8%B9%E0%B8%9B%E0%B8%96%E0%B9%88%E0%B8%B2%E0%B8%A2/%E0%B8%9E%E0%B8%B7%E0%B9%89%E0%B8%99%E0%B8%AB%E0%B8%A5%E0%B8%B1%E0%B8%87%E0%B8%81%E0%B8%A3%E0%B8%B0%E0%B8%94%E0%B8%B2%E0%B8%A9%E0%B8%81%E0%B8%A3%E0%B8%B2%E0%B8%9F%E0%B8%AA%E0%B8%B5%E0%B8%82%E0%B8%B2%E0%B8%A7.jpg?s=612x612&w=0&k=20&c=25186__Kksyjl59SGaCsBFGZSYX_webLrWEnWDBi8GA=");
+      border: 0.5px solid #000000;
+      text-align: 20px;
+      font-size: 5px;
+      padding-top: 40px;
+      border-radius: 20px;
+      /* ทำให้ขอบมน */
+
+
+
+    }
+
+    h3 {
+      font-size: 72px;
+      width: 500px;
+      height: 100px;
+      color: rgb(0, 0, 0);
+      background-color: aliceblue;
+
+      padding-top: 30px;
+      justify-content: center;
+
+      /* ใช้ clip-path เพื่อทำให้กล่องเป็นสี่เหลี่ยมคางหมูที่ด้านซ้ายเป็นมุมฉาก */
+      clip-path: polygon(0% 0%, 90% 0%, 100% 100%, 0% 100%);
+      position: absolute;
+      left: 150px;
+      top: 200px;
+    }
+
+    h2 {
+      font-size: 48px;
+      width: 700px;
+      height: 70px;
+      color: rgb(186, 186, 186);
+      background-color: rgb(117, 117, 117);
+      text-align: right;
+      /* ข้อความชิดขวา */
+      padding-right: 20px;
+      /* ขยับข้อความไปทางขวา 50px */
+
+
+      /* เพิ่ม Flexbox เพื่อจัดตำแหน่งข้อความให้อยู่กลาง */
+
+      justify-content: center;
+      /* จัดแนวนอนให้อยู่ตรงกลาง */
+      align-items: center;
+      /* จัดแนวตั้งให้อยู่ตรงกลาง */
+
+      clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 20% 100%);
+      position: absolute;
+      left: 360px;
+      top: 260px;
+      z-index: -1;
+
+    }
+
+    h3,
+    h2 {
+
+      transition: background-color 0.3s, color 0.3s;
+      /* ทำให้เปลี่ยนสีแบบนุ่มนวล */
+
+    }
+
+    .swapped-h3 {
+      color: rgb(255, 255, 255);
+      background-color: rgb(100, 100, 100);
+      position: absolute;
+      right: 150px;
+      top: 250px;
+      width: 700px;
+      height: 50px;
+      font-size: 36px;
+      z-index: -1;
+    }
+
+    .swapped-h2 {
+      color: rgb(0, 0, 0);
+      background-color: aliceblue;
+      width: 500px;
+      height: 120px;
+      position: absolute;
+      left: 560px;
+      top: 200px;
+      font-size: 82px;
+      z-index: 1;
+    }
+
+
+
+    button {
+      padding: 100px 100px;
+      /* ปรับขนาดตามต้องการ */
+      font-size: 16px;
+      /* ปรับขนาดตัวอักษรตามต้องการ */
+      border-radius: 90%;
+      width: 200px;
+      /* กำหนดขนาดของปุ่ม */
+      position: absolute;
+      /* กำหนดให้เป็นตำแหน่งเอนเจิ้ล */
+      border: 5px solid #000000;
+      height: 200px;
+      background-color: aliceblue;
+
+      vertical-align: top;
+      cursor: pointer;
+      padding-left: 30px;
+      padding-top: 30px;
+    }
+
+
+    input {
+      padding: 200px 300px;
+      /* ปรับขนาดตามต้องการ */
+      font-size: 32px;
+
+      /* ปรับขนาดตัวอักษรตามต้องการ */
+
+      /* ปรับความกว้างของ input field */
+      color: rgb(0, 0, 0);
+
+      background-color: aqua;
+      background-image: url("https://media.istockphoto.com/id/1900013732/th/%E0%B8%A3%E0%B8%B9%E0%B8%9B%E0%B8%96%E0%B9%88%E0%B8%B2%E0%B8%A2/%E0%B8%9E%E0%B8%B7%E0%B9%89%E0%B8%99%E0%B8%AB%E0%B8%A5%E0%B8%B1%E0%B8%87%E0%B8%81%E0%B8%A3%E0%B8%B0%E0%B8%94%E0%B8%B2%E0%B8%A9%E0%B8%81%E0%B8%A3%E0%B8%B2%E0%B8%9F%E0%B8%AA%E0%B8%B5%E0%B8%82%E0%B8%B2%E0%B8%A7.jpg?s=612x612&w=0&k=20&c=25186__Kksyjl59SGaCsBFGZSYX_webLrWEnWDBi8GA=");
+      font-family: "Itim", cursive;
+      border-radius: 10%;
+      /* กำหนดขอบมน */
+      border: 5px solid #000000;
+      /* เพิ่มเส้นขอบ */
+      text-align: left;
+      padding-top: 200px;
+      position: absolute;
+      left: 100px;
+      top: 470px;
+
+
+
+    }
+
+    output {
+      height: 400px;
+      width: 900px;
+      /* ปรับขนาดตามต้องการ */
+      font-size: 30px;
+      /* ปรับขนาดตัวอักษรตามต้องการ */
+
+      /* ปรับความกว้างของ input field */
+      color: rgb(0, 0, 0);
+
+      background-color: aqua;
+      background-image: url("https://media.istockphoto.com/id/1900013732/th/%E0%B8%A3%E0%B8%B9%E0%B8%9B%E0%B8%96%E0%B9%88%E0%B8%B2%E0%B8%A2/%E0%B8%9E%E0%B8%B7%E0%B9%89%E0%B8%99%E0%B8%AB%E0%B8%A5%E0%B8%B1%E0%B8%87%E0%B8%81%E0%B8%A3%E0%B8%B0%E0%B8%94%E0%B8%B2%E0%B8%A9%E0%B8%81%E0%B8%A3%E0%B8%B2%E0%B8%9F%E0%B8%AA%E0%B8%B5%E0%B8%82%E0%B8%B2%E0%B8%A7.jpg?s=612x612&w=0&k=20&c=25186__Kksyjl59SGaCsBFGZSYX_webLrWEnWDBi8GA=");
+      font-family: "Itim", cursive;
+      border-radius: 10%;
+      /* กำหนดขอบมน */
+      border: 3px solid #000000;
+      /* เพิ่มเส้นขอบ */
+      text-align: center;
+      padding-top: 200px;
+      position: absolute; left: 150px; top:1400px;
+
+
+    }
+    #bodyList,
+#familyList,
+#plantsList,
+#objectsList,
+#clothingList,
+#monkItemsList,
+#natureList,
+#buildingsList,
+#fruitsList,
+#foodList,
+#vegetablesList,
+#fruitsExtraList,
+#flowersList,
+#treesList,
+#fishList,
+#birdsList,
+#landAnimalsList,
+#reptilesList,
+#illnessList,
+#vehiclesList,
+#religionList,
+#entertainmentList,
+#professionsList,
+#classifiersList,
+#cookingVerbsList,
+#eatingVerbsList,
+#dressingVerbsList,
+#speakingVerbsList,
+#feelingVerbsList,
+#healthVerbsList,
+#cleaningVerbsList,
+#craftingVerbsList,
+#fightingVerbsList,
+#movingVerbsList,
+#educationVerbsList,
+#farmingVerbsList,
+#eyeVerbsList,
+#pronounsList,
+#nounsList,
+#demonstrativesList,
+#daytimeList,
+#durationList,
+#quantitiesList,
+#flavorsList,
+#colorsList,
+#scentsList,
+#featuresList,
+#sizesList,
+#touchList,
+#endingsList {
+  width: 1000px;
+
+  background-image: url("https://media.istockphoto.com/id/1900013732/th/%E0%B8%A3%E0%B8%B9%E0%B8%9B%E0%B8%96%E0%B9%88%E0%B8%B2%E0%B8%A2/%E0%B8%9E%E0%B8%B7%E0%B9%89%E0%B8%99%E0%B8%AB%E0%B8%A5%E0%B8%B1%E0%B8%87%E0%B8%81%E0%B8%A3%E0%B8%B0%E0%B8%94%E0%B8%B2%E0%B8%A9%E0%B8%81%E0%B8%A3%E0%B8%B2%E0%B8%9F%E0%B8%AA%E0%B8%B5%E0%B8%82%E0%B8%B2%E0%B8%A7.jpg?s=612x612&w=0&k=20&c=25186__Kksyjl59SGaCsBFGZSYX_webLrWEnWDBi8GA=");
+  border: 0.5px solid #000000;
+  text-align: 20px;
+  font-size: 60px;
+  padding-top: 40px;
+  color: #2a004688;
+  position: absolute;
+  left: 80px;
+  top: 500px;
+
+}
+    #soundButton {
+  position: absolute;
+  left: 500px;
+  top: 1070px;
+  
+}
+   
+
+    .animated-button {
+  position:  absolute; 
+    left:800px; 
+    top:1070px; 
+    font-size: 100px;  /* ให้อยู่เหนือ element อื่นถ้าซ้อนกัน */
+}
+
+.animated-image {
+
+  left: 100px;
+  top: 970px; /* ปรับตำแหน่งแนวตั้งที่นี่ */
+  transition: box-shadow 0.3s ease, transform 0.2s ease;
+ 
+}
   }
 }</style>
 
@@ -687,23 +1201,17 @@ h6{
 
     <!-- สคริปต์ของคุณเอง -->
     <script src="app.js" defer></script>
-    <input type="text" id="searchInput" style="position: absolute; left: 140px; top: 600px;"
+    <input type="text" id="searchInput" 
         placeholder="พิมพ์ข้อความที่นี่" onkeypress="if(event.key === 'Enter') satar();">
     <img " src="
         https://media.istockphoto.com/id/1075605186/th/%E0%B9%80%E0%B8%A7%E0%B8%84%E0%B9%80%E0%B8%95%E0%B8%AD%E0%B8%A3%E0%B9%8C/%E0%B8%95%E0%B8%B1%E0%B8%A7%E0%B9%81%E0%B8%9B%E0%B8%A5%E0%B9%80%E0%B8%AA%E0%B9%89%E0%B8%99%E0%B8%9A%E0%B8%B2%E0%B8%87%E0%B8%AA%E0%B8%B5%E0%B8%94%E0%B9%8D%E0%B8%B2.jpg?s=612x612&w=0&k=20&c=0SCRuZCM3D23Ezd3B_e76Y7z0OX13iD6dYl69Zfmb58="  alt="
-        Animated Image" onclick="satar(); addEffects(this);" class="animated-image" width="200" height="200" style="border-radius: 50%; 
-            position: absolute; left:300px; top:970px; 
-            
-            border: 5px solid black; 
-            transition: box-shadow 0.3s ease; 
-            margin-top: 100px; 
-            margin-left: 100px;" onmouseover="this.style.boxShadow='0px 0px 15px 5px rgba(0, 255, 255, 0.7)';"
+        Animated Image" onclick="satar(); addEffects(this);" class="animated-image" width="200" height="200"  onmouseover="this.style.boxShadow='0px 0px 15px 5px rgba(0, 255, 255, 0.7)';"
         onmouseout="this.style.boxShadow='none';" />
     <div id="translatedText"></div>
     <div id="แปลเเล้ว"></div>
 
     <br><br><br>
-    <output id="result" style=" position: absolute; left: 150px; top:1400px;"></output>
+    <output id="result" ></output>
     <!-- หน้าจอดำ -->
     <div id="blackScreen"></div>
 
@@ -713,7 +1221,7 @@ h6{
     <br><br><br>
     <h7 style="position: absolute; left: 370px; top: 1300px;"></h7>
 
-    <button id="soundButton" onclick="sdata() ; addEffects(this)" style="position: absolute; left:700px; top: 1070px;
+    <button id="soundButton" onclick="sdata() ; addEffects(this)" 
                transition: box-shadow 0.3s ease;"
         onmouseover="this.style.boxShadow='0px 0px 15px 5px rgba(0, 255, 255, 0.7)';"
         onmouseout="this.style.boxShadow='none';">
@@ -722,7 +1230,7 @@ h6{
     </button>
     <audio id="ttsAudio" controls style="display: none;"></audio>
     <button onclick="randomWord(); SS()" class="animated-button"
-        style=" font-size: 100px; position:  absolute; left:850px; top:1400px; ">🌟</button>
+        >🌟</button>
     <div id="result"></div>
 
 
